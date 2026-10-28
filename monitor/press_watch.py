@@ -16,7 +16,8 @@ from email.utils import parsedate_to_datetime
 from datetime import datetime, timezone
 
 KEYWORDS = re.compile(r"agreement|deal|commit|capacity|gigawatt|\bGW\b|GPU|financ|bond|notes|loan|credit|facility|"
-                      r"invest|stake|equity|guarantee|backstop|lease|take-or-pay|partnership|supply", re.I)
+                      r"invest|stake|equity|guarantee|backstop|lease|take-or-pay|partnership|supply|"
+                      r"订单|融资|债券|贷款|投资|采购|合同|协议|算力|数据中心|芯片|供货|产能|租赁|担保|发债|信贷|合资|入股|承诺|吉瓦|GW|HBM", re.I)
 UA = os.environ.get("PRESS_UA", "ai-deal-graph-watch/0.1")
 
 
@@ -82,7 +83,7 @@ def main():
                 if not KEYWORDS.search(it["title"] + " " + it["summary"]):
                     continue
                 out.append({"candidate_id": hashlib.sha1(it["link"].encode()).hexdigest()[:12], "source": "press_rss",
-                            "entity_id": ent, "filed": it["date"].date().isoformat() if it["date"] else None,
+                            "entity_id": ent, "filed": it["date"].date().isoformat() if it["date"] else None, "published": it["date"].isoformat() if it["date"] else None,
                             "url": it["link"], "title": it["title"], "publisher": it.get("publisher") or "",
                             "summary": re.sub(r"<[^>]+>", "", it["summary"]).replace("&nbsp;", " ")[:500]})
         elif kind == "html":

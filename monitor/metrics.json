@@ -1,9 +1,9 @@
 {
  "n_entities": 117,
  "n_edges_total": 253,
- "n_edges_active": 240,
+ "n_edges_active": 239,
  "n_firm": 215,
- "n_soft": 25,
+ "n_soft": 24,
  "cycles": [
   {
    "nodes": [
@@ -1339,7 +1339,7 @@
     0
    ],
    "equity_in": [
-    268600,
+    168600,
     114100
    ],
    "equity_out": [
@@ -1350,7 +1350,7 @@
     0,
     0
    ],
-   "n_edges": 25
+   "n_edges": 24
   },
   "softbank": {
    "order_out": [
@@ -1467,14 +1467,14 @@
     0
    ],
    "equity_out": [
-    151000,
+    51000,
     39000
    ],
    "guarantee_exposure": [
     111300,
     6300
    ],
-   "n_edges": 15
+   "n_edges": 14
   },
   "amd": {
    "order_out": [
@@ -4777,41 +4777,7 @@
   ]
  ],
  "delta": {
-  "new": [
-   "bf_e_001",
-   "bf_e_002",
-   "bf_e_003",
-   "bf_e_004",
-   "bf_e_005",
-   "bf_e_006",
-   "bf_e_007",
-   "bf_e_008",
-   "bf_e_009",
-   "bf_e_010",
-   "bf_e_011",
-   "bf_e_012",
-   "bf_e_013",
-   "bf_e_014",
-   "bf_e_015",
-   "bf_e_016",
-   "bf_e_017",
-   "bf_e_018",
-   "bf_e_019",
-   "bf_e_020",
-   "bf_e_021",
-   "bf_e_022",
-   "bf_e_023",
-   "bf_e_024",
-   "bf_e_025",
-   "bf_e_026",
-   "bf_e_027",
-   "bf_e_028",
-   "bf_e_029",
-   "bf_e_030",
-   "bf_e_031",
-   "bf_e_032",
-   "bf_e_033"
-  ],
+  "new": [],
   "status_changed": [],
   "amount_changed": []
  },

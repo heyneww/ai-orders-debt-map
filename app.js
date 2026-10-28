@@ -1,21 +1,21 @@
 /* AI 巨头订单与债务关系图 · 前端 */
 (() => {
 const I18N = {
-  zh: {eyebrow:"实时数据 · AI 资本流向", title:"AI 巨头订单与债务关系图", subtitle:"谁欠谁：订单、股权、债务与担保。每条边可追溯到来源，标题口径与已约束口径并列，不做估值判断。",
+  zh: {eyebrow:"实时数据 · AI 资本流向", title:"AI 巨头订单与债务关系图", subtitle:"谁欠谁：订单、股权、债务与担保。每笔交易可追溯到来源，标题口径与已约束口径并列，不做估值判断。",
     search:"搜公司或交易（例如 NVDA、Beignet、残值担保）", sector:"板块", minsize:"最小金额", period:"期间", status:"状态", basis:"口径", any:"不限", alldates:"全部",
     last90:"近 90 天", last12m:"近 12 个月", st_active:"有效（含传闻/意向）", st_firm:"仅已约束", st_all:"全部（含已修订/取消）", b_headline:"标题口径", b_firm:"已约束口径",
-    collapse:"SPV 折叠到发起人", v_graph:"关系图", v_table:"表格", v_cycles:"资金闭环", v_maturity:"到期墙", v_conc:"集中度", v_gaps:"数据缺口", v_delta:"本次变动", all:"全部",
+    collapse:"SPV 折叠到发起人", layered:"按板块分层布局", v_graph:"关系图", v_table:"表格", v_cycles:"资金闭环", v_maturity:"到期墙", v_conc:"集中度", v_gaps:"数据缺口", v_delta:"本次变动", all:"全部",
     replay:"回放至", csv:"复制 CSV", rank_title:"最大敞口", rank_total:"合计", rank_borrowed:"借入", rank_orders:"订单支出", rank_guar:"担保敞口",
     rank_hint:"点击公司查看它欠谁、谁欠它、下了哪些订单。条形 = 边类型构成。", rank_note:"占位对手方（公募债投资者、未披露贷款人、未拆分银团）不参与排名。",
     latest_title:"监控最新动态", news:"新闻", filings:"SEC 申报", method_title:"口径说明",
-    m1:"四类边：订单（买方→供应方）、债务（出借方→借款方）、股权（投资方→被投方）、担保（担保方→被担保主体）。箭头方向 = 资金方向。",
+    m1:"四类交易：订单（买方→供应方）、债务（出借方→借款方）、股权（投资方→被投方）、担保（担保方→被担保主体）。图中每条连线是一笔交易，箭头方向 = 资金方向。",
     m2:"标题口径 = 媒体标题金额（含 \"up to\"、多年总额）；已约束口径 = 已签约/已提款部分。两者并列，不互相替代。",
-    m3:"修订不覆盖旧边：新边带 supersedes 指向旧边，统计只计最新版本。传闻/意向灰显，只有公告或申报才记为已约束。",
+    m3:"修订不覆盖旧记录：新记录指向被修订的旧记录，统计只计最新版本。传闻/意向灰显，只有公告或申报才记为已约束。",
     m4:"SPV 是独立节点：项目债记在 SPV，承租人只以租约（订单）和残值担保（担保）出现。勾选\"折叠\"可把 SPV 并回发起人。",
     m5:"每笔只计一次、不做净额；供应链两端都计。资金闭环只是拓扑事实，不代表任何风险结论。",
-    disc:"仅供参考，不构成投资建议：本站只描述交易，不做评价。金额为公司公告或具名媒体披露的名义美元；每条边附来源链接与来源等级（1 申报 / 2 新闻稿 / 3 通讯社 / 4 其他）。",
+    disc:"仅供参考，不构成投资建议：本站只描述交易，不做评价。金额为公司公告或具名媒体披露的名义美元；每笔交易附来源链接与来源等级（1 申报 / 2 新闻稿 / 3 通讯社 / 4 其他）。",
     built:"数据来自公开申报与新闻。监控按计划运行；本页每 5 分钟自检一次。",
-    ORDER:"订单", DEBT:"债务", EQUITY:"股权", GUARANTEE:"担保", undisclosed:"未披露", more_undisc:"另 {n} 笔未披露金额", mix:"边类型构成", deals:"{d} 笔 · {c} 家",
+    ORDER:"订单", DEBT:"债务", EQUITY:"股权", GUARANTEE:"担保", undisclosed:"未披露", more_undisc:"另 {n} 笔未披露金额", mix:"四类交易占比", deals:"{d} 笔交易 · {c} 家公司",
     countnote:"每笔只计一次，不做净额（OpenAI→Oracle 与 Oracle→NVIDIA 都计）；修订过的交易只计最新版本。当前口径：{b}。",
     sectors:{all:"全部板块",hyperscalers:"超大规模云",labs:"模型实验室",chips:"芯片与存储",neoclouds:"Neocloud",datacenters:"数据中心开发商",energy:"电力",financiers:"资金方",spvs:"SPV / 合资",other:"其他"},
     status_:{rumored:"传闻",loi:"意向",definitive:"已签约",amended:"已修订",drawn:"已提款",completed:"已完成",cancelled:"已取消"},
@@ -23,27 +23,27 @@ const I18N = {
     money_in:"资金流入", money_out:"资金流出", deals_n:"交易数", firm_of:"其中已约束", orders_out:"订单支出（承诺采购）", orders_in:"订单收入（在手合同）", debt_in:"借入", debt_out:"出借",
     eq_in:"股权流入", eq_out:"股权流出", guar_out:"担保敞口（提供担保）", guar_in:"获得担保", in_cycles:"所在资金闭环", none:"无",
     col_date:"日期", col_type:"类型", col_deal:"交易", col_amt:"金额（标题 / 已约束）", col_status:"状态", col_src:"来源", showing:"显示 {n} 笔 · {c} 家",
-    cyc_firm:"已约束口径的闭环", cyc_soft:"含传闻/意向的闭环", cyc_note:"闭环 = 资金方向上的闭合路径（A 投/借给 B，B 向 C 采购，C 向 A 采购……）。只是拓扑事实，不代表任何风险结论。按全部有效边计算，不随上方筛选变化。点击可在关系图中高亮。",
+    cyc_firm:"已约束口径的闭环", cyc_soft:"含传闻/意向的闭环", cyc_note:"闭环 = 资金方向上的闭合路径（A 投/借给 B，B 向 C 采购，C 向 A 采购……）。只是结构事实，不代表任何风险结论。按全部有效交易计算，不随上方筛选变化。点击可在关系图中高亮。",
     bottleneck:"瓶颈额", headline_only:"含标题口径", mat_title:"债务到期墙（按到期年，当前口径）", mat_unknown:"未披露到期", mix_title:"融资结构 × 评级（债务边计数）",
-    conc_title:"供应方按买方集中度（订单流入）", conc_sup:"供应方", conc_total:"合计", conc_top:"前三买方", gaps_title:"数据缺口 Top 10", gaps_edges:"逐边缺口（当前筛选）",
-    delta_new:"新增边", delta_status:"状态变更", delta_amt:"金额修订", revised_from:"修订自", revised_by:"已被修订为", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"边 / 节点", feed_n:"新闻 / 申报",
+    conc_title:"供应方按买方集中度（订单流入）", conc_sup:"供应方", conc_total:"合计", conc_top:"前三买方", gaps_title:"数据缺口 Top 10", gaps_edges:"逐笔缺口（当前筛选）",
+    delta_new:"新增交易", delta_status:"状态变更", delta_amt:"金额修订", revised_from:"修订自", revised_by:"已被修订为", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"交易 / 公司", feed_n:"新闻 / 申报",
     ago_min:"{n} 分钟前", ago_h:"{n} 小时前", just:"刚刚", view_src:"来源", confidence:"置信度", basis_:{total_contract:"合同总额",annual:"年度",facility_size:"额度",drawn:"已提款"},
-    in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_evidence:"依据（图中可核）", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开依据与触发条件", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联订单边", covered:"被担保边"},
-  en: {eyebrow:"LIVE DATA · AI CAPITAL FLOWS", title:"AI Orders & Debt Map", subtitle:"Who owes whom: orders, equity, debt and guarantees. Every edge links to a source; headline and firm amounts shown side by side; no valuation calls.",
+    in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_evidence:"依据（图中可核对）", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开依据与触发条件", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联的订单", covered:"被担保的交易"},
+  en: {eyebrow:"LIVE DATA · AI CAPITAL FLOWS", title:"AI Orders & Debt Map", subtitle:"Who owes whom: orders, equity, debt and guarantees. Every deal links to a source; headline and firm amounts shown side by side; no valuation calls.",
     search:"Find a company or deal (e.g. NVDA, Beignet, residual value)", sector:"Sector", minsize:"Min size", period:"Period", status:"Status", basis:"Basis", any:"Any", alldates:"All dates",
     last90:"Last 90 days", last12m:"Last 12 months", st_active:"Active (incl. rumored/LOI)", st_firm:"Firm only", st_all:"All (incl. superseded/cancelled)", b_headline:"Headline", b_firm:"Firm",
-    collapse:"Collapse SPVs into sponsors", v_graph:"Graph", v_table:"Table", v_cycles:"Funding loops", v_maturity:"Maturity wall", v_conc:"Concentration", v_gaps:"Data gaps", v_delta:"Latest changes", all:"All",
+    collapse:"Collapse SPVs into sponsors", layered:"Layered by sector", v_graph:"Graph", v_table:"Table", v_cycles:"Funding loops", v_maturity:"Maturity wall", v_conc:"Concentration", v_gaps:"Data gaps", v_delta:"Latest changes", all:"All",
     replay:"Replay to", csv:"Copy CSV", rank_title:"Largest exposures", rank_total:"Total", rank_borrowed:"Borrowed", rank_orders:"Orders placed", rank_guar:"Guarantees given",
     rank_hint:"Click a company to see who it owes, who owes it, and every order. Bar = mix of edge types.", rank_note:"Pooled counterparties (bond investors, undisclosed lenders, unsplit syndicates) are not ranked.",
     latest_title:"Latest from the monitor", news:"News", filings:"SEC filings", method_title:"Methodology",
-    m1:"Four edge kinds: ORDER (buyer→supplier), DEBT (lender→borrower), EQUITY (investor→investee), GUARANTEE (guarantor→obligor). Arrow = direction of money.",
+    m1:"Four deal kinds: ORDER (buyer→supplier), DEBT (lender→borrower), EQUITY (investor→investee), GUARANTEE (guarantor→obligor). Arrow = direction of money.",
     m2:"Headline = the reported amount (incl. \"up to\", multi-year totals); firm = signed / drawn portion. Both shown, never substituted.",
     m3:"Revisions never overwrite: a new edge supersedes the old one and only the latest version is counted. Rumors/LOIs are greyed; only announcements or filings count as firm.",
     m4:"SPVs are nodes: project debt sits on the SPV; the tenant appears only via lease (ORDER) and residual-value guarantee. Tick \"collapse\" to fold SPVs into sponsors.",
     m5:"Each deal counted once, not netted; both ends of a supply chain count. Funding loops are topology, not a risk verdict.",
     disc:"For information only, not investment advice: this site describes deals and does not rate them. Amounts are nominal USD as disclosed by companies or named outlets; every edge carries a source link and tier (1 filing / 2 press release / 3 wire / 4 other).",
     built:"Built from public filings and news. The monitor runs on a schedule; this page re-checks every 5 minutes.",
-    ORDER:"Order", DEBT:"Debt", EQUITY:"Equity", GUARANTEE:"Guarantee", undisclosed:"Undisclosed", more_undisc:"+{n} with no disclosed amount", mix:"Mix by edge type", deals:"{d} deals · {c} companies",
+    ORDER:"Order", DEBT:"Debt", EQUITY:"Equity", GUARANTEE:"Guarantee", undisclosed:"Undisclosed", more_undisc:"+{n} with no disclosed amount", mix:"Mix by deal type", deals:"{d} deals · {c} companies",
     countnote:"Each deal counted once, not netted (OpenAI→Oracle and Oracle→NVIDIA both count); revised deals count only their latest version. Basis: {b}.",
     sectors:{all:"All sectors",hyperscalers:"Hyperscalers",labs:"AI labs",chips:"Chips & memory",neoclouds:"Neoclouds",datacenters:"Data centers",energy:"Energy",financiers:"Financiers",spvs:"SPVs & JVs",other:"Other"},
     status_:{rumored:"Rumored",loi:"LOI",definitive:"Signed",amended:"Amended",drawn:"Drawn",completed:"Completed",cancelled:"Cancelled"},
@@ -53,10 +53,10 @@ const I18N = {
     col_date:"Date", col_type:"Type", col_deal:"Deal", col_amt:"Amount (headline / firm)", col_status:"Status", col_src:"Sources", showing:"{n} deals · {c} companies",
     cyc_firm:"Loops on firm edges", cyc_soft:"Loops incl. rumored/LOI", cyc_note:"A loop is a closed path in the direction of money (A invests in B, B orders from C, C orders from A…). Topology only, not a risk verdict. Computed on all active edges, independent of the filters above. Click to highlight in the graph.",
     bottleneck:"Bottleneck", headline_only:"headline amounts", mat_title:"Debt maturity wall (by year, current basis)", mat_unknown:"Undisclosed maturity", mix_title:"Structure × rating (debt edge count)",
-    conc_title:"Supplier concentration by buyer (order inflow)", conc_sup:"Supplier", conc_total:"Total", conc_top:"Top 3 buyers", gaps_title:"Top 10 data gaps", gaps_edges:"Gaps by edge (current filter)",
-    delta_new:"New edges", delta_status:"Status changes", delta_amt:"Amount revisions", revised_from:"Revised from", revised_by:"Superseded by", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Edges / nodes", feed_n:"News / filings",
+    conc_title:"Supplier concentration by buyer (order inflow)", conc_sup:"Supplier", conc_total:"Total", conc_top:"Top 3 buyers", gaps_title:"Top 10 data gaps", gaps_edges:"Gaps by deal (current filter)",
+    delta_new:"New deals", delta_status:"Status changes", delta_amt:"Amount revisions", revised_from:"Revised from", revised_by:"Superseded by", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Deals / companies", feed_n:"News / filings",
     ago_min:"{n} min ago", ago_h:"{n} h ago", just:"just now", view_src:"source", confidence:"Confidence", basis_:{total_contract:"total contract",annual:"annual",facility_size:"facility size",drawn:"drawn"},
-    in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_evidence:"Evidence (verifiable on the map)", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show evidence and triggers", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order edge", covered:"Covered edge"}
+    in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_evidence:"Evidence (verifiable on the map)", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show evidence and triggers", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order", covered:"Covered deal"}
 };
 const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const KCOL = {}, SCOL = {};
@@ -68,7 +68,7 @@ const KINDS = ["ORDER","DEBT","EQUITY","GUARANTEE"];
 const FIRM = new Set(["definitive","amended","drawn","completed"]);
 const POOLED = new Set(["public_bondholders","public_equity_investors","undisclosed_counterparty","syndicate"]);
 
-const S = {lang:"zh", basis:"headline", kinds:new Set(KINDS), sector:"all", min:0, period:"all", status:"active", collapse:false, topn:0, view:"graph", replay:1, q:"", sel:null, hl:new Set(), rank:"total", sort:["announced_date",-1]};
+const S = {lang:"zh", newsLang:"all", basis:"headline", kinds:new Set(KINDS), sector:"all", min:0, period:"all", status:"active", collapse:false, topn:50, layered:true, view:"graph", replay:1, q:"", sel:null, hl:new Set(), rank:"total", sort:["announced_date",-1]};
 let D = null, E = {}, sim = null, zoom = null, lastGen = null, nextCheck = Date.now()+300000;
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const t = (k, v={}) => { let s = (I18N[S.lang][k] ?? I18N.zh[k] ?? k); if (typeof s !== "string") return s; return s.replace(/\{(\w+)\}/g,(_,x)=>v[x]); };
@@ -163,14 +163,14 @@ function renderChips(){
 }
 
 /* ---------- graph ---------- */
+const RING = {labs:0.14, hyperscalers:0.36, chips:0.56, neoclouds:0.56, datacenters:0.76, spvs:0.76, energy:0.76, financiers:0.95, other:0.66};
 function renderGraph(edges){
   const svg = d3.select("#svg"); const W = svg.node().clientWidth, H = svg.node().clientHeight;
   svg.selectAll("*").remove();
   const g = svg.append("g");
-  // svg 无 width/height 属性时 d3-zoom 的默认 extent 为 0×0，过渡插值会产生 NaN；显式给 extent
   zoom = d3.zoom().scaleExtent([.25,5]).extent([[0,0],[W,H]]).translateExtent([[-4000,-4000],[4000+W,4000+H]]).on("zoom",ev=>g.attr("transform",ev.transform)); svg.call(zoom);
   const defs = svg.append("defs");
-  for(const [k,c] of Object.entries({...KCOL, soft:cssVar("--soft"), hl:cssVar("--hl")})) defs.append("marker").attr("id","arr_"+k).attr("viewBox","0 -5 10 10").attr("refX",14).attr("markerWidth",5).attr("markerHeight",5).attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill",c);
+  for(const [k,c] of Object.entries({...KCOL, soft:cssVar("--soft"), hl:cssVar("--hl")})) defs.append("marker").attr("id","arr_"+k).attr("viewBox","0 -5 10 10").attr("refX",12).attr("markerWidth",4.5).attr("markerHeight",4.5).attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill",c);
   const tot = nodeTotals(edges);
   let ids = Object.keys(tot); if(S.topn>0) ids = ids.sort((a,b)=>tot[b]-tot[a]).slice(0,S.topn);
   const idset = new Set(ids);
@@ -179,32 +179,58 @@ function renderGraph(edges){
   const nm_ = Object.fromEntries(nodes.map(n=>[n.id,n]));
   const links = es.map(e=>({source:nm_[endpoint(e.from)], target:nm_[endpoint(e.to)], e}));
   $("#viewcount").textContent = t("showing",{n:es.length,c:nodes.length});
-  const r = n => 5 + Math.sqrt((n.tot||0)/1000)*1.6;
+  const amts = es.map(e=>amt(e)||0).filter(v=>v>0); const amax = Math.log10(Math.max(1000, ...amts)+1), amin = Math.log10(500);
+  const norm = v => v>0 ? Math.max(0, Math.min(1, (Math.log10(v+1)-amin)/Math.max(.01,amax-amin))) : 0;
+  const r = n => 4 + Math.sqrt((n.tot||0)/1000)*1.5;
+  const ranked = nodes.slice().sort((a,b)=>b.tot-a.tot); const big = new Set(ranked.slice(0, Math.min(28, Math.ceil(nodes.length*.35))).map(n=>n.id));
+  const neighbors = {}; links.forEach(l=>{ (neighbors[l.source.id] ??= new Set()).add(l.target.id); (neighbors[l.target.id] ??= new Set()).add(l.source.id); });
+  const R = Math.min(W,H)*0.46;
+  // 同心环底图：按板块分层
+  if(S.layered){
+    const ringg = g.append("g").attr("pointer-events","none");
+    const used = {}; nodes.forEach(n=>{ const k = (RING[n.sector]??0.6); (used[k] ??= []).push(n.sector); });
+    Object.entries(used).sort((a,b)=>a[0]-b[0]).forEach(([k,secs])=>{ const rr = +k*R; if(rr<=0) return;
+      ringg.append("circle").attr("cx",W/2).attr("cy",H/2).attr("r",rr).attr("fill","none").attr("stroke",cssVar("--line")).attr("stroke-dasharray","3,5");
+      ringg.append("text").attr("x",W/2+rr*0.71+4).attr("y",H/2-rr*0.71-4).attr("font-size",10).attr("fill",cssVar("--muted")).text([...new Set(secs)].map(x=>t("sectors")[x]||x).join(" / ")); });
+  }
+  let hover = null;
+  const edgeColor = l => S.hl.size ? (S.hl.has(l.e.edge_id)?cssVar("--hl"):cssVar("--track")) : (l.e.firm?KCOL[l.e.kind]:cssVar("--soft"));
+  const focusIds = () => { const f = S.sel || hover; return f ? new Set([f, ...(neighbors[f]||[])]) : null; };
+  const edgeOpacity = l => { const f = focusIds(); if(S.hl.size) return S.hl.has(l.e.edge_id)?1:.12; if(f) return (l.source.id===(S.sel||hover)||l.target.id===(S.sel||hover))?.95:.06; return l.e.firm ? .25+.6*norm(amt(l.e)||0) : .22; };
   const link = g.append("g").selectAll("path").data(links).join("path").attr("fill","none")
-    .attr("stroke",l=>S.hl.size? (S.hl.has(l.e.edge_id)?cssVar("--hl"):cssVar("--track")) : (l.e.firm?KCOL[l.e.kind]:cssVar("--soft")))
-    .attr("stroke-width",l=>Math.max(1,Math.log10((amt(l.e)||1)+1)*1.1))
-    .attr("stroke-dasharray",l=>l.e.firm?null:"4,4").attr("opacity",l=>S.hl.size&&!S.hl.has(l.e.edge_id)?.25:.8)
+    .attr("stroke",edgeColor).attr("stroke-width",l=>.7+3.3*norm(amt(l.e)||0)).attr("stroke-dasharray",l=>l.e.firm?null:"4,4").attr("opacity",edgeOpacity)
     .attr("marker-end",l=>`url(#arr_${S.hl.size?(S.hl.has(l.e.edge_id)?"hl":"soft"):(l.e.firm?l.e.kind:"soft")})`)
-    .style("cursor","pointer").on("click",(ev,l)=>openEdge(l.e));
+    .style("cursor","pointer").on("click",(ev,l)=>{ev.stopPropagation(); openEdge(l.e);});
   link.append("title").text(l=>`${S.lang==="zh"?l.e.title_zh:l.e.title_en}\n${t("status_")[l.e.status]} · ${l.e.announced_date}`);
   const node = g.append("g").selectAll("g").data(nodes).join("g").style("cursor","pointer")
     .call(d3.drag().on("start",(ev,d)=>{if(!ev.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y}).on("drag",(ev,d)=>{d.fx=ev.x;d.fy=ev.y}).on("end",(ev,d)=>{if(!ev.active)sim.alphaTarget(0);d.fx=null;d.fy=null}))
-    .on("click",(ev,d)=>{ev.stopPropagation(); selectNode(d.id);});
-  node.append("circle").attr("r",r).attr("fill",d=>SCOL[d.sector]||cssVar("--muted")).attr("stroke",d=>d.id===S.sel?cssVar("--hl"):cssVar("--halo")).attr("stroke-width",d=>d.id===S.sel?3:1.5).attr("opacity",d=>S.sel&&d.id!==S.sel&&!links.some(l=>(l.source.id===S.sel&&l.target.id===d.id)||(l.target.id===S.sel&&l.source.id===d.id))?.35:1);
-  const big = nodes.slice().sort((a,b)=>b.tot-a.tot).slice(0,40).map(n=>n.id);
-  const short = id => { const s=nm(id); return s.length>26 ? s.slice(0,24)+"…" : s; };
-  node.append("text").text(d=>short(d.id)).attr("dy",d=>-r(d)-3).attr("text-anchor","middle").style("font-size",d=>big.includes(d.id)?"11px":"9px").style("fill",d=>big.includes(d.id)?cssVar("--fg"):cssVar("--muted")).style("paint-order","stroke").style("stroke",cssVar("--halo")).style("stroke-width","3px");
+    .on("click",(ev,d)=>{ev.stopPropagation(); selectNode(d.id);})
+    .on("mouseenter",(ev,d)=>{ hover=d.id; restyle(); }).on("mouseleave",()=>{ hover=null; restyle(); });
+  const fill = d => { const c = d3.color(SCOL[d.sector]||cssVar("--muted")); if(!c) return "#999"; if(d.type==="spv") return cssVar("--panel"); return big.has(d.id) ? c.formatHex() : c.brighter(.9).formatHex(); };
+  node.append("circle").attr("r",r).attr("fill",fill).attr("stroke",d=>d.type==="spv"?(SCOL[d.sector]||"#999"):cssVar("--halo")).attr("stroke-width",d=>d.type==="spv"?1.5:1.2).attr("stroke-dasharray",d=>d.type==="spv"?"2,2":null);
+  const short = id => { const s=nm(id); return s.length>22 ? s.slice(0,20)+"…" : s; };
+  node.append("text").text(d=>short(d.id)).attr("dy",d=>-r(d)-3).attr("text-anchor","middle").style("font-size",d=>big.has(d.id)?"11px":"9.5px").style("font-weight",d=>big.has(d.id)?"600":"400")
+    .style("fill",d=>big.has(d.id)?cssVar("--fg"):cssVar("--muted")).style("paint-order","stroke").style("stroke",cssVar("--halo")).style("stroke-width","3px").style("pointer-events","none");
   node.append("title").text(d=>`${nm(d.id)} · ${fmt(d.tot)}`);
+  function restyle(){
+    const f = focusIds();
+    link.attr("opacity",edgeOpacity).attr("stroke",edgeColor);
+    node.select("circle").attr("opacity",d=>f?(f.has(d.id)?1:.18):1).attr("stroke",d=>d.id===S.sel?cssVar("--hl"):(d.type==="spv"?(SCOL[d.sector]||"#999"):cssVar("--halo"))).attr("stroke-width",d=>d.id===S.sel?3:(d.type==="spv"?1.5:1.2));
+    node.select("text").style("display",d=>(big.has(d.id)||(f&&f.has(d.id)))?null:"none").style("opacity",d=>f?(f.has(d.id)?1:.25):1);
+  }
   if(sim){ sim.stop(); sim.on("tick",null).on("end",null); }
-  sim = d3.forceSimulation(nodes).force("link",d3.forceLink(links).distance(l=>70+Math.min(60,(amt(l.e)||0)/5000)).strength(.35))
-    .force("charge",d3.forceManyBody().strength(-260)).force("center",d3.forceCenter(W/2,H/2)).force("x",d3.forceX(W/2).strength(.05)).force("y",d3.forceY(H/2).strength(.07)).force("col",d3.forceCollide(d=>r(d)+6))
-    .on("tick",()=>{ link.attr("d",l=>{const dx=l.target.x-l.source.x,dy=l.target.y-l.source.y,dr=Math.hypot(dx,dy)*1.7;return `M${l.source.x},${l.source.y}A${dr},${dr} 0 0,1 ${l.target.x},${l.target.y}`}); node.attr("transform",d=>`translate(${d.x},${d.y})`); })
+  sim = d3.forceSimulation(nodes).force("link",d3.forceLink(links).distance(l=>60+Math.min(60,(amt(l.e)||0)/5000)).strength(S.layered?.12:.35))
+    .force("charge",d3.forceManyBody().strength(S.layered?-120:-260)).force("center",d3.forceCenter(W/2,H/2)).force("col",d3.forceCollide(d=>r(d)+7));
+  if(S.layered) sim.force("radial",d3.forceRadial(d=>(RING[d.sector]??0.6)*R, W/2, H/2).strength(.9));
+  else sim.force("x",d3.forceX(W/2).strength(.05)).force("y",d3.forceY(H/2).strength(.07));
+  sim.on("tick",()=>{ link.attr("d",l=>{const dx=l.target.x-l.source.x,dy=l.target.y-l.source.y,dr=Math.hypot(dx,dy)*1.9;return `M${l.source.x},${l.source.y}A${dr},${dr} 0 0,1 ${l.target.x},${l.target.y}`}); node.attr("transform",d=>`translate(${d.x},${d.y})`); })
     .on("end",function(){ if(this!==sim || !nodes.length || !W || !H) return; const xs=nodes.map(n=>n.x), ys=nodes.map(n=>n.y); if(!xs.every(Number.isFinite)||!ys.every(Number.isFinite)) return;
       const x0=Math.min(...xs)-40,x1=Math.max(...xs)+40,y0=Math.min(...ys)-40,y1=Math.max(...ys)+40; const k=Math.min(1.6,.95/Math.max((x1-x0)/W,(y1-y0)/H,1e-6)); if(!Number.isFinite(k)) return;
       svg.transition().duration(500).call(zoom.transform,d3.zoomIdentity.translate(W/2,H/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2)); });
+  restyle();
   svg.on("click",()=>{ if(S.sel){S.sel=null; $("#detail").classList.add("hidden"); renderGraph(filtered());} });
   $("#legend").innerHTML = Object.entries(t("sectors")).filter(([k])=>k!=="all").map(([k,v])=>`<span><i style="background:${SCOL[k]}"></i>${v}</span>`).join("")+
-    KINDS.map(k=>`<span><i style="border-radius:0;height:2px;width:14px;background:${KCOL[k]}"></i>${t(k)}</span>`).join("")+`<span><i style="border-radius:0;height:2px;width:14px;background:${cssVar("--soft")}"></i>${t("status_").rumored}/${t("status_").loi}</span>`;
+    KINDS.map(k=>`<span><i style="border-radius:0;height:2px;width:14px;background:${KCOL[k]}"></i>${t(k)}</span>`).join("")+`<span><i style="border-radius:0;height:2px;width:14px;background:${cssVar("--soft")}"></i>${t("status_").rumored}/${t("status_").loi}</span><span><i style="background:${cssVar("--panel")};border:1.5px dashed ${cssVar("--muted")}"></i>SPV</span>`;
   $("#zin").onclick=()=>svg.transition().call(zoom.scaleBy,1.4); $("#zout").onclick=()=>svg.transition().call(zoom.scaleBy,.7); $("#zfit").onclick=()=>svg.transition().call(zoom.transform,d3.zoomIdentity);
 }
 
@@ -267,9 +293,17 @@ function renderRank(edges){
   $("#rank").innerHTML = rows.map(([id,v],i)=>{const m=v.mix, tot=v.total||1; return `<li data-id="${id}"><span class="n">${i+1}</span><div><div class="nm">${nm(id)}</div><div class="stack">${KINDS.map(k=>`<i style="width:${100*m[k]/tot}%;background:${KCOL[k]}"></i>`).join("")}</div></div><div class="v">${fmt(v[S.rank])}<small>${E[id]?.ticker||""}</small></div></li>`}).join("");
   $$("#rank li").forEach(li=>li.onclick=()=>{ S.view="graph"; selectNode(li.dataset.id); window.scrollTo({top:$(".panel").offsetTop-10,behavior:"smooth"}); });
 }
+const ITEMS_ZH={"1.01":"签订重大协议","1.02":"终止重大协议","2.01":"完成收购或处置","2.02":"业绩公告","2.03":"新增债务/表外安排","3.02":"非公开发行股权","5.02":"高管变动","7.01":"Reg FD 披露","8.01":"其他事项","9.01":"附件"};
+const ITEMS_EN={"1.01":"Material agreement","1.02":"Agreement terminated","2.01":"Acquisition/disposition","2.02":"Results","2.03":"Direct financial obligation","3.02":"Unregistered equity sale","5.02":"Officer change","7.01":"Reg FD","8.01":"Other events","9.01":"Exhibits"};
+const FORMS_ZH={"8-K":"8-K 重大事项","8-K/A":"8-K 修正","6-K":"6-K 境外发行人报告","424B2":"424B2 发行条款","424B5":"424B5 招股书补充","FWP":"FWP 自由书面招股","10-Q":"10-Q 季报","10-K":"10-K 年报","D":"Form D 私募发行"};
+function rel(iso){ if(!iso) return ""; const ms=Date.now()-new Date(iso).getTime(); if(!(ms>=0)) return ""; const h=ms/36e5; if(h<1){ const m=Math.max(1,Math.round(ms/6e4)); return S.lang==="zh"?`${m} 分钟前`:`${m} min ago`; } if(h<24) return S.lang==="zh"?`${Math.round(h)} 小时前`:`${Math.round(h)} h ago`; return ""; }
 function renderFeeds(){
-  $("#news").innerHTML = (D.news||[]).slice(0,120).map(n=>`<li><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a><div class="m"><span>${n.date||""}</span><span>· ${esc(n.publisher||"")}</span>${n.lang==="zh"?'<span class="tag">中</span>':""}${(n.entities||[]).map(id=>`<span class="tag">${nm(id)}</span>`).join("")}</div></li>`).join("");
-  $("#filings").innerHTML = (D.filings||[]).map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.company)} ${esc(f.form)}${f.title&&f.title!==f.form?`: ${esc(f.title)}`:""}</a><div class="m"><span class="tag">${esc(f.form)}</span>${(f.items||[]).length?`<span>Item ${f.items.join(", ")}</span>`:""}<span>${f.filed}</span></div></li>`).join("");
+  const newsList = (D.news||[]).filter(n=>S.newsLang==="all"||n.lang===S.newsLang);
+  $("#newslang").innerHTML = ["all","zh","en"].map(k=>`<button data-l="${k}" class="${S.newsLang===k?"on":""}">${k==="all"?(S.lang==="zh"?"全部":"All"):k==="zh"?"中文":"English"}</button>`).join("");
+  $$("#newslang button").forEach(b=>b.onclick=()=>{S.newsLang=b.dataset.l; renderFeeds();});
+  $("#news").innerHTML = newsList.slice(0,150).map(n=>{const r=rel(n.published); return `<li><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a><div class="m">${r?`<b style="color:var(--equity)">${r}</b>`:`<span>${n.date||""}</span>`}<span>· ${esc(n.publisher||"")}</span>${n.lang==="zh"?'<span class="tag">中</span>':""}${(n.entities||[]).map(id=>`<span class="tag">${nm(id)}</span>`).join("")}</div></li>`}).join("");
+  $("#filings").innerHTML = (D.filings||[]).map(f=>{const items=(f.items||[]).filter(i=>i!=="9.01"); const lab=items.map(i=>(S.lang==="zh"?ITEMS_ZH:ITEMS_EN)[i]||`Item ${i}`).join("、"); const formLab=S.lang==="zh"?(FORMS_ZH[f.form]||f.form):f.form; const seq=f.seq_total>1?(S.lang==="zh"?`（当日第 ${f.seq} 份）`:` (#${f.seq} that day)`):"";
+    return `<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(nm(f.entity)||f.company)} · ${esc(formLab)}${lab?`：${esc(lab)}`:""}${seq}</a><div class="m"><span class="tag">${esc(f.form)}</span>${items.length?`<span>Item ${items.join(", ")}</span>`:""}<span>${f.filed}</span></div></li>`}).join("");
 }
 
 /* ---------- detail & modal ---------- */
@@ -351,7 +385,7 @@ function bind(){
   $("#search").oninput=ev=>{S.q=ev.target.value.trim(); S.hl=new Set(); renderAll();};
   $("#f_sector").onchange=ev=>{S.sector=ev.target.value; renderAll();}; $("#f_min").onchange=ev=>{S.min=+ev.target.value; renderAll();};
   $("#f_period").onchange=ev=>{S.period=ev.target.value; renderAll();}; $("#f_status").onchange=ev=>{S.status=ev.target.value; renderAll();};
-  $("#f_basis").onchange=ev=>{S.basis=ev.target.value; renderAll();}; $("#f_collapse").onchange=ev=>{S.collapse=ev.target.checked; S.sel=null; $("#detail").classList.add("hidden"); renderAll();};
+  $("#f_basis").onchange=ev=>{S.basis=ev.target.value; renderAll();}; $("#f_layered").onchange=ev=>{S.layered=ev.target.checked; renderAll();}; $("#f_collapse").onchange=ev=>{S.collapse=ev.target.checked; S.sel=null; $("#detail").classList.add("hidden"); renderAll();};
   $$("#views button").forEach(b=>b.onclick=()=>{S.view=b.dataset.view; if(S.view!=="graph") S.hl=new Set(); renderAll();});
   $$("#topn button").forEach(b=>b.onclick=()=>{S.topn=+b.dataset.n; $$("#topn button").forEach(x=>x.classList.toggle("on",x===b)); renderAll();});
   $$("#rankmode button").forEach(b=>b.onclick=()=>{S.rank=b.dataset.m; $$("#rankmode button").forEach(x=>x.classList.toggle("on",x===b)); renderRank(filtered());});

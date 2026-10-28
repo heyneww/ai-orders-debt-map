@@ -20,7 +20,7 @@
         <div id="livepop" class="pop hidden"></div>
       </div>
     </div>
-    <p class="sub" data-i18n="subtitle">谁欠谁：订单、股权、债务与担保。每条边可追溯到来源，标题口径与已约束口径并列，不做估值判断。</p>
+    <p class="sub" data-i18n="subtitle">谁欠谁：订单、股权、债务与担保。每笔交易可追溯到来源，标题口径与已约束口径并列，不做估值判断。</p>
   </div>
 </header>
 
@@ -45,6 +45,7 @@
       <label><span data-i18n="basis">口径</span><select id="f_basis">
         <option value="headline" data-i18n="b_headline">标题口径</option><option value="firm" data-i18n="b_firm">已约束口径</option></select></label>
       <label class="chk"><input type="checkbox" id="f_collapse"><span data-i18n="collapse">SPV 折叠到发起人</span></label>
+      <label class="chk"><input type="checkbox" id="f_layered" checked><span data-i18n="layered">按板块分层布局</span></label>
     </div>
   </section>
 
@@ -59,7 +60,7 @@
         <button data-view="gaps" data-i18n="v_gaps">数据缺口</button>
         <button data-view="delta" data-i18n="v_delta">本次变动</button>
       </div>
-      <div class="tabs small" id="topn"><button data-n="20">Top 20</button><button data-n="50">Top 50</button><button data-n="0" class="on" data-i18n="all">全部</button></div>
+      <div class="tabs small" id="topn"><button data-n="20">Top 20</button><button data-n="50" class="on">Top 50</button><button data-n="0" data-i18n="all">全部</button></div>
       <span class="fine" id="viewcount"></span>
       <div class="spacer"></div>
       <label class="fine slider"><span data-i18n="replay">回放至</span> <span id="replaydate"></span><input type="range" id="replay" min="0" max="100" value="100"></label>
@@ -89,7 +90,7 @@
     <div class="box">
       <div class="boxhead"><h2 data-i18n="latest_title">监控最新动态</h2></div>
       <div class="feeds">
-        <div><h3 data-i18n="news">新闻</h3><ul id="news" class="feed"></ul></div>
+        <div><div class="boxhead"><h3 data-i18n="news">新闻</h3><div class="tabs small" id="newslang"></div></div><ul id="news" class="feed"></ul></div>
         <div><h3 data-i18n="filings">SEC 申报</h3><ul id="filings" class="feed"></ul></div>
       </div>
     </div>
@@ -98,15 +99,15 @@
   <section class="box method">
     <h2 data-i18n="method_title">口径说明</h2>
     <ul>
-      <li data-i18n="m1">四类边：订单（买方→供应方）、债务（出借方→借款方）、股权（投资方→被投方）、担保（担保方→被担保主体）。箭头方向 = 资金方向。</li>
+      <li data-i18n="m1">四类交易：订单（买方→供应方）、债务（出借方→借款方）、股权（投资方→被投方）、担保（担保方→被担保主体）。图中每条连线是一笔交易，箭头方向 = 资金方向。</li>
       <li data-i18n="m2">标题口径 = 媒体标题金额（含 "up to"、多年总额）；已约束口径 = 已签约/已提款部分。两者并列，不互相替代。</li>
-      <li data-i18n="m3">修订不覆盖旧边：新边带 supersedes 指向旧边，统计只计最新版本。传闻/意向灰显，只有公告或申报才记为已约束。</li>
+      <li data-i18n="m3">修订不覆盖旧记录：新记录指向被修订的旧记录，统计只计最新版本。传闻/意向灰显，只有公告或申报才记为已约束。</li>
       <li data-i18n="m4">SPV 是独立节点：项目债记在 SPV，承租人只以租约（订单）和残值担保（担保）出现。勾选"折叠"可把 SPV 并回发起人。</li>
       <li data-i18n="m5">每笔只计一次、不做净额；供应链两端都计。资金闭环只是拓扑事实，不代表任何风险结论。</li>
     </ul>
   </section>
   <footer class="fine">
-    <p data-i18n="disc">仅供参考，不构成投资建议：本站只描述交易，不做评价。金额为公司公告或具名媒体披露的名义美元；每条边附来源链接与来源等级（1 申报 / 2 新闻稿 / 3 通讯社 / 4 其他）。</p>
+    <p data-i18n="disc">仅供参考，不构成投资建议：本站只描述交易，不做评价。金额为公司公告或具名媒体披露的名义美元；每笔交易附来源链接与来源等级（1 申报 / 2 新闻稿 / 3 通讯社 / 4 其他）。</p>
     <p data-i18n="built">数据来自公开申报与新闻。监控按计划运行；本页每 5 分钟自检一次。</p>
   </footer>
 </main>

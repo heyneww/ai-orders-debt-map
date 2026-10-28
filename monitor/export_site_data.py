@@ -107,8 +107,10 @@ def main():
             tl = t.lower()
             tagged = sorted({eid for al, eid in alias_map if al in tl} | ({n.get("entity_id")} if n.get("entity_id") in by_id else set()))
             news.append({"title": t.rsplit(" - ", 1)[0] if pub and t.endswith(pub) else t, "publisher": pub, "url": n.get("url"), "date": n.get("filed"),
-                         "lang": "zh" if re.search(r"[一-鿿]", t) else "en", "entities": tagged[:4], "entity_feed": n.get("entity_id")})
-        news.sort(key=lambda n: n.get("date") or "", reverse=True); news = news[:800]
+                         "lang": "zh" if re.search(r"[一-鿿]", t) else "en", "entities": tagged[:4], "entity_feed": n.get("entity_id"), "published": n.get("published")})
+        news.sort(key=lambda n: (n.get("published") or n.get("date") or ""), reverse=True)
+        zh = [n for n in news if n["lang"] == "zh"][:250]; en = [n for n in news if n["lang"] != "zh"][:800 - len(zh)]
+        news = sorted(zh + en, key=lambda n: (n.get("published") or n.get("date") or ""), reverse=True)
     filings = []
     if a.filings and os.path.exists(a.filings):
         for l in open(a.filings):
@@ -118,6 +120,11 @@ def main():
             filings.append({"entity": c.get("entity_id"), "company": name(c.get("entity_id")), "form": c.get("form"), "items": c.get("items") or [],
                             "filed": c.get("filed"), "url": c.get("url"), "title": c.get("title") or ""})
         filings.sort(key=lambda f: f.get("filed") or "", reverse=True); filings = filings[:120]
+        seen_day = {}
+        for f in filings:  # 同一主体同日多份同类文件：加序号，避免看起来像重复
+            k = (f["entity"], f["form"], tuple(f["items"]), f["filed"]); seen_day[k] = seen_day.get(k, 0) + 1; f["seq"] = seen_day[k]
+        for f in filings:
+            k = (f["entity"], f["form"], tuple(f["items"]), f["filed"]); f["seq_total"] = seen_day[k]
     stale = {}
     if a.fallback and os.path.exists(a.fallback):
         try:
