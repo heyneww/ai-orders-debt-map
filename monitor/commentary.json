@@ -1,0 +1,37 @@
+{
+  "asof": "2026-10-28",
+  "basis": "基于 2026-10-27 构建的 220 条边（有效 208 条）与 10 条独立核查；判断在每次 TRIAGE 后人工更新，数据自动刷新不改判断。",
+  "basis_en": "Based on the 2026-10-27 build (220 edges, 208 active) and an independent check of 10 edges; the call is updated after each triage, not by the automatic data refresh.",
+  "zh": {
+    "stance": "承诺远超到位资金，风险集中在单一买方的履约节奏",
+    "verdict": "图里 $1.17T 的算力采购承诺中，已约束的只有 $96B（约 8%），其余是 \"up to\" 与多年总额；买方端 94% 的 Oracle 在手合同来自 OpenAI 一家，而 OpenAI 自身是 $720B 采购承诺对 $114B 已到位股权和 $4.7B 债务。债务本身大多落在 SPV / 项目层（约 $307B）并由芯片厂商的残值担保兜底（NVIDIA $105B、Broadcom $29B），公司层投资级债的到期集中在 2030 年以后，近两年没有集中到期墙。",
+    "evidence": [
+      "订单：标题口径 $1.17T，已约束 $96B；另有 25 笔 GW 级合同未披露金额。",
+      "集中度：Oracle 在手合同 HHI 0.88（OpenAI 占 94%）；Microsoft 在手 $280B、CoreWeave 在手 $58B 的已约束口径均为 0。",
+      "担保：9 条担保边，可量化的敞口 $143B，其中 NVIDIA 对 OpenAI 4.25 GW 租约的累计付款上限 $105B 要到 2028 年起租才生效。",
+      "闭环：已约束口径 16 条资金闭环（Amazon↔OpenAI、Amazon↔Anthropic、AMD↔OpenAI/Meta/Anthropic 等），投资方与采购方是同一批公司。"
+    ],
+    "watch": [
+      {"if": "OpenAI 在 2027 年 Oracle 合同起始前没有新的大额股权或债务到位（现有已到位 $114B 对 $720B 承诺）", "then": "压力先落在为它建设的开发商项目贷款上：Vantage Frontier $23B、Vantage Lighthouse $15B、Crusoe Abilene $7.1B、Project Jupiter $18B 的还款依赖 Oracle 租金，而 Oracle 租金依赖 OpenAI 付款", "watch": "OpenAI 下一轮融资公告；Oracle 10-Q 里的 RPO 与客户集中度披露；上述项目贷款的评级动作"},
+      {"if": "Anthropic 的 TPU 租约出现欠付（Broadcom 兜底的触发条件是租约违约，负债 = 85% 欠付额 − 机架处置价值）", "then": "$43.5B 一级贷款的信用风险从 SPV 转移到 Broadcom 资产负债表，Broadcom 自身 $18.5B 公募债的持有人会同时重新定价", "watch": "Anthropic S-1 之后的季度收入披露；Broadcom 10-Q 中 backstop 敞口的变动"},
+      {"if": "芯片厂商按部署分期的股权投资（NVIDIA、AMD 对 OpenAI / Anthropic / xAI）与被投方的采购分期同步放缓", "then": "16 条闭环会让订单与投资两端同时缩水，图上会表现为 EQUITY 与 ORDER 的 firm 口径同时下降而 headline 不变", "watch": "NVIDIA 与 AMD 下一次财报附注里的投资承诺余额；OpenAI / Anthropic 的 GW 部署进度"}
+    ],
+    "note": "以上是条件式提示，只陈述图中可核的事实与触发条件，不构成对任何主体的评级或投资建议。"
+  },
+  "en": {
+    "stance": "Commitments far exceed funded capital; the risk sits in one buyer's delivery schedule",
+    "verdict": "Of $1.17T in compute purchase commitments on the map, only $96B (about 8%) is firm; the rest is \"up to\" or multi-year totals. On the buyer side, 94% of Oracle's contracted backlog comes from OpenAI alone, and OpenAI carries $720B of purchase commitments against $114B of funded equity and $4.7B of debt. Most debt sits at the SPV / project level (about $307B) and is backstopped by chip vendors' residual-value guarantees (NVIDIA $105B, Broadcom $29B); corporate investment-grade maturities cluster after 2030, with no wall in the next two years.",
+    "evidence": [
+      "Orders: $1.17T headline, $96B firm; 25 further GW-scale contracts have no disclosed amount.",
+      "Concentration: Oracle backlog HHI 0.88 (OpenAI 94%); Microsoft's $280B and CoreWeave's $58B backlogs have zero firm amount.",
+      "Guarantees: 9 guarantee edges, $143B quantifiable; NVIDIA's $105B cap on OpenAI's 4.25 GW lease only becomes effective at lease start in 2028.",
+      "Loops: 16 firm-basis funding loops (Amazon↔OpenAI, Amazon↔Anthropic, AMD↔OpenAI/Meta/Anthropic…); investors and buyers are the same companies."
+    ],
+    "watch": [
+      {"if": "OpenAI raises no major new equity or debt before the Oracle contract starts in 2027 ($114B funded vs $720B committed)", "then": "pressure lands first on the developer project loans built for it: Vantage Frontier $23B, Vantage Lighthouse $15B, Crusoe Abilene $7.1B, Project Jupiter $18B all depend on Oracle rent, which depends on OpenAI payments", "watch": "OpenAI's next funding announcement; RPO and customer-concentration disclosures in Oracle's 10-Q; rating actions on those project loans"},
+      {"if": "Anthropic's TPU leases go into arrears (Broadcom's backstop triggers on lease default; liability = 85% of arrears minus rack disposal value)", "then": "credit risk on the $43.5B first lien moves from the SPV to Broadcom's balance sheet, and Broadcom's own $18.5B of public bonds reprice with it", "watch": "Anthropic's quarterly revenue after the S-1; changes in backstop exposure in Broadcom's 10-Q"},
+      {"if": "chip vendors' staged equity (NVIDIA, AMD into OpenAI / Anthropic / xAI) slows in step with the investees' staged purchases", "then": "the 16 loops shrink orders and investments together: firm EQUITY and ORDER fall while headline stays flat", "watch": "investment-commitment balances in NVIDIA's and AMD's next filings; OpenAI / Anthropic GW deployment progress"}
+    ],
+    "note": "Conditional flags only: verifiable facts from the map plus their triggers. Not a rating of any party and not investment advice."
+  }
+}

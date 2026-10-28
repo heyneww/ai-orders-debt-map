@@ -1,0 +1,4958 @@
+{
+ "n_entities": 90,
+ "n_edges_total": 220,
+ "n_edges_active": 208,
+ "n_firm": 188,
+ "n_soft": 20,
+ "cycles": [
+  {
+   "nodes": [
+    "amzn",
+    "openai",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_055",
+    "bf_b_054"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 15000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amzn",
+    "anthropic",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_051",
+    "bf_b_052"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 5000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amzn",
+    "openai",
+    "msft",
+    "anthropic",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_055",
+    "bf_b_041",
+    "bf_b_046",
+    "bf_b_052"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 5000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "msft",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_b_045",
+    "bf_b_046"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 5000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "meta",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_061",
+    "bf_c_062"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_a_044",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "anthropic",
+    "amzn",
+    "openai",
+    "amd"
+   ],
+   "edges": [
+    "bf_a_044",
+    "bf_b_052",
+    "bf_b_055",
+    "bf_c_060"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "anthropic",
+    "nvda",
+    "openai",
+    "amd"
+   ],
+   "edges": [
+    "bf_a_044",
+    "bf_a_032",
+    "bf_c_063",
+    "bf_c_060"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "GUARANTEE",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "openai",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_059",
+    "bf_c_060"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "openai",
+    "amzn",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_059",
+    "bf_b_054",
+    "bf_b_051",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "openai",
+    "msft",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_059",
+    "bf_b_041",
+    "bf_b_046",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amzn",
+    "anthropic",
+    "nvda",
+    "openai",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_051",
+    "bf_a_032",
+    "bf_c_063",
+    "bf_b_054"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "GUARANTEE",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "nvda",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_a_032",
+    "bf_a_033"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "nvda",
+    "openai",
+    "msft",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_a_032",
+    "bf_c_063",
+    "bf_b_041",
+    "bf_b_046"
+   ],
+   "kinds": [
+    "ORDER",
+    "GUARANTEE",
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "googl",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_b_047",
+    "bf_b_048"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "openai",
+    "softbank",
+    "openai"
+   ],
+   "edges": [
+    "bf_c_064",
+    "bf_d_023"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  }
+ ],
+ "cycles_soft": [
+  {
+   "nodes": [
+    "amzn",
+    "openai",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_055",
+    "bf_b_054"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 15000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amzn",
+    "anthropic",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_051",
+    "bf_b_052"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 5000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amzn",
+    "openai",
+    "msft",
+    "anthropic",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_055",
+    "bf_b_041",
+    "bf_b_046",
+    "bf_b_052"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 5000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "msft",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_b_045",
+    "bf_b_046"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 5000.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "meta",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_061",
+    "bf_c_062"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "meta",
+    "googl",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_061",
+    "bf_b_036",
+    "bf_b_048",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_a_044",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "anthropic",
+    "amzn",
+    "openai",
+    "amd"
+   ],
+   "edges": [
+    "bf_a_044",
+    "bf_b_052",
+    "bf_b_055",
+    "bf_c_060"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "anthropic",
+    "nvda",
+    "openai",
+    "amd"
+   ],
+   "edges": [
+    "bf_a_044",
+    "bf_a_032",
+    "bf_c_063",
+    "bf_c_060"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "GUARANTEE",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "openai",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_059",
+    "bf_c_060"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "openai",
+    "amzn",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_059",
+    "bf_b_054",
+    "bf_b_051",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "openai",
+    "msft",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_059",
+    "bf_b_041",
+    "bf_b_046",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amd",
+    "openai",
+    "nvda",
+    "anthropic",
+    "amd"
+   ],
+   "edges": [
+    "bf_c_059",
+    "bf_a_010",
+    "bf_a_033",
+    "bf_a_043"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amzn",
+    "anthropic",
+    "nvda",
+    "openai",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_051",
+    "bf_a_032",
+    "bf_c_063",
+    "bf_b_054"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "GUARANTEE",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "amzn",
+    "openai",
+    "nvda",
+    "anthropic",
+    "amzn"
+   ],
+   "edges": [
+    "bf_b_055",
+    "bf_a_010",
+    "bf_a_033",
+    "bf_b_052"
+   ],
+   "kinds": [
+    "EQUITY",
+    "ORDER",
+    "EQUITY",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "nvda",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_a_032",
+    "bf_a_033"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "nvda",
+    "openai",
+    "msft",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_a_032",
+    "bf_c_063",
+    "bf_b_041",
+    "bf_b_046"
+   ],
+   "kinds": [
+    "ORDER",
+    "GUARANTEE",
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "anthropic",
+    "googl",
+    "anthropic"
+   ],
+   "edges": [
+    "bf_b_047",
+    "bf_b_048"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "nvda",
+    "openai",
+    "nvda"
+   ],
+   "edges": [
+    "bf_c_063",
+    "bf_a_010"
+   ],
+   "kinds": [
+    "GUARANTEE",
+    "ORDER"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  },
+  {
+   "nodes": [
+    "openai",
+    "softbank",
+    "openai"
+   ],
+   "edges": [
+    "bf_c_064",
+    "bf_d_023"
+   ],
+   "kinds": [
+    "ORDER",
+    "EQUITY"
+   ],
+   "bottleneck_musd": 0.0,
+   "has_headline_only": true
+  }
+ ],
+ "concentration": {
+  "crwv": {
+   "total_musd": 57600.0,
+   "hhi": 0.525,
+   "top3": [
+    {
+     "buyer": "meta",
+     "share": 0.611
+    },
+    {
+     "buyer": "openai",
+     "share": 0.389
+    }
+   ]
+  },
+  "nvda": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": null
+    },
+    {
+     "buyer": "anthropic",
+     "share": null
+    }
+   ]
+  },
+  "amd": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": null
+    },
+    {
+     "buyer": "anthropic",
+     "share": null
+    },
+    {
+     "buyer": "meta",
+     "share": null
+    }
+   ]
+  },
+  "avgo": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": null
+    },
+    {
+     "buyer": "anthropic",
+     "share": null
+    }
+   ]
+  },
+  "msft": {
+   "total_musd": 280000.0,
+   "hhi": 0.809,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": 0.893
+    },
+    {
+     "buyer": "anthropic",
+     "share": 0.107
+    }
+   ]
+  },
+  "amzn": {
+   "total_musd": 238000.0,
+   "hhi": 0.513,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": 0.58
+    },
+    {
+     "buyer": "anthropic",
+     "share": 0.42
+    }
+   ]
+  },
+  "cerebras": {
+   "total_musd": 10000.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": 1.0
+    }
+   ]
+  },
+  "googl": {
+   "total_musd": 10000.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "meta",
+     "share": 1.0
+    },
+    {
+     "buyer": "anthropic",
+     "share": 0.0
+    }
+   ]
+  },
+  "fluidstack": {
+   "total_musd": 50000.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "anthropic",
+     "share": 1.0
+    }
+   ]
+  },
+  "spacex": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "anthropic",
+     "share": null
+    }
+   ]
+  },
+  "nscale": {
+   "total_musd": 51200.0,
+   "hhi": 0.787,
+   "top3": [
+    {
+     "buyer": "anthropic",
+     "share": 0.879
+    },
+    {
+     "buyer": "msft",
+     "share": 0.121
+    }
+   ]
+  },
+  "xai_colossus2_spv": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "xai",
+     "share": null
+    }
+   ]
+  },
+  "beignet": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "meta",
+     "share": null
+    }
+   ]
+  },
+  "nbis": {
+   "total_musd": 32300.0,
+   "hhi": 0.503,
+   "top3": [
+    {
+     "buyer": "msft",
+     "share": 0.539
+    },
+    {
+     "buyer": "meta",
+     "share": 0.461
+    }
+   ]
+  },
+  "orcl": {
+   "total_musd": 320000.0,
+   "hhi": 0.883,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": 0.938
+    },
+    {
+     "buyer": "meta",
+     "share": 0.062
+    }
+   ]
+  },
+  "iren": {
+   "total_musd": 13100.0,
+   "hhi": 0.616,
+   "top3": [
+    {
+     "buyer": "msft",
+     "share": 0.74
+    },
+    {
+     "buyer": "nvda",
+     "share": 0.26
+    }
+   ]
+  },
+  "corz": {
+   "total_musd": 10200.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "crwv",
+     "share": 1.0
+    }
+   ]
+  },
+  "apld": {
+   "total_musd": 21200.0,
+   "hhi": 0.501,
+   "top3": [
+    {
+     "buyer": "crwv",
+     "share": 0.519
+    },
+    {
+     "buyer": "orcl",
+     "share": 0.481
+    }
+   ]
+  },
+  "glxy": {
+   "total_musd": 10400.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "crwv",
+     "share": 1.0
+    }
+   ]
+  },
+  "dell": {
+   "total_musd": 10900.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "iren",
+     "share": 1.0
+    }
+   ]
+  },
+  "lambda": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "msft",
+     "share": null
+    }
+   ]
+  },
+  "softbank": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "openai",
+     "share": null
+    }
+   ]
+  },
+  "cipher": {
+   "total_musd": 8500.0,
+   "hhi": 0.543,
+   "top3": [
+    {
+     "buyer": "amzn",
+     "share": 0.647
+    },
+    {
+     "buyer": "fluidstack",
+     "share": 0.353
+    }
+   ]
+  },
+  "hut8": {
+   "total_musd": 26600.0,
+   "hhi": 0.612,
+   "top3": [
+    {
+     "buyer": "undisclosed_counterparty",
+     "share": 0.737
+    },
+    {
+     "buyer": "fluidstack",
+     "share": 0.263
+    }
+   ]
+  },
+  "crusoe_abilene_jv": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "orcl",
+     "share": null
+    }
+   ]
+  },
+  "vantage_frontier_tx": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "orcl",
+     "share": null
+    }
+   ]
+  },
+  "vantage_lighthouse_wi": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "orcl",
+     "share": null
+    }
+   ]
+  },
+  "related_saline_mi": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "orcl",
+     "share": null
+    }
+   ]
+  },
+  "sopaipilla": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "meta",
+     "share": null
+    }
+   ]
+  },
+  "valor_compute": {
+   "total_musd": 5400.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "xai",
+     "share": 1.0
+    }
+   ]
+  },
+  "ceg": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "meta",
+     "share": null
+    }
+   ]
+  },
+  "vst": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "amzn",
+     "share": null
+    },
+    {
+     "buyer": "meta",
+     "share": null
+    }
+   ]
+  },
+  "brookfield": {
+   "total_musd": 3000.0,
+   "hhi": 1.0,
+   "top3": [
+    {
+     "buyer": "googl",
+     "share": 1.0
+    }
+   ]
+  },
+  "anthropic_tpu_spv": {
+   "total_musd": null,
+   "hhi": null,
+   "top3": [
+    {
+     "buyer": "anthropic",
+     "share": null
+    }
+   ]
+  }
+ },
+ "ledger": {
+  "syndicate": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    44700,
+    34700
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    171100,
+    86600
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 14
+  },
+  "openai": {
+   "order_out": [
+    720400,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    4700,
+    4700
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    268600,
+    114100
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 24
+  },
+  "softbank": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    50000,
+    30000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    160000,
+    60000
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 7
+  },
+  "stargate_jv": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    100000,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "crwv": {
+   "order_out": [
+    31600,
+    17400
+   ],
+   "order_in": [
+    57600,
+    0
+   ],
+   "debt_in": [
+    20829.5,
+    20829.5
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    3000,
+    3000
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 20
+  },
+  "nvda": {
+   "order_out": [
+    3400,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    25000,
+    25000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    146000,
+    34000
+   ],
+   "guarantee_exposure": [
+    111300,
+    6300
+   ],
+   "n_edges": 13
+  },
+  "amd": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    6250,
+    6250
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    5000,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 9
+  },
+  "avgo": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    18500,
+    18500
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    30000,
+    0
+   ],
+   "n_edges": 7
+  },
+  "msft": {
+   "order_out": [
+    33300,
+    17400
+   ],
+   "order_in": [
+    280000,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    5000,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 8
+  },
+  "amzn": {
+   "order_out": [
+    5500,
+    5500
+   ],
+   "order_in": [
+    238000,
+    0
+   ],
+   "debt_in": [
+    127131,
+    127131
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    79000,
+    24000
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 16
+  },
+  "cerebras": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    10000,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "anthropic": {
+   "order_out": [
+    225000,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    10000,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    201500,
+    65500
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 23
+  },
+  "googl": {
+   "order_out": [
+    3000,
+    3000
+   ],
+   "order_in": [
+    10000,
+    0
+   ],
+   "debt_in": [
+    106983,
+    106983
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    49950,
+    49950
+   ],
+   "equity_out": [
+    41000,
+    10000
+   ],
+   "guarantee_exposure": [
+    1400,
+    1400
+   ],
+   "n_edges": 21
+  },
+  "fluidstack": {
+   "order_out": [
+    10000,
+    10000
+   ],
+   "order_in": [
+    50000,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 5
+  },
+  "spacex": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    65000,
+    25000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "nscale": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    51200,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    1100,
+    285
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 4
+  },
+  "xai": {
+   "order_out": [
+    5400,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    5000,
+    5000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    33000,
+    31000
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 7
+  },
+  "apo": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    91000,
+    3500
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 4
+  },
+  "xai_colossus2_spv": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    12500,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "public_bondholders": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    443148.0,
+    430648.0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 55
+  },
+  "orcl": {
+   "order_out": [
+    10200,
+    0
+   ],
+   "order_in": [
+    320000,
+    0
+   ],
+   "debt_in": [
+    50750,
+    50750
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    5000,
+    5000
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 12
+  },
+  "meta": {
+   "order_out": [
+    95100,
+    12000
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    55000,
+    55000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    37500,
+    12500
+   ],
+   "equity_out": [
+    14300,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 20
+  },
+  "citi": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    17500,
+    17500
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "public_equity_investors": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    82450,
+    57450
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 5
+  },
+  "berkshire": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    10000,
+    10000
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "beignet": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    27300,
+    27300
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    7000,
+    7000
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 4
+  },
+  "pimco": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    41300,
+    41300
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "owl": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    22000,
+    7000
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "nbis": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    47300,
+    29400
+   ],
+   "debt_in": [
+    4162.5,
+    4162.5
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    2000,
+    2000
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 7
+  },
+  "scale_ai": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    14300,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "iren": {
+   "order_out": [
+    10900,
+    10900
+   ],
+   "order_in": [
+    13100,
+    0
+   ],
+   "debt_in": [
+    6300,
+    6300
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 10
+  },
+  "bx": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    10000,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    7000,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "googl_bx_tpu_jv": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    5000,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "jpm": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    122000,
+    42000
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 8
+  },
+  "vantage_frontier_tx": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    45250,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "vantage_lighthouse_wi": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    14750,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "crusoe_abilene_jv": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    9400,
+    9400
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    15000,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 4
+  },
+  "undisclosed_counterparty": {
+   "order_out": [
+    19600,
+    19600
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    37000,
+    3000
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 5
+  },
+  "related_saline_mi": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    30000,
+    14000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    2000,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 4
+  },
+  "project_jupiter_nm": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    18000,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "jane_street": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    1000,
+    1000
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "corz": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    10200,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "apld": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    21200,
+    7000
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 4
+  },
+  "glxy": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    10400,
+    10400
+   ],
+   "debt_in": [
+    1400,
+    1400
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "mufg": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    11100,
+    11100
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "crwv_ccac_vii": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    2600,
+    2600
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "crwv_ccac_iv": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    3000,
+    3000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "crwv_ccac_viii": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    8500,
+    8500
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "morgan_stanley": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    3100,
+    3100
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "crwv_ddtl_v": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    3100,
+    3100
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "crwv_ddtl_vv": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    2600,
+    2600
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "dell": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    10900,
+    10900
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "goldman": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    3600,
+    3600
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "iren_hardware3": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    3600,
+    3600
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "aker": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    1100,
+    285
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "mubadala": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    5280,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "crusoe": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    5280,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "twg_global": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    1500,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "lambda": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    1500,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "mu": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    4433.5,
+    4433.5
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "pnc": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    1683.5,
+    1683.5
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "apld_computeco": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    2350,
+    2350
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "apld_computeco2": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    2150,
+    2150
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "apld_computeco3": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    1590,
+    1590
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "corz_finance_i": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    3300,
+    3300
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "cipher_compute": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    1400,
+    1400
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "black_pearl_compute": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    2000,
+    2000
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "cipher": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    8500,
+    8500
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "hut8_dc": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    3250,
+    3250
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "beacon_point_dc": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    4250,
+    4250
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "hut8": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    26600,
+    26600
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "galaxy_helios_ii": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    3507,
+    3507
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "deutsche_bank": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    1400,
+    1400
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "sopaipilla": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    12500,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    4900,
+    4900
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 4
+  },
+  "blackrock": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    4900,
+    4900
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "valor_compute": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    5400,
+    0
+   ],
+   "debt_in": [
+    3500,
+    3500
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "mgx": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "aip": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    40000,
+    40000
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "aligned": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    40000,
+    40000
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "ceg": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "vst": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 2
+  },
+  "brookfield": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    3000,
+    3000
+   ],
+   "debt_in": [
+    0,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "anthropic_tpu_spv": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    35000,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 3
+  },
+  "firmus": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    10000,
+    0
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  },
+  "stack": {
+   "order_out": [
+    0,
+    0
+   ],
+   "order_in": [
+    0,
+    0
+   ],
+   "debt_in": [
+    695,
+    695
+   ],
+   "debt_out": [
+    0,
+    0
+   ],
+   "equity_in": [
+    0,
+    0
+   ],
+   "equity_out": [
+    0,
+    0
+   ],
+   "guarantee_exposure": [
+    0,
+    0
+   ],
+   "n_edges": 1
+  }
+ },
+ "maturity_ladder": {
+  "2027": 30000.0,
+  "2028": 1500.0,
+  "2029": 2683.5,
+  "2030": 1581.25,
+  "2031": 18082.5,
+  "2032": 21773.25,
+  "2033": 8350.0,
+  "2035": 8750.0,
+  "2036": 4750.0,
+  "2038": 5000.0,
+  "2045": 5756.0,
+  "2054": 7701.0,
+  "2056": 45779.0,
+  "2063": 10523.0,
+  "2064": 24329.0,
+  "2065": 75750.0,
+  "2066": 120000.0,
+  "2075": 17500.0,
+  "2076": 37000.0,
+  "2126": 7526.0,
+  "unknown": 363197.0
+ },
+ "structure_mix": {
+  "E_other|NR": 5,
+  "C_gpu_spv|NR": 11,
+  "D_corporate_ig|NR": 47,
+  "A_lease_spv_rvg|A+": 1,
+  "B_developer|NR": 17,
+  "A_lease_spv_rvg|NR": 2,
+  "A_lease_spv_rvg|A+ (preliminary)": 1,
+  "E_other|A-(sf)": 1
+ },
+ "data_gaps_summary": [
+  [
+   "评级未核对",
+   16
+  ],
+  [
+   "GPU 数量未披露",
+   5
+  ],
+  [
+   "到期具体日期未在已读部分出现（due 2031）",
+   5
+  ],
+  [
+   "from 未披露，挂占位节点",
+   4
+  ],
+  [
+   "评级未在契约中出现",
+   4
+  ],
+  [
+   "评级未从评级机构一手来源核对",
+   3
+  ],
+  [
+   "所融资客户合同对手方未披露",
+   3
+  ],
+  [
+   "per-investor split not disclosed",
+   2
+  ],
+  [
+   "form coded in_kind_gpu per project convention for GPU-linked",
+   2
+  ],
+  [
+   "结算日未在已读部分出现",
+   2
+  ]
+ ],
+ "delta": {
+  "new": [
+   "bf_a_056_r1",
+   "bf_a_009_r1",
+   "bf_a_003_r1",
+   "bf_d_025_r1",
+   "bf_a_011_r1",
+   "bf_d_036_r1"
+  ],
+  "status_changed": [],
+  "amount_changed": []
+ },
+ "edges_snapshot": {
+  "bf_a_001": {
+   "status": "completed",
+   "h": 6600,
+   "f": 6600
+  },
+  "bf_a_008": {
+   "status": "definitive",
+   "h": 10000,
+   "f": 2500
+  },
+  "bf_a_022": {
+   "status": "definitive",
+   "h": 12000,
+   "f": null
+  },
+  "bf_a_002": {
+   "status": "definitive",
+   "h": 4000,
+   "f": 4000
+  },
+  "bf_a_023": {
+   "status": "amended",
+   "h": 4700,
+   "f": 4700
+  },
+  "bf_a_003": {
+   "status": "loi",
+   "h": 100000,
+   "f": null
+  },
+  "bf_d_028": {
+   "status": "loi",
+   "h": null,
+   "f": null
+  },
+  "bf_c_002": {
+   "status": "definitive",
+   "h": 11900,
+   "f": null
+  },
+  "bf_c_003": {
+   "status": "definitive",
+   "h": 4000,
+   "f": null
+  },
+  "bf_c_004": {
+   "status": "definitive",
+   "h": 6500,
+   "f": null
+  },
+  "bf_d_023": {
+   "status": "completed",
+   "h": 30000,
+   "f": 30000
+  },
+  "bf_d_024": {
+   "status": "completed",
+   "h": 30000,
+   "f": 30000
+  },
+  "bf_a_009": {
+   "status": "definitive",
+   "h": 300000,
+   "f": null
+  },
+  "bf_a_010": {
+   "status": "loi",
+   "h": null,
+   "f": null
+  },
+  "bf_a_011": {
+   "status": "loi",
+   "h": 100000,
+   "f": null
+  },
+  "bf_a_020": {
+   "status": "amended",
+   "h": 30000,
+   "f": 30000
+  },
+  "bf_c_060": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_059": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_058": {
+   "status": "loi",
+   "h": null,
+   "f": null
+  },
+  "bf_b_041": {
+   "status": "definitive",
+   "h": 250000,
+   "f": null
+  },
+  "bf_b_053": {
+   "status": "definitive",
+   "h": 38000,
+   "f": null
+  },
+  "bf_b_054": {
+   "status": "definitive",
+   "h": 100000,
+   "f": null
+  },
+  "bf_a_019": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_a_017": {
+   "status": "definitive",
+   "h": 10000,
+   "f": null
+  },
+  "bf_b_055": {
+   "status": "definitive",
+   "h": 50000,
+   "f": 15000
+  },
+  "bf_a_024": {
+   "status": "definitive",
+   "h": 4000,
+   "f": 4000
+  },
+  "bf_b_051": {
+   "status": "definitive",
+   "h": 25000,
+   "f": 5000
+  },
+  "bf_a_025": {
+   "status": "rumored",
+   "h": 1000,
+   "f": null
+  },
+  "bf_b_048": {
+   "status": "definitive",
+   "h": 40000,
+   "f": 10000
+  },
+  "bf_a_026": {
+   "status": "completed",
+   "h": 3500,
+   "f": 3500
+  },
+  "bf_a_028": {
+   "status": "completed",
+   "h": 13000,
+   "f": 13000
+  },
+  "bf_a_035": {
+   "status": "completed",
+   "h": 30000,
+   "f": 30000
+  },
+  "bf_a_042": {
+   "status": "definitive",
+   "h": 65000,
+   "f": null
+  },
+  "bf_a_027": {
+   "status": "definitive",
+   "h": 2500,
+   "f": 2500
+  },
+  "bf_a_046": {
+   "status": "rumored",
+   "h": 10000,
+   "f": null
+  },
+  "bf_b_047": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_a_040": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_a_030": {
+   "status": "definitive",
+   "h": 50000,
+   "f": null
+  },
+  "bf_b_045": {
+   "status": "definitive",
+   "h": 30000,
+   "f": null
+  },
+  "bf_a_032": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_a_033": {
+   "status": "definitive",
+   "h": 10000,
+   "f": null
+  },
+  "bf_b_046": {
+   "status": "definitive",
+   "h": 5000,
+   "f": null
+  },
+  "bf_a_036": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_b_052": {
+   "status": "definitive",
+   "h": 100000,
+   "f": null
+  },
+  "bf_a_041": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_a_043": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_a_044": {
+   "status": "definitive",
+   "h": 5000,
+   "f": null
+  },
+  "bf_a_045": {
+   "status": "rumored",
+   "h": 45000,
+   "f": null
+  },
+  "bf_a_047": {
+   "status": "completed",
+   "h": 6000,
+   "f": 6000
+  },
+  "bf_a_049": {
+   "status": "definitive",
+   "h": 5000,
+   "f": 5000
+  },
+  "bf_a_053": {
+   "status": "completed",
+   "h": 20000,
+   "f": 20000
+  },
+  "bf_a_048": {
+   "status": "definitive",
+   "h": 5000,
+   "f": 5000
+  },
+  "bf_a_050": {
+   "status": "rumored",
+   "h": 12500,
+   "f": null
+  },
+  "bf_a_051": {
+   "status": "rumored",
+   "h": null,
+   "f": null
+  },
+  "bf_c_057": {
+   "status": "rumored",
+   "h": 2000,
+   "f": null
+  },
+  "bf_a_054": {
+   "status": "completed",
+   "h": 20000,
+   "f": null
+  },
+  "bf_a_055": {
+   "status": "completed",
+   "h": 25000,
+   "f": 25000
+  },
+  "bf_a_056": {
+   "status": "definitive",
+   "h": 40000,
+   "f": null
+  },
+  "bf_b_001": {
+   "status": "drawn",
+   "h": 7750,
+   "f": 7750
+  },
+  "bf_b_002": {
+   "status": "drawn",
+   "h": 18000,
+   "f": 18000
+  },
+  "bf_b_003": {
+   "status": "drawn",
+   "h": 25000,
+   "f": 25000
+  },
+  "bf_b_004": {
+   "status": "drawn",
+   "h": 5000,
+   "f": 5000
+  },
+  "bf_b_005": {
+   "status": "drawn",
+   "h": 7701,
+   "f": 7701
+  },
+  "bf_b_006": {
+   "status": "drawn",
+   "h": 17500,
+   "f": 17500
+  },
+  "bf_b_007": {
+   "status": "drawn",
+   "h": 7493,
+   "f": 7493
+  },
+  "bf_b_008": {
+   "status": "drawn",
+   "h": 20000,
+   "f": 20000
+  },
+  "bf_b_009": {
+   "status": "drawn",
+   "h": 7526,
+   "f": 7526
+  },
+  "bf_b_010": {
+   "status": "drawn",
+   "h": 6240,
+   "f": 6240
+  },
+  "bf_b_011": {
+   "status": "drawn",
+   "h": 10523,
+   "f": 10523
+  },
+  "bf_b_012": {
+   "status": "drawn",
+   "h": 25000,
+   "f": 25000
+  },
+  "bf_b_013": {
+   "status": "drawn",
+   "h": 30000,
+   "f": 30000
+  },
+  "bf_b_014": {
+   "status": "drawn",
+   "h": 25000,
+   "f": 25000
+  },
+  "bf_b_015": {
+   "status": "drawn",
+   "h": 15000,
+   "f": 15000
+  },
+  "bf_b_016": {
+   "status": "drawn",
+   "h": 37000,
+   "f": 37000
+  },
+  "bf_b_017": {
+   "status": "drawn",
+   "h": 16836,
+   "f": 16836
+  },
+  "bf_b_018": {
+   "status": "drawn",
+   "h": 10039,
+   "f": 10039
+  },
+  "bf_b_019": {
+   "status": "drawn",
+   "h": 25000,
+   "f": 25000
+  },
+  "bf_b_020": {
+   "status": "drawn",
+   "h": 5756,
+   "f": 5756
+  },
+  "bf_b_021": {
+   "status": "definitive",
+   "h": 17500,
+   "f": 17500
+  },
+  "bf_b_022": {
+   "status": "completed",
+   "h": 5000,
+   "f": 5000
+  },
+  "bf_b_023": {
+   "status": "completed",
+   "h": 20700,
+   "f": 20700
+  },
+  "bf_b_024": {
+   "status": "completed",
+   "h": 19250,
+   "f": 19250
+  },
+  "bf_b_025": {
+   "status": "completed",
+   "h": 10000,
+   "f": 10000
+  },
+  "bf_b_026": {
+   "status": "definitive",
+   "h": 12500,
+   "f": 12500
+  },
+  "bf_b_027": {
+   "status": "definitive",
+   "h": 25000,
+   "f": null
+  },
+  "bf_b_028": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_b_029": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_b_030": {
+   "status": "drawn",
+   "h": 27300,
+   "f": 27300
+  },
+  "bf_d_002": {
+   "status": "definitive",
+   "h": 7000,
+   "f": 7000
+  },
+  "bf_b_032": {
+   "status": "definitive",
+   "h": 14200,
+   "f": null
+  },
+  "bf_b_033": {
+   "status": "definitive",
+   "h": 21000,
+   "f": null
+  },
+  "bf_b_034": {
+   "status": "definitive",
+   "h": 2900,
+   "f": null
+  },
+  "bf_b_035": {
+   "status": "definitive",
+   "h": 27000,
+   "f": 12000
+  },
+  "bf_b_036": {
+   "status": "rumored",
+   "h": 10000,
+   "f": null
+  },
+  "bf_b_037": {
+   "status": "rumored",
+   "h": 20000,
+   "f": null
+  },
+  "bf_b_038": {
+   "status": "definitive",
+   "h": 14300,
+   "f": null
+  },
+  "bf_c_062": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_b_040": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_042": {
+   "status": "definitive",
+   "h": 17400,
+   "f": 17400
+  },
+  "bf_c_030": {
+   "status": "definitive",
+   "h": 9700,
+   "f": null
+  },
+  "bf_b_044": {
+   "status": "definitive",
+   "h": 6200,
+   "f": null
+  },
+  "bf_c_049": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_b_049": {
+   "status": "definitive",
+   "h": 5000,
+   "f": null
+  },
+  "bf_d_010": {
+   "status": "rumored",
+   "h": 22000,
+   "f": null
+  },
+  "bf_b_057": {
+   "status": "rumored",
+   "h": 23250,
+   "f": null
+  },
+  "bf_b_058": {
+   "status": "rumored",
+   "h": 14750,
+   "f": null
+  },
+  "bf_c_053": {
+   "status": "definitive",
+   "h": 2300,
+   "f": 2300
+  },
+  "bf_b_059": {
+   "status": "definitive",
+   "h": 7100,
+   "f": 7100
+  },
+  "bf_d_005": {
+   "status": "definitive",
+   "h": 3400,
+   "f": null
+  },
+  "bf_d_006": {
+   "status": "amended",
+   "h": 15000,
+   "f": null
+  },
+  "bf_b_061": {
+   "status": "rumored",
+   "h": 16000,
+   "f": null
+  },
+  "bf_b_062": {
+   "status": "rumored",
+   "h": 18000,
+   "f": null
+  },
+  "bf_c_001": {
+   "status": "definitive",
+   "h": 6300,
+   "f": 6300
+  },
+  "bf_c_007": {
+   "status": "completed",
+   "h": 2000,
+   "f": 2000
+  },
+  "bf_c_008": {
+   "status": "completed",
+   "h": 1000,
+   "f": 1000
+  },
+  "bf_c_009": {
+   "status": "definitive",
+   "h": 10200,
+   "f": null
+  },
+  "bf_c_010": {
+   "status": "definitive",
+   "h": 7000,
+   "f": 7000
+  },
+  "bf_c_011": {
+   "status": "definitive",
+   "h": 4000,
+   "f": null
+  },
+  "bf_c_012": {
+   "status": "definitive",
+   "h": 5000,
+   "f": null
+  },
+  "bf_c_013": {
+   "status": "definitive",
+   "h": 5200,
+   "f": null
+  },
+  "bf_c_014": {
+   "status": "definitive",
+   "h": 10400,
+   "f": 10400
+  },
+  "bf_c_015": {
+   "status": "completed",
+   "h": 2000,
+   "f": 2000
+  },
+  "bf_c_016": {
+   "status": "completed",
+   "h": 1750,
+   "f": 1750
+  },
+  "bf_c_023": {
+   "status": "completed",
+   "h": 2587.5,
+   "f": 2587.5
+  },
+  "bf_c_026": {
+   "status": "completed",
+   "h": 4000,
+   "f": 4000
+  },
+  "bf_c_024": {
+   "status": "completed",
+   "h": 1750,
+   "f": 1750
+  },
+  "bf_c_025": {
+   "status": "amended",
+   "h": 2750,
+   "f": 2750
+  },
+  "bf_c_027": {
+   "status": "completed",
+   "h": 1250,
+   "f": 1250
+  },
+  "bf_c_028": {
+   "status": "completed",
+   "h": 2292,
+   "f": 2292
+  },
+  "bf_c_029": {
+   "status": "completed",
+   "h": 4200,
+   "f": 4200
+  },
+  "bf_c_017": {
+   "status": "definitive",
+   "h": 2600,
+   "f": 2600
+  },
+  "bf_c_018": {
+   "status": "amended",
+   "h": 2600,
+   "f": 2600
+  },
+  "bf_c_019": {
+   "status": "definitive",
+   "h": 3000,
+   "f": 3000
+  },
+  "bf_c_020": {
+   "status": "definitive",
+   "h": 8500,
+   "f": 8500
+  },
+  "bf_c_021": {
+   "status": "definitive",
+   "h": 3100,
+   "f": 3100
+  },
+  "bf_c_022": {
+   "status": "definitive",
+   "h": 2600,
+   "f": 2600
+  },
+  "bf_c_031": {
+   "status": "definitive",
+   "h": 5800,
+   "f": 5800
+  },
+  "bf_c_032": {
+   "status": "definitive",
+   "h": 3500,
+   "f": 3500
+  },
+  "bf_c_033": {
+   "status": "definitive",
+   "h": 1600,
+   "f": 1600
+  },
+  "bf_c_034": {
+   "status": "definitive",
+   "h": 3400,
+   "f": null
+  },
+  "bf_c_035": {
+   "status": "completed",
+   "h": 1000,
+   "f": 1000
+  },
+  "bf_c_036": {
+   "status": "completed",
+   "h": 1150,
+   "f": 1150
+  },
+  "bf_c_037": {
+   "status": "completed",
+   "h": 1150,
+   "f": 1150
+  },
+  "bf_c_038": {
+   "status": "completed",
+   "h": 3000,
+   "f": 3000
+  },
+  "bf_c_039": {
+   "status": "definitive",
+   "h": 1500,
+   "f": 1500
+  },
+  "bf_c_040": {
+   "status": "definitive",
+   "h": 2100,
+   "f": 2100
+  },
+  "bf_c_041": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_045": {
+   "status": "completed",
+   "h": 2000,
+   "f": 2000
+  },
+  "bf_c_046": {
+   "status": "completed",
+   "h": 1000,
+   "f": 1000
+  },
+  "bf_c_047": {
+   "status": "completed",
+   "h": 1581.25,
+   "f": 1581.25
+  },
+  "bf_c_048": {
+   "status": "completed",
+   "h": 1581.25,
+   "f": 1581.25
+  },
+  "bf_c_050": {
+   "status": "completed",
+   "h": 1100,
+   "f": 285
+  },
+  "bf_c_051": {
+   "status": "completed",
+   "h": 1380,
+   "f": null
+  },
+  "bf_c_052": {
+   "status": "completed",
+   "h": 3900,
+   "f": null
+  },
+  "bf_c_055": {
+   "status": "completed",
+   "h": 1500,
+   "f": null
+  },
+  "bf_c_056": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_061": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_063": {
+   "status": "definitive",
+   "h": 105000,
+   "f": null
+  },
+  "bf_c_064": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_065": {
+   "status": "completed",
+   "h": 25000,
+   "f": 25000
+  },
+  "bf_c_066": {
+   "status": "completed",
+   "h": 1500,
+   "f": 1500
+  },
+  "bf_c_067": {
+   "status": "completed",
+   "h": 4750,
+   "f": 4750
+  },
+  "bf_c_068": {
+   "status": "completed",
+   "h": 3000,
+   "f": 3000
+  },
+  "bf_c_069": {
+   "status": "completed",
+   "h": 6000,
+   "f": 6000
+  },
+  "bf_c_070": {
+   "status": "completed",
+   "h": 5000,
+   "f": 5000
+  },
+  "bf_c_071": {
+   "status": "completed",
+   "h": 4500,
+   "f": 4500
+  },
+  "bf_c_072": {
+   "status": "completed",
+   "h": 1000,
+   "f": 1000
+  },
+  "bf_c_073": {
+   "status": "completed",
+   "h": 1750,
+   "f": 1750
+  },
+  "bf_c_074": {
+   "status": "drawn",
+   "h": 1683.5,
+   "f": 1683.5
+  },
+  "bf_c_075": {
+   "status": "completed",
+   "h": 2350,
+   "f": 2350
+  },
+  "bf_c_076": {
+   "status": "completed",
+   "h": 2150,
+   "f": 2150
+  },
+  "bf_c_077": {
+   "status": "completed",
+   "h": 1590,
+   "f": 1590
+  },
+  "bf_c_078": {
+   "status": "completed",
+   "h": 3300,
+   "f": 3300
+  },
+  "bf_c_079": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_080": {
+   "status": "completed",
+   "h": 1400,
+   "f": 1400
+  },
+  "bf_c_081": {
+   "status": "completed",
+   "h": 2000,
+   "f": 2000
+  },
+  "bf_c_082": {
+   "status": "definitive",
+   "h": 3000,
+   "f": 3000
+  },
+  "bf_c_083": {
+   "status": "definitive",
+   "h": 1400,
+   "f": 1400
+  },
+  "bf_c_089": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_084": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_c_085": {
+   "status": "definitive",
+   "h": 5500,
+   "f": 5500
+  },
+  "bf_c_086": {
+   "status": "completed",
+   "h": 3250,
+   "f": 3250
+  },
+  "bf_c_087": {
+   "status": "completed",
+   "h": 4250,
+   "f": 4250
+  },
+  "bf_c_088": {
+   "status": "definitive",
+   "h": 7000,
+   "f": 7000
+  },
+  "bf_c_090": {
+   "status": "definitive",
+   "h": 9800,
+   "f": 9800
+  },
+  "bf_c_091": {
+   "status": "definitive",
+   "h": 9800,
+   "f": 9800
+  },
+  "bf_c_092": {
+   "status": "completed",
+   "h": 3507,
+   "f": 3507
+  },
+  "bf_c_093": {
+   "status": "definitive",
+   "h": 1400,
+   "f": 1400
+  },
+  "bf_d_009": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_011": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_012": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_013": {
+   "status": "definitive",
+   "h": 14000,
+   "f": 14000
+  },
+  "bf_d_014": {
+   "status": "definitive",
+   "h": 2000,
+   "f": null
+  },
+  "bf_d_015": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_016": {
+   "status": "definitive",
+   "h": 12500,
+   "f": null
+  },
+  "bf_d_017": {
+   "status": "definitive",
+   "h": 4900,
+   "f": 4900
+  },
+  "bf_d_018": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_019": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_020": {
+   "status": "definitive",
+   "h": 3500,
+   "f": 3500
+  },
+  "bf_d_021": {
+   "status": "definitive",
+   "h": 5400,
+   "f": null
+  },
+  "bf_d_022": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_025": {
+   "status": "definitive",
+   "h": 40000,
+   "f": null
+  },
+  "bf_d_026": {
+   "status": "rumored",
+   "h": 10000,
+   "f": null
+  },
+  "bf_d_027": {
+   "status": "loi",
+   "h": null,
+   "f": null
+  },
+  "bf_d_029": {
+   "status": "completed",
+   "h": 40000,
+   "f": 40000
+  },
+  "bf_d_030": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_031": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_032": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_033": {
+   "status": "definitive",
+   "h": 3000,
+   "f": 3000
+  },
+  "bf_d_034": {
+   "status": "definitive",
+   "h": 35000,
+   "f": null
+  },
+  "bf_d_035": {
+   "status": "definitive",
+   "h": null,
+   "f": null
+  },
+  "bf_d_036": {
+   "status": "definitive",
+   "h": 30000,
+   "f": null
+  },
+  "bf_d_037": {
+   "status": "definitive",
+   "h": 10000,
+   "f": null
+  },
+  "bf_d_038": {
+   "status": "drawn",
+   "h": 695,
+   "f": 695
+  },
+  "bf_a_056_r1": {
+   "status": "definitive",
+   "h": 40000,
+   "f": null
+  },
+  "bf_a_009_r1": {
+   "status": "definitive",
+   "h": 300000,
+   "f": null
+  },
+  "bf_a_003_r1": {
+   "status": "loi",
+   "h": 100000,
+   "f": null
+  },
+  "bf_d_025_r1": {
+   "status": "completed",
+   "h": 40000,
+   "f": 30000
+  },
+  "bf_a_011_r1": {
+   "status": "loi",
+   "h": 100000,
+   "f": null
+  },
+  "bf_d_036_r1": {
+   "status": "definitive",
+   "h": 30000,
+   "f": null
+  }
+ },
+ "asof": "2026-10-27"
+}

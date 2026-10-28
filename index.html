@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 巨头订单与债务关系图</title>
+<meta name="description" content="谁欠谁：AI 巨头之间的订单、股权、债务与担保关系图，每条边可追溯到来源，双口径（标题 / 已约束）。">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="eyebrow">实时数据 · AI 资本流向</div>
+    <div class="titlerow">
+      <h1 data-i18n="title">AI 巨头订单与债务关系图</h1>
+      <div class="right">
+        <div class="lang"><button data-lang="zh" class="on">中文</button><button data-lang="en">English</button></div>
+        <button id="livebtn" class="live"><i></i><span id="livetext">—</span> ▾</button>
+        <div id="livepop" class="pop hidden"></div>
+      </div>
+    </div>
+    <p class="sub" data-i18n="subtitle">谁欠谁：订单、股权、债务与担保。每条边可追溯到来源，标题口径与已约束口径并列，不做估值判断。</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="verdict" class="verdict hidden"></section>
+  <section class="cards" id="cards"></section>
+  <p class="fine" id="countnote"></p>
+
+  <section class="controls">
+    <div class="row">
+      <input id="search" type="search" data-i18n-ph="search" placeholder="搜公司或交易（例如 NVDA、Beignet、残值担保）">
+      <div class="chips" id="kindchips"></div>
+    </div>
+    <div class="row filters">
+      <label><span data-i18n="sector">板块</span><select id="f_sector"></select></label>
+      <label><span data-i18n="minsize">最小金额</span><select id="f_min">
+        <option value="0" data-i18n="any">不限</option><option value="1000">≥ $1B</option><option value="10000">≥ $10B</option><option value="50000">≥ $50B</option><option value="100000">≥ $100B</option></select></label>
+      <label><span data-i18n="period">期间</span><select id="f_period">
+        <option value="all" data-i18n="alldates">全部</option><option value="90d" data-i18n="last90">近 90 天</option><option value="12m" data-i18n="last12m">近 12 个月</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option></select></label>
+      <label><span data-i18n="status">状态</span><select id="f_status">
+        <option value="active" data-i18n="st_active">有效（含传闻/意向）</option><option value="firm" data-i18n="st_firm">仅已约束</option><option value="all" data-i18n="st_all">全部（含已修订/取消）</option></select></label>
+      <label><span data-i18n="basis">口径</span><select id="f_basis">
+        <option value="headline" data-i18n="b_headline">标题口径</option><option value="firm" data-i18n="b_firm">已约束口径</option></select></label>
+      <label class="chk"><input type="checkbox" id="f_collapse"><span data-i18n="collapse">SPV 折叠到发起人</span></label>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="toolbar">
+      <div class="tabs" id="views">
+        <button data-view="graph" class="on" data-i18n="v_graph">关系图</button>
+        <button data-view="table" data-i18n="v_table">表格</button>
+        <button data-view="cycles" data-i18n="v_cycles">资金闭环</button>
+        <button data-view="maturity" data-i18n="v_maturity">到期墙</button>
+        <button data-view="conc" data-i18n="v_conc">集中度</button>
+        <button data-view="gaps" data-i18n="v_gaps">数据缺口</button>
+        <button data-view="delta" data-i18n="v_delta">本次变动</button>
+      </div>
+      <div class="tabs small" id="topn"><button data-n="20">Top 20</button><button data-n="50">Top 50</button><button data-n="0" class="on" data-i18n="all">全部</button></div>
+      <span class="fine" id="viewcount"></span>
+      <div class="spacer"></div>
+      <label class="fine slider"><span data-i18n="replay">回放至</span> <span id="replaydate"></span><input type="range" id="replay" min="0" max="100" value="100"></label>
+      <button id="csv" class="btn" data-i18n="csv">复制 CSV</button>
+      <div class="zoom"><button id="zin">+</button><button id="zout">−</button><button id="zfit">⤢</button></div>
+    </div>
+    <div class="viewarea">
+      <div id="v_graph" class="view"><svg id="svg"></svg><div id="legend" class="legend"></div></div>
+      <div id="v_table" class="view hidden"></div>
+      <div id="v_cycles" class="view hidden"></div>
+      <div id="v_maturity" class="view hidden"></div>
+      <div id="v_conc" class="view hidden"></div>
+      <div id="v_gaps" class="view hidden"></div>
+      <div id="v_delta" class="view hidden"></div>
+      <aside id="detail" class="detail hidden"></aside>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="box">
+      <div class="boxhead"><h2 data-i18n="rank_title">最大敞口</h2>
+        <div class="tabs small" id="rankmode"><button data-m="total" class="on" data-i18n="rank_total">合计</button><button data-m="debt_in" data-i18n="rank_borrowed">借入</button><button data-m="order_out" data-i18n="rank_orders">订单支出</button><button data-m="guar" data-i18n="rank_guar">担保敞口</button></div></div>
+      <p class="fine" data-i18n="rank_hint">点击公司查看它欠谁、谁欠它、下了哪些订单。条形 = 边类型构成。</p>
+      <ol id="rank" class="rank"></ol>
+      <p class="fine" data-i18n="rank_note">占位对手方（公募债投资者、未披露贷款人、未拆分银团）不参与排名。</p>
+    </div>
+    <div class="box">
+      <div class="boxhead"><h2 data-i18n="latest_title">监控最新动态</h2></div>
+      <div class="feeds">
+        <div><h3 data-i18n="news">新闻</h3><ul id="news" class="feed"></ul></div>
+        <div><h3 data-i18n="filings">SEC 申报</h3><ul id="filings" class="feed"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="box method">
+    <h2 data-i18n="method_title">口径说明</h2>
+    <ul>
+      <li data-i18n="m1">四类边：订单（买方→供应方）、债务（出借方→借款方）、股权（投资方→被投方）、担保（担保方→被担保主体）。箭头方向 = 资金方向。</li>
+      <li data-i18n="m2">标题口径 = 媒体标题金额（含 "up to"、多年总额）；已约束口径 = 已签约/已提款部分。两者并列，不互相替代。</li>
+      <li data-i18n="m3">修订不覆盖旧边：新边带 supersedes 指向旧边，统计只计最新版本。传闻/意向灰显，只有公告或申报才记为已约束。</li>
+      <li data-i18n="m4">SPV 是独立节点：项目债记在 SPV，承租人只以租约（订单）和残值担保（担保）出现。勾选"折叠"可把 SPV 并回发起人。</li>
+      <li data-i18n="m5">每笔只计一次、不做净额；供应链两端都计。资金闭环只是拓扑事实，不代表任何风险结论。</li>
+    </ul>
+  </section>
+  <footer class="fine">
+    <p data-i18n="disc">仅供参考，不构成投资建议：本站只描述交易，不做评价。金额为公司公告或具名媒体披露的名义美元；每条边附来源链接与来源等级（1 申报 / 2 新闻稿 / 3 通讯社 / 4 其他）。</p>
+    <p data-i18n="built">数据来自公开申报与新闻。监控按计划运行；本页每 5 分钟自检一次。</p>
+  </footer>
+</main>
+<div id="modal" class="modal hidden"><div class="modalbox"><button class="close" id="mclose">×</button><div id="mbody"></div></div></div>
+<script src="app.js"></script>
+</body>
+</html>

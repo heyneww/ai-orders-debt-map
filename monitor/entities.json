@@ -1,0 +1,1204 @@
+{
+ "version": "0.1",
+ "note": "初始节点清单。ticker 为上市主体；CIK 由 edgar_watch.py 运行时从 SEC company_tickers.json 解析，不手填。aliases 供 TRIAGE 实体消歧。",
+ "entities": [
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "type": "lab",
+   "ticker": null,
+   "aliases": [
+    "OpenAI Global",
+    "OpenAI Group PBC",
+    "OpenAI LP",
+    "Stargate (OpenAI)"
+   ]
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "type": "lab",
+   "ticker": null,
+   "aliases": [
+    "Anthropic PBC"
+   ]
+  },
+  {
+   "id": "xai",
+   "name": "xAI",
+   "type": "lab",
+   "ticker": null,
+   "aliases": [
+    "xAI Corp",
+    "X.AI",
+    "Colossus"
+   ]
+  },
+  {
+   "id": "msft",
+   "name": "Microsoft",
+   "type": "hyperscaler",
+   "ticker": "MSFT",
+   "aliases": [
+    "Azure"
+   ]
+  },
+  {
+   "id": "googl",
+   "name": "Alphabet",
+   "type": "hyperscaler",
+   "ticker": "GOOGL",
+   "aliases": [
+    "Google",
+    "Google Cloud",
+    "GCP"
+   ]
+  },
+  {
+   "id": "amzn",
+   "name": "Amazon",
+   "type": "hyperscaler",
+   "ticker": "AMZN",
+   "aliases": [
+    "AWS",
+    "Amazon Web Services"
+   ]
+  },
+  {
+   "id": "meta",
+   "name": "Meta Platforms",
+   "type": "hyperscaler",
+   "ticker": "META",
+   "aliases": [
+    "Meta",
+    "Facebook"
+   ]
+  },
+  {
+   "id": "orcl",
+   "name": "Oracle",
+   "type": "hyperscaler",
+   "ticker": "ORCL",
+   "aliases": [
+    "OCI",
+    "Oracle Cloud"
+   ]
+  },
+  {
+   "id": "crwv",
+   "name": "CoreWeave",
+   "type": "neocloud",
+   "ticker": "CRWV",
+   "aliases": []
+  },
+  {
+   "id": "nbis",
+   "name": "Nebius",
+   "type": "neocloud",
+   "ticker": "NBIS",
+   "aliases": [
+    "Nebius Group"
+   ]
+  },
+  {
+   "id": "crusoe",
+   "name": "Crusoe",
+   "type": "neocloud",
+   "ticker": null,
+   "aliases": [
+    "Crusoe Energy"
+   ]
+  },
+  {
+   "id": "lambda",
+   "name": "Lambda",
+   "type": "neocloud",
+   "ticker": null,
+   "aliases": [
+    "Lambda Labs"
+   ]
+  },
+  {
+   "id": "nscale",
+   "name": "Nscale",
+   "type": "neocloud",
+   "ticker": null,
+   "aliases": []
+  },
+  {
+   "id": "iren",
+   "name": "IREN",
+   "type": "neocloud",
+   "ticker": "IREN",
+   "aliases": [
+    "Iris Energy"
+   ]
+  },
+  {
+   "id": "nvda",
+   "name": "NVIDIA",
+   "type": "chip",
+   "ticker": "NVDA",
+   "aliases": [
+    "Nvidia"
+   ]
+  },
+  {
+   "id": "amd",
+   "name": "AMD",
+   "type": "chip",
+   "ticker": "AMD",
+   "aliases": [
+    "Advanced Micro Devices"
+   ]
+  },
+  {
+   "id": "avgo",
+   "name": "Broadcom",
+   "type": "chip",
+   "ticker": "AVGO",
+   "aliases": []
+  },
+  {
+   "id": "mu",
+   "name": "Micron",
+   "type": "memory",
+   "ticker": "MU",
+   "aliases": []
+  },
+  {
+   "id": "skhynix",
+   "name": "SK hynix",
+   "type": "memory",
+   "ticker": null,
+   "aliases": [
+    "SK Hynix",
+    "000660.KS"
+   ]
+  },
+  {
+   "id": "samsung",
+   "name": "Samsung Electronics",
+   "type": "memory",
+   "ticker": null,
+   "aliases": [
+    "005930.KS"
+   ]
+  },
+  {
+   "id": "vantage",
+   "name": "Vantage Data Centers",
+   "type": "dc_developer",
+   "ticker": null,
+   "aliases": []
+  },
+  {
+   "id": "related",
+   "name": "Related Digital",
+   "type": "dc_developer",
+   "ticker": null,
+   "aliases": [
+    "Related Companies"
+   ]
+  },
+  {
+   "id": "owl",
+   "name": "Blue Owl Capital",
+   "type": "financier",
+   "ticker": "OWL",
+   "aliases": [
+    "Blue Owl"
+   ]
+  },
+  {
+   "id": "apo",
+   "name": "Apollo Global",
+   "type": "financier",
+   "ticker": "APO",
+   "aliases": [
+    "Apollo"
+   ]
+  },
+  {
+   "id": "bx",
+   "name": "Blackstone",
+   "type": "financier",
+   "ticker": "BX",
+   "aliases": []
+  },
+  {
+   "id": "pimco",
+   "name": "PIMCO",
+   "type": "financier",
+   "ticker": null,
+   "aliases": []
+  },
+  {
+   "id": "jpm",
+   "name": "JPMorgan",
+   "type": "financier",
+   "ticker": "JPM",
+   "aliases": [
+    "J.P. Morgan",
+    "JPMorgan Chase"
+   ]
+  },
+  {
+   "id": "mufg",
+   "name": "MUFG",
+   "type": "financier",
+   "ticker": null,
+   "aliases": [
+    "Mitsubishi UFJ"
+   ]
+  },
+  {
+   "id": "brookfield",
+   "name": "Brookfield",
+   "type": "financier",
+   "ticker": "BAM",
+   "aliases": [
+    "Brookfield Asset Management",
+    "Brookfield Infrastructure"
+   ]
+  },
+  {
+   "id": "softbank",
+   "name": "SoftBank Group",
+   "type": "financier",
+   "ticker": null,
+   "aliases": [
+    "SoftBank",
+    "SB Energy",
+    "9984.T"
+   ]
+  },
+  {
+   "id": "mgx",
+   "name": "MGX",
+   "type": "sovereign",
+   "ticker": null,
+   "aliases": [
+    "MGX Fund"
+   ]
+  },
+  {
+   "id": "ceg",
+   "name": "Constellation Energy",
+   "type": "power",
+   "ticker": "CEG",
+   "aliases": []
+  },
+  {
+   "id": "vst",
+   "name": "Vistra",
+   "type": "power",
+   "ticker": "VST",
+   "aliases": []
+  },
+  {
+   "id": "syndicate",
+   "name": "Unattributed investor / lender syndicate",
+   "type": "financier",
+   "ticker": null,
+   "aliases": [
+    "investor syndicate",
+    "bank group",
+    "lender group"
+   ],
+   "parent": null,
+   "notes": "Placeholder node for funding rounds and bank facilities where per-participant amounts are not disclosed. Named participants are listed in each edge's notes. Do not treat as a single counterparty."
+  },
+  {
+   "id": "stargate_jv",
+   "name": "Stargate LLC (JV)",
+   "type": "spv",
+   "ticker": null,
+   "aliases": [
+    "Stargate",
+    "Stargate Project",
+    "Stargate LLC"
+   ],
+   "parent": "softbank",
+   "notes": "Announced 2025-01-21; equity partners SoftBank (financial responsibility), OpenAI (operational responsibility), Oracle, MGX. Builds infrastructure for OpenAI."
+  },
+  {
+   "id": "fluidstack",
+   "name": "Fluidstack",
+   "type": "neocloud",
+   "ticker": null,
+   "aliases": [],
+   "parent": null,
+   "notes": "London-based; Anthropic's infrastructure partner for the Nov-2025 $50B US data center program."
+  },
+  {
+   "id": "cerebras",
+   "name": "Cerebras Systems",
+   "type": "chip",
+   "ticker": null,
+   "aliases": [
+    "Cerebras"
+   ],
+   "parent": null,
+   "notes": "Wafer-scale inference systems; 750 MW agreement with OpenAI (Jan 2026)."
+  },
+  {
+   "id": "spacex",
+   "name": "SpaceX",
+   "type": "lab",
+   "ticker": null,
+   "aliases": [
+    "Space Exploration Technologies",
+    "SpaceX (xAI parent)"
+   ],
+   "parent": null,
+   "notes": "Acquired xAI in Feb 2026 (reported xAI valuation $250B, all-stock; not recorded as an edge). Post-merger borrower for xAI/Colossus-related debt and seller of Colossus 1 capacity to Anthropic. Type set to 'lab' as successor/parent of xAI; IPO June 2026."
+  },
+  {
+   "id": "xai_colossus2_spv",
+   "name": "xAI Colossus 2 GPU financing SPV (name undisclosed)",
+   "type": "spv",
+   "ticker": null,
+   "aliases": [
+    "Colossus 2 SPV"
+   ],
+   "parent": "xai",
+   "notes": "Placeholder for the Bloomberg-reported (Oct 2025) special purpose vehicle that would buy Nvidia GPUs and lease them to xAI for five years; up to $12.5B debt (Apollo, Diameter) + ~$7.5B equity (Valor lead). Closing not confirmed."
+  },
+  {
+   "id": "public_bondholders",
+   "name": "Public bond investors",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "bond investors",
+    "noteholders"
+   ],
+   "parent": null,
+   "notes": "公募/144A 债券投资者的汇总节点；用于发行人公募债 DEBT 边的 from"
+  },
+  {
+   "id": "public_equity_investors",
+   "name": "Public equity investors",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "public shareholders"
+   ],
+   "parent": null,
+   "notes": "承销公开发行（普通股、强制可转优先股/存托股）的投资者汇总节点；EQUITY 边的 from"
+  },
+  {
+   "id": "berkshire",
+   "name": "Berkshire Hathaway",
+   "type": "financier",
+   "ticker": "BRK.B",
+   "listed": true,
+   "aliases": [
+    "Berkshire Hathaway Inc.",
+    "Berkshire"
+   ],
+   "parent": null,
+   "notes": "2026-06-01 定向认购 Alphabet $10B 普通股（Alphabet 8-K）"
+  },
+  {
+   "id": "citi",
+   "name": "Citibank N.A.",
+   "type": "financier",
+   "ticker": "C",
+   "listed": true,
+   "aliases": [
+    "Citigroup",
+    "Citi"
+   ],
+   "parent": null,
+   "notes": "Amazon $17.5B 延迟提款定期贷款的行政代理行；贷款人团体未逐一披露"
+  },
+  {
+   "id": "beignet",
+   "name": "Beignet Investor LLC (Hyperion JV)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Beignet Investor",
+    "Hyperion",
+    "Hyperion JV",
+    "Meta/Blue Owl Hyperion joint venture"
+   ],
+   "parent": "meta",
+   "notes": "Louisiana Richland Parish Hyperion 园区合资载体。JV 由 Blue Owl 管理基金持 80%、Meta 持 20%；Beignet Investor LLC 为 Blue Owl 侧发债主体（$27.3B 144A 债券，Morgan Stanley 独家簿记）。按 schema 以发起人/承租人 Meta 为 parent，债务不记到 Meta"
+  },
+  {
+   "id": "scale_ai",
+   "name": "Scale AI",
+   "type": "lab",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Scale"
+   ],
+   "parent": null,
+   "notes": "AI 数据标注/评估服务商；enum 无更贴切类型，暂归 lab。Meta 2025-06 投资 $14.3B 取得 49% 无投票权股份（股比来自媒体）"
+  },
+  {
+   "id": "vantage_frontier_tx",
+   "name": "Vantage Frontier campus (Shackelford County, TX)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Frontier",
+    "Stargate Shackelford",
+    "Vantage Texas"
+   ],
+   "parent": "vantage",
+   "notes": "Vantage 开发、Oracle 承租、服务 OpenAI Stargate 的 1.4GW 园区；$23.25B 高级有担保贷款的借款载体（具体借款主体名未披露）"
+  },
+  {
+   "id": "vantage_lighthouse_wi",
+   "name": "Vantage Lighthouse campus (Port Washington, WI)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Lighthouse",
+    "Port Washington",
+    "Vantage Wisconsin"
+   ],
+   "parent": "vantage",
+   "notes": "Vantage 开发、Oracle/OpenAI Stargate 园区；$14.75B 高级有担保贷款的借款载体（具体借款主体名未披露）"
+  },
+  {
+   "id": "crusoe_abilene_jv",
+   "name": "Crusoe / Blue Owl / Primary Digital Abilene JV",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Abilene",
+    "Lancium Clean Campus",
+    "Stargate Abilene"
+   ],
+   "parent": "crusoe",
+   "notes": "Abilene TX 1.2GW 园区合资载体；2024-10 $3.4B 股权 JV、2025-05 $7.1B JPM 牵头建设贷款；租户在一手来源中为 'Fortune 100 hyperscale tenant'（媒体指 Oracle）"
+  },
+  {
+   "id": "related_saline_mi",
+   "name": "Related Digital Saline Township campus (MI)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Saline Township",
+    "Stargate Michigan",
+    "The Barn"
+   ],
+   "parent": "related",
+   "notes": "Related Digital 开发、Oracle 承租、服务 OpenAI 的 >1GW 园区；2026-04 约 $16B 项目融资的借款载体（主体名未披露）"
+  },
+  {
+   "id": "project_jupiter_nm",
+   "name": "Project Jupiter (Doña Ana County, NM)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Project Jupiter",
+    "Stargate New Mexico",
+    "Doña Ana"
+   ],
+   "parent": null,
+   "notes": "开发商 Stack Infrastructure 与 BorderPlex Digital Assets（均不在节点表，parent 留空）；Oracle 18 年租约；$18B 银团贷款；2026-09 媒体报道 Oracle 发出不可抗力通知、贷款二级价 89–91"
+  },
+  {
+   "id": "googl_bx_tpu_jv",
+   "name": "Blackstone–Google TPU cloud JV",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "TPU cloud venture"
+   ],
+   "parent": "bx",
+   "notes": "2026-05-18 宣布的美国新公司：Blackstone 出资 $5B 股权（媒体称持多数股），Google 供应 TPU/软件/服务；首期 500MW 目标 2027 上线；CEO Benjamin Treynor Sloss"
+  },
+  {
+   "id": "undisclosed_counterparty",
+   "name": "未披露对手方",
+   "type": "financier",
+   "ticker": null,
+   "aliases": [],
+   "parent": null
+  },
+  {
+   "id": "morgan_stanley",
+   "name": "Morgan Stanley",
+   "type": "financier",
+   "ticker": "MS",
+   "listed": true,
+   "aliases": [
+    "Morgan Stanley Senior Funding",
+    "Morgan Stanley Asset Funding",
+    "Morgan Stanley & Co."
+   ],
+   "parent": null,
+   "notes": "CoreWeave DDTL 5.0 行政代理兼协调牵头安排行；DDTL 3.0/4.0 联席安排行。"
+  },
+  {
+   "id": "goldman",
+   "name": "Goldman Sachs",
+   "type": "financier",
+   "ticker": "GS",
+   "listed": true,
+   "aliases": [
+    "Goldman Sachs Bank USA",
+    "Goldman Sachs Lending Partners",
+    "Goldman Sachs & Co."
+   ],
+   "parent": null,
+   "notes": "IREN IE US Hardware 3 融资联席牵头安排行（与 JPMorgan）。"
+  },
+  {
+   "id": "deutsche_bank",
+   "name": "Deutsche Bank",
+   "type": "financier",
+   "ticker": null,
+   "listed": true,
+   "aliases": [
+    "Deutsche Bank AG New York Branch",
+    "Deutsche Bank Securities"
+   ],
+   "parent": null,
+   "notes": "Galaxy Helios 第一期 $1.4B 项目融资初始贷款人。"
+  },
+  {
+   "id": "pnc",
+   "name": "PNC Bank",
+   "type": "financier",
+   "ticker": "PNC",
+   "listed": true,
+   "aliases": [
+    "PNC Bank, National Association",
+    "PNC Capital Markets"
+   ],
+   "parent": null,
+   "notes": "Micron 2025-01 定期贷款行政代理兼唯一簿记行。"
+  },
+  {
+   "id": "jane_street",
+   "name": "Jane Street",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Jane Street Global Trading, LLC"
+   ],
+   "parent": null,
+   "notes": "2026-04-15 以 $1.0B 私募认购 CoreWeave Class A。"
+  },
+  {
+   "id": "aker",
+   "name": "Aker ASA",
+   "type": "financier",
+   "ticker": null,
+   "listed": true,
+   "aliases": [
+    "Aker",
+    "AKER.OL"
+   ],
+   "parent": null,
+   "notes": "挪威工业投资公司；Nscale Series B 领投，Aker-Nscale JV（Narvik）合作方。"
+  },
+  {
+   "id": "twg_global",
+   "name": "TWG Global",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "TWG"
+   ],
+   "parent": null,
+   "notes": "Thomas Tull 与 Mark Walter 的控股公司；Lambda Series E 领投。"
+  },
+  {
+   "id": "mubadala",
+   "name": "Mubadala Capital",
+   "type": "sovereign",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Mubadala Investment Company",
+    "Mubadala"
+   ],
+   "parent": null,
+   "notes": "阿布扎比主权基金资管部门；Crusoe Series E/F 联合领投。与既有 mgx 节点不同主体。"
+  },
+  {
+   "id": "dell",
+   "name": "Dell Technologies",
+   "type": "chip",
+   "ticker": "DELL",
+   "listed": true,
+   "aliases": [
+    "Dell Marketing L.P.",
+    "Dell Canada Inc.",
+    "Dell"
+   ],
+   "parent": null,
+   "notes": "服务器 OEM（GPU 服务器供应方），schema 无 OEM 类型，暂归 chip；IREN 三笔 GPU 采购对手方。"
+  },
+  {
+   "id": "apld",
+   "name": "Applied Digital",
+   "type": "dc_developer",
+   "ticker": "APLD",
+   "listed": true,
+   "aliases": [
+    "Applied Digital Corp.",
+    "Applied Digital Corporation",
+    "Polaris Forge",
+    "Delta Forge"
+   ],
+   "parent": null,
+   "notes": "北达科他等地 AI 工厂开发商；承租人 CoreWeave、Oracle。"
+  },
+  {
+   "id": "corz",
+   "name": "Core Scientific",
+   "type": "dc_developer",
+   "ticker": "CORZ",
+   "listed": true,
+   "aliases": [
+    "Core Scientific, Inc."
+   ],
+   "parent": null,
+   "notes": "托管/数据中心运营商；CoreWeave 约 590MW 托管合同；2025-10-30 与 CoreWeave 的合并协议被股东否决终止。"
+  },
+  {
+   "id": "cipher",
+   "name": "Cipher Mining / Cipher Digital",
+   "type": "dc_developer",
+   "ticker": "CIFR",
+   "listed": true,
+   "aliases": [
+    "Cipher Mining Inc.",
+    "Cipher Digital Inc.",
+    "Cipher Barber Lake LLC",
+    "Cipher Black Pearl"
+   ],
+   "parent": null,
+   "notes": "2026 年更名 Cipher Digital；承租人 Fluidstack（Google 背书）、AWS。"
+  },
+  {
+   "id": "hut8",
+   "name": "Hut 8",
+   "type": "dc_developer",
+   "ticker": "HUT",
+   "listed": true,
+   "aliases": [
+    "Hut 8 Corp."
+   ],
+   "parent": null,
+   "notes": "River Bend（LA）与 Beacon Point（TX）园区；承租人 Fluidstack（Google 背书）及未披露投资级租户。"
+  },
+  {
+   "id": "glxy",
+   "name": "Galaxy Digital",
+   "type": "dc_developer",
+   "ticker": "GLXY",
+   "listed": true,
+   "aliases": [
+    "Galaxy Digital Inc.",
+    "Galaxy Digital Holdings LP",
+    "Galaxy Power LLC",
+    "Helios"
+   ],
+   "parent": null,
+   "notes": "Helios（Dickens County TX）园区，CoreWeave 为唯一 AI/HPC 承租人。"
+  },
+  {
+   "id": "crwv_ccac_iv",
+   "name": "CoreWeave Compute Acquisition Co. IV, LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "CCAC IV",
+    "DDTL 2.0 borrower"
+   ],
+   "parent": "crwv",
+   "notes": "DDTL 2.0 Credit Agreement（2024-05-16）借款人；第五修订新增 $3.0B。"
+  },
+  {
+   "id": "crwv_ccac_vii",
+   "name": "CoreWeave Compute Acquisition Co. VII, LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "CCAC VII",
+    "DDTL 3.0 borrower",
+    "CoreWeave Compute Acquisition Co. V, LLC"
+   ],
+   "parent": "crwv",
+   "notes": "DDTL 3.0 初始借款人；Co. V 为共同借款人。"
+  },
+  {
+   "id": "crwv_ccac_viii",
+   "name": "CoreWeave Compute Acquisition Co. VIII, LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "CCAC VIII",
+    "DDTL 4.0 borrower"
+   ],
+   "parent": "crwv",
+   "notes": "DDTL 4.0 借款人。"
+  },
+  {
+   "id": "crwv_ddtl_v",
+   "name": "CoreWeave Financing DDTL V, LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "DDTL 5.0 borrower",
+    "CW Financing DDTL V Holdco"
+   ],
+   "parent": "crwv",
+   "notes": "DDTL 5.0 借款人。"
+  },
+  {
+   "id": "crwv_ddtl_vv",
+   "name": "CoreWeave Financing DDTL V-V, LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "DDTL 5.5 borrower",
+    "CW Financing DDTL V-V Holdco"
+   ],
+   "parent": "crwv",
+   "notes": "DDTL 5.5 借款人。"
+  },
+  {
+   "id": "iren_hardware3",
+   "name": "IE US Hardware 3 LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "IE US Hardware 3 Inc.",
+    "Hardware 3"
+   ],
+   "parent": "iren",
+   "notes": "IREN 为 Microsoft 合同设立的 GPU 融资载体（DDTL $1.5B + 5.96% 票据 $2.1B）。"
+  },
+  {
+   "id": "apld_computeco",
+   "name": "APLD ComputeCo LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "APLD HPC Holdings 2 LLC"
+   ],
+   "parent": "apld",
+   "notes": "ELN-02/ELN-03（CoreWeave 租约）9.25% 2030 票据发行人。"
+  },
+  {
+   "id": "apld_computeco2",
+   "name": "APLD ComputeCo 2 LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "APLD FAR Holdings LLC"
+   ],
+   "parent": "apld",
+   "notes": "FAR-01/FAR-02（Oracle 租约，Polaris Forge 2）6.75% 2031 票据发行人。"
+  },
+  {
+   "id": "apld_computeco3",
+   "name": "APLD ComputeCo 3 LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [],
+   "parent": "apld",
+   "notes": "ELN-04（CoreWeave 租约）7.00% 2031 票据发行人。"
+  },
+  {
+   "id": "corz_finance_i",
+   "name": "Core Scientific Finance I LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Core Scientific Finance Holding LLC"
+   ],
+   "parent": "corz",
+   "notes": "7.75% 2031 高级担保票据发行人；担保子公司 Austin/Denton/Dalton/Marble/Muskogee。"
+  },
+  {
+   "id": "cipher_compute",
+   "name": "Cipher Compute LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Cipher Songbird LLC"
+   ],
+   "parent": "cipher",
+   "notes": "Barber Lake（Fluidstack/Google）7.125% 2030 票据发行人。"
+  },
+  {
+   "id": "black_pearl_compute",
+   "name": "Black Pearl Compute LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Black Pearl Holdings LLC"
+   ],
+   "parent": "cipher",
+   "notes": "Black Pearl（AWS 租约）6.125% 2031 票据发行人。"
+  },
+  {
+   "id": "hut8_dc",
+   "name": "Hut 8 DC LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Hut 8 DC Member LLC",
+    "River Bend"
+   ],
+   "parent": "hut8",
+   "notes": "River Bend（Fluidstack/Google）6.192% 2042 票据发行人。"
+  },
+  {
+   "id": "beacon_point_dc",
+   "name": "Beacon Point DC LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Beacon Point Holding LLC"
+   ],
+   "parent": "hut8",
+   "notes": "Beacon Point 第一期 6.129% 2042 票据发行人。"
+  },
+  {
+   "id": "galaxy_helios_ii",
+   "name": "Galaxy Helios Data Centers II LLC",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Galaxy Helios II Qualified Opportunity Zone Business, LLC"
+   ],
+   "parent": "glxy",
+   "notes": "Helios Phase II（CoreWeave 租约）9.875% 2031 票据发行人。"
+  },
+  {
+   "id": "sopaipilla",
+   "name": "Sopaipilla Investor LLC (Meta El Paso JV)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Sopaipilla",
+    "Project Sopaipilla Holdings",
+    "El Paso JV"
+   ],
+   "parent": "meta",
+   "notes": "El Paso, Texas, 1 GW。BlackRock（GIP/HPS）管理基金持 80%、Meta 持 20%；结构与 Hyperion 同构。2026-07-23/24 启动 $12.3B 高级担保债券发行。"
+  },
+  {
+   "id": "valor",
+   "name": "Valor Equity Partners",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Valor",
+    "Valor Capital"
+   ],
+   "parent": null,
+   "notes": "xAI 股东；管理 Valor Compute Infrastructure L.P."
+  },
+  {
+   "id": "valor_compute",
+   "name": "Valor Compute Infrastructure L.P.",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "VCI"
+   ],
+   "parent": "valor",
+   "notes": "Valor 管理的 GPU 持有/出租载体；NVIDIA 为锚定 LP；向 xAI 子公司三净租赁 GB200 等算力设备。"
+  },
+  {
+   "id": "anthropic_tpu_spv",
+   "name": "Anthropic TPU lease SPV ('Compute SPV' / AI XPV Platform)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Compute SPV",
+    "AI XPV Platform"
+   ],
+   "parent": "anthropic",
+   "notes": "购入 Google TPU（Broadcom 制造）并租赁给 Anthropic 的载体；Morgan Stanley 协助搭建。发起人/股权持有人未披露，parent 暂挂 anthropic（承租人）。"
+  },
+  {
+   "id": "aip",
+   "name": "AI Infrastructure Partnership (AIP)",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Artificial Intelligence Infrastructure Partnership",
+    "GAIIP"
+   ],
+   "parent": null,
+   "notes": "BlackRock/GIP、Microsoft、MGX 发起；NVIDIA、xAI 后加入；目标股权 $30B、含债务最高 $100B。"
+  },
+  {
+   "id": "aligned",
+   "name": "Aligned Data Centers",
+   "type": "dc_developer",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Aligned"
+   ],
+   "parent": null,
+   "notes": "Dallas 总部；2026-07 被 AIP/MGX/GIP 财团以约 $40B 企业价值收购（卖方 Macquarie Asset Management）。"
+  },
+  {
+   "id": "blackrock",
+   "name": "BlackRock (GIP / HPS)",
+   "type": "financier",
+   "ticker": "BLK",
+   "listed": true,
+   "aliases": [
+    "BlackRock",
+    "Global Infrastructure Partners",
+    "GIP",
+    "HPS Investment Partners",
+    "HPS"
+   ],
+   "parent": null,
+   "notes": "El Paso JV 80% 股东（GIP/HPS 基金）。"
+  },
+  {
+   "id": "firmus",
+   "name": "Firmus Technologies",
+   "type": "neocloud",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Firmus",
+    "Project Southgate"
+   ],
+   "parent": null,
+   "notes": "澳大利亚 AI 基础设施公司；与 CDC Data Centres、NVIDIA 合作建设 'AI Factories'。"
+  },
+  {
+   "id": "stack",
+   "name": "STACK Infrastructure (Stack Infrastructure Issuer LLC)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Stack Infrastructure Issuer",
+    "Blue Owl Digital Infrastructure Trust"
+   ],
+   "parent": "owl",
+   "notes": "Blue Owl Digital Infrastructure Trust 间接全资子公司；数据中心 ABS 发行人。"
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "tsmc",
+   "name": "TSMC",
+   "type": "chip",
+   "ticker": "TSM",
+   "aliases": [
+    "Taiwan Semiconductor",
+    "台积电",
+    "2330.TW"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "intc",
+   "name": "Intel",
+   "type": "chip",
+   "ticker": "INTC",
+   "aliases": [
+    "Intel Foundry"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": false,
+   "id": "tencent",
+   "name": "Tencent",
+   "type": "hyperscaler",
+   "ticker": null,
+   "aliases": [
+    "Tencent Cloud",
+    "腾讯",
+    "0700.HK"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "alibaba",
+   "name": "Alibaba",
+   "type": "hyperscaler",
+   "ticker": "BABA",
+   "aliases": [
+    "Alibaba Cloud",
+    "Aliyun",
+    "阿里巴巴",
+    "阿里云",
+    "9988.HK"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": false,
+   "id": "bytedance",
+   "name": "ByteDance",
+   "type": "hyperscaler",
+   "ticker": null,
+   "aliases": [
+    "字节跳动",
+    "Volcano Engine",
+    "火山引擎"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": false,
+   "id": "airtrunk",
+   "name": "AirTrunk",
+   "type": "dc_developer",
+   "ticker": null,
+   "aliases": []
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "eqix",
+   "name": "Equinix",
+   "type": "dc_developer",
+   "ticker": "EQIX",
+   "aliases": []
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "dlr",
+   "name": "Digital Realty",
+   "type": "dc_developer",
+   "ticker": "DLR",
+   "aliases": [
+    "Digital Realty Trust"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "tesla",
+   "name": "Tesla",
+   "type": "corporate",
+   "ticker": "TSLA",
+   "aliases": [
+    "特斯拉"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "apple",
+   "name": "Apple",
+   "type": "corporate",
+   "ticker": "AAPL",
+   "aliases": [
+    "苹果"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "bofa",
+   "name": "Bank of America",
+   "type": "financier",
+   "ticker": "BAC",
+   "aliases": [
+    "BofA",
+    "美国银行"
+   ]
+  },
+  {
+   "parent": "softbank",
+   "listed": false,
+   "id": "sb_energy",
+   "name": "SB Energy",
+   "type": "dc_developer",
+   "ticker": null,
+   "aliases": [
+    "SB Energy Global"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": false,
+   "id": "humain",
+   "name": "Humain",
+   "type": "sovereign",
+   "ticker": null,
+   "aliases": [
+    "HUMAIN",
+    "PIF Humain"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": false,
+   "id": "g42",
+   "name": "G42",
+   "type": "sovereign",
+   "ticker": null,
+   "aliases": [
+    "Group 42",
+    "Core42"
+   ]
+  },
+  {
+   "parent": null,
+   "listed": true,
+   "id": "kkr",
+   "name": "KKR",
+   "type": "financier",
+   "ticker": "KKR",
+   "aliases": [
+    "Kohlberg Kravis Roberts"
+   ]
+  }
+ ],
+ "last_updated": "2026-10-27"
+}
