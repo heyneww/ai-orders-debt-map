@@ -49,7 +49,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--entities", required=True); ap.add_argument("--edges", required=True); ap.add_argument("--metrics", required=True)
     ap.add_argument("--news", default=None); ap.add_argument("--filings", default=None); ap.add_argument("--out", required=True)
-    ap.add_argument("--archive", default=None); ap.add_argument("--monitor-note", default=""); ap.add_argument("--commentary", default=None)
+    ap.add_argument("--archive", default=None); ap.add_argument("--monitor-note", default=""); ap.add_argument("--commentary", default=None); ap.add_argument("--fallback", default=None, help="上一版 graph.json：新闻/申报抓取为空时沿用其列表并标记 stale")
     a = ap.parse_args()
     ents = json.load(open(a.entities))["entities"]
     edges = [json.loads(l) for l in open(a.edges) if l.strip()]
@@ -118,9 +118,21 @@ def main():
             filings.append({"entity": c.get("entity_id"), "company": name(c.get("entity_id")), "form": c.get("form"), "items": c.get("items") or [],
                             "filed": c.get("filed"), "url": c.get("url"), "title": c.get("title") or ""})
         filings.sort(key=lambda f: f.get("filed") or "", reverse=True); filings = filings[:120]
+    stale = {}
+    if a.fallback and os.path.exists(a.fallback):
+        try:
+            prev = json.load(open(a.fallback))
+            if not filings and prev.get("filings"):
+                filings = prev["filings"]; stale["filings"] = (prev.get("monitor") or {}).get("filings_fetched_at") or prev.get("generated_at")
+            if not news and prev.get("news"):
+                news = prev["news"]; stale["news"] = (prev.get("monitor") or {}).get("news_fetched_at") or prev.get("generated_at")
+        except Exception as ex:  # noqa
+            print(f"[warn] fallback unreadable: {ex}")
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     doc = {"generated_at": now, "asof": m.get("asof"), "monitor": {"edges": len(out_edges), "edges_active": sum(e["active"] for e in out_edges), "entities": len(out_ents),
-                                                                 "news_items": len(news), "sec_items": len(filings), "note": a.monitor_note},
+                                                                 "news_items": len(news), "sec_items": len(filings), "note": a.monitor_note,
+                                                                 "filings_fetched_at": stale.get("filings") or now, "news_fetched_at": stale.get("news") or now,
+                                                                 "filings_stale": bool(stale.get("filings")), "news_stale": bool(stale.get("news"))},
            "entities": out_ents, "edges": out_edges,
            "metrics": {k: m.get(k) for k in ("cycles", "cycles_soft", "concentration", "maturity_ladder", "structure_mix", "delta", "data_gaps_summary", "n_firm", "n_soft")},
            "news": news, "filings": filings,

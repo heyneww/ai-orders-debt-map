@@ -140,6 +140,7 @@ function renderLive(){
   $("#livepop").innerHTML = `<div><span>${t("rebuilt")}</span><b>${D.generated_at.replace("T"," ").replace("Z"," UTC")}</b></div>
     <div><span>${t("edges_n")}</span><b>${D.monitor.edges_active} / ${D.monitor.entities}</b></div>
     <div><span>${t("feed_n")}</span><b>${D.monitor.news_items} / ${D.monitor.sec_items}</b></div>
+    ${D.monitor.filings_stale?`<div><span>${S.lang==="zh"?"SEC 申报沿用":"SEC filings as of"}</span><b>${(D.monitor.filings_fetched_at||"").slice(0,16).replace("T"," ")} UTC</b></div>`:""}
     <div><span>${t("next_check")}</span><b id="nextchk">${Math.max(0,Math.round((nextCheck-Date.now())/60000))} min</b></div>
     ${snap?`<div><span>${t("snapshot")}</span><b>${snap}</b></div>`:""}`;
 }
