@@ -1198,7 +1198,165 @@
    "aliases": [
     "Kohlberg Kravis Roberts"
    ]
+  },
+  {
+   "id": "us_doc",
+   "name": "U.S. Department of Commerce (U.S. Government)",
+   "type": "sovereign",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "DOC",
+    "U.S. Government",
+    "United States Department of Commerce",
+    "CHIPS Program Office"
+   ],
+   "parent": null,
+   "notes": "2025-08-22 Warrant and Common Stock Agreement：以 CHIPS 拨款换取 Intel 最多 433,323,000 股普通股 + 认股权证（bf_e_003）。"
+  },
+  {
+   "id": "intel_fab34_jv",
+   "name": "Intel Ireland Fab 34 joint investment entity (name undisclosed)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Fab 34 JV",
+    "Intel Ireland JV",
+    "Leixlip Fab 34 joint venture"
+   ],
+   "parent": "intc",
+   "notes": "2024-06 Apollo 管理基金取得 49%（早于回填窗口）；2026-04-08 Intel 以 $14.2B 回购，持股 100%，拟清算合资（bf_e_007）。法律实体名未披露。"
+  },
+  {
+   "id": "gic",
+   "name": "GIC",
+   "type": "sovereign",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "GIC Private Limited",
+    "Government of Singapore Investment Corporation"
+   ],
+   "parent": null,
+   "notes": "新加坡主权财富基金；Equinix xScale 美国合资 37.5% 股东（bf_e_008）。"
+  },
+  {
+   "id": "cpp",
+   "name": "CPP Investments",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Canada Pension Plan Investment Board",
+    "CPPIB",
+    "CPP Investment Board"
+   ],
+   "parent": null,
+   "notes": "加拿大养老基金投资公司；Equinix xScale 美国合资 37.5% 股东（bf_e_009）；AirTrunk 收购财团成员（bf_e_013 notes）。"
+  },
+  {
+   "id": "eqix_xscale_us_jv",
+   "name": "Equinix / GIC / CPP Investments xScale U.S. JV (LLP, name undisclosed)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "xScale U.S. JV",
+    "Equinix xScale joint venture (U.S.)"
+   ],
+   "parent": "eqix",
+   "notes": "2024-10-01 签约的有限责任合伙：GIC 37.5% / CPP Investments 37.5% / Equinix 25%；目标与合作方合计募集逾 US$15B（含债务），美国多园区 >1.5GW xScale 容量。"
+  },
+  {
+   "id": "dlr_carver_jv",
+   "name": "Digital Carver Dulles 9 / Digital Carver Brickyard JVs (Northern Virginia)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Digital Carver Dulles 9",
+    "Digital Carver Brickyard",
+    "Digital Dulles campus",
+    "Manassas hyperscale JVs"
+   ],
+   "parent": "dlr",
+   "notes": "原 Digital Realty / Blackstone 合资；2026-06-29 DLR 以 $1,231M 现金 + 约 $2,346M 无投票权股收购 Blackstone 64% 权益后转为全资（bf_e_011）；三座在建超大规模数据中心合计 288MW，100% 签 15 年租约。"
+  },
+  {
+   "id": "dlr_hyperscale_fund",
+   "name": "Digital Realty U.S. Hyperscale Data Center Fund",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "U.S. Hyperscale Data Center Fund",
+    "Digital Realty US Hyperscale Fund"
+   ],
+   "parent": "dlr",
+   "notes": "2026-03-30 最终交割 $3.25B 股权承诺；Digital Realty 保留 20% 并任管理人（bf_e_012）。"
+  },
+  {
+   "id": "qcom",
+   "name": "Qualcomm",
+   "type": "chip",
+   "ticker": "QCOM",
+   "listed": true,
+   "aliases": [
+    "Qualcomm Technologies",
+    "Qualcomm Technologies, Inc."
+   ],
+   "parent": null,
+   "notes": "AI200/AI250 机架级推理方案供应方；HUMAIN 目标 2026 年起部署 200MW（bf_e_025）。"
+  },
+  {
+   "id": "helix",
+   "name": "Helix Digital Infrastructure",
+   "type": "dc_developer",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Helix"
+   ],
+   "parent": "kkr",
+   "notes": "2026-06-11 由 KKR（锚定）、Kuwait Investment Authority、NVIDIA、Vistra 发起的 AI 基础设施投资/开发公司，承诺资本逾 $10B；CEO Adam Selipsky；Samsung 2026-09-28 承诺 $1B；Vistra 最多 $1.0B。"
+  },
+  {
+   "id": "stt_gdc",
+   "name": "ST Telemedia Global Data Centres",
+   "type": "dc_developer",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "STT GDC"
+   ],
+   "parent": null,
+   "notes": "新加坡总部数据中心运营商；2026-02-04 KKR 牵头财团与 Singtel 以 S$6.6B 收购剩余 82%，交割后 KKR 75% / Singtel 25%（bf_e_030）。"
+  },
+  {
+   "id": "gtr",
+   "name": "Global Technical Realty",
+   "type": "dc_developer",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "GTR"
+   ],
+   "parent": "kkr",
+   "notes": "KKR 2020 年共同创立的欧洲数据中心平台；2026-01-07 KKR 追加 $1.5B、Oak Hill Capital $400M（bf_e_031）。"
+  },
+  {
+   "id": "aolani",
+   "name": "Aolani Cloud",
+   "type": "neocloud",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Aolani"
+   ],
+   "parent": null,
+   "notes": "东南亚云服务商；WSJ 2026-03 报道其在马来西亚为 ByteDance 部署约 36,000 颗 NVIDIA B200（约 $2.5B 硬件，服务器购自 Aivres）（bf_e_033）。"
   }
  ],
- "last_updated": "2026-10-27"
+ "last_updated": "2026-10-28"
 }
