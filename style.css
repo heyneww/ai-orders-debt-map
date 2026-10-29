@@ -175,3 +175,4 @@ button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{ou
 
 .rcsum{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink2);margin:6px 0 10px}.rcsum i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
 .rev{font-size:11.5px;color:var(--warn-fg);background:var(--warn-bg);border-radius:4px;padding:2px 6px;margin-top:4px;display:inline-block}
+.gp{border-top:1px solid var(--line);padding:10px 0 6px}.gp h3{margin:0 0 4px;font-size:13px;letter-spacing:0;text-transform:none;color:var(--fg)}.gpstat{margin:0 0 4px;font-size:13.5px;font-family:var(--f-body)}.gp details{margin-top:4px}.gp summary,.maint summary{cursor:pointer;color:var(--accent)}.maint{margin-top:14px;border-top:1px solid var(--line);padding-top:8px}

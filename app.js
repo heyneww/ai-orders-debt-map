@@ -31,7 +31,12 @@ const I18N = {
      lg_lines:"连线", lg_circles:"圆圈", lg_thin:"最细 = 未披露或低于 $1B", lg_pool:"虚线圆 = 占位对手方 / SPV", lg_arrow:"箭头指向收钱方：买方→供应方、投资方→公司、出借方→借款方", lg_undisc:"虚线 = 金额未披露", lg_soft:"点线 = 传闻 / 意向",
     tl_title:"月度节奏", tl_amt:"金额", tl_count:"笔数", tl_cum:"累计", tl_hint:"柱 = 当月公告的交易（按类型堆叠，当前口径）；下方折线 = 累计。点击某月只看该月，再点取消；随上方筛选变化（期间除外）。", tl_sum:"峰值月 {m}：{a}（{n} 笔）· 最近 3 个月 {b}（{k} 笔），占累计 {p}%。",
     v_flow:"板块流向", flow_title:"钱从哪个板块流向哪个板块", flow_note:"行 = 付钱方板块，列 = 收钱方板块；格内为金额与笔数，颜色深浅 = 金额相对大小（当前筛选与口径）。担保是或有敞口，不计入。净流入 = 流入 − 流出，只是方向事实，不代表任何风险结论。", flow_from:"付钱方", flow_to:"收钱方", flow_out:"流出合计", flow_in:"流入合计", flow_net:"净流入", flow_top:"最大流向",
-    n_deals:"{n} 笔", in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_where:"在图上哪里看（点击可跳转）", v_chain:"若资金不到位，会怎样", v_flip:"什么会改变这个判断", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开触发条件与数据依据", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联的订单", covered:"被担保的交易"},
+    n_deals:"{n} 笔", gp_title:"读者要知道的四类缺口", gp_note:"这四类缺口会改变对图的解读，按当前筛选与口径计算。核对员的内部待办（评级未核对、GPU 数量等）收在最下方的维护记录里。",
+    gp1:"金额未披露", gp1_stat:"{a} 笔完全没有金额；另 {b} 笔只有标题金额、没有已约束金额，标题合计 {h}。", gp1_impact:"影响：已约束合计是下限，不是全部。只有标题的交易主要落在：{top}。看这些公司的在手合同时，切到已约束口径会归零，不代表没有合同。",
+    gp2:"到期日未知", gp2_stat:"{m} 笔债务里 {n} 笔没有到期日，金额 {h}，占债务总额 {p}%。", gp2_impact:"影响：到期墙只画了有到期日的部分，\"未披露到期\"那一截是这里的钱。到期墙能信几成，取决于这个比例。",
+    gp3:"贷款人 / 对手方未披露", gp3_stat:"{n} 笔交易的资金来源是未披露对手方或未拆分的银团，金额 {h}。", gp3_impact:"影响：这些钱在图上从占位节点出发，资金方那一列和最大敞口排行都不含它们；真正的出借人可能是已经在图上的某家银行或基金。",
+    gp4:"担保条款不全", gp4_stat:"{m} 笔担保里 {n} 笔没有金额或上限（有金额的合计 {h}）。", gp4_impact:"影响：这些担保在图上有线、算不了敞口。担保敞口排行和本期判断里的担保数字都只包含有上限的部分。",
+    gp_show:"查看涉及的 {n} 笔交易", gp_maint:"数据维护记录（内部核对项，不影响读者结论）", in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_where:"在图上哪里看（点击可跳转）", v_chain:"若资金不到位，会怎样", v_flip:"什么会改变这个判断", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开触发条件与数据依据", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联的订单", covered:"被担保的交易"},
   en: {eyebrow:"LIVE DATA · AI CAPITAL FLOWS", title:"AI Orders & Debt Map", subtitle:"Who owes whom: orders, equity, debt and guarantees. Every deal links to a source; headline and firm amounts shown side by side; no valuation calls.",
     search:"Find a company or deal (e.g. NVDA, Beignet, residual value)", sector:"Sector", minsize:"Min size", period:"Period", status:"Status", basis:"Basis", any:"Any", alldates:"All dates",
     last90:"Last 90 days", last12m:"Last 12 months", st_active:"Active (incl. rumored/LOI)", st_firm:"Firm only", st_all:"All (incl. superseded/cancelled)", b_headline:"Headline", b_firm:"Firm",
@@ -62,7 +67,12 @@ const I18N = {
      lg_lines:"Lines", lg_circles:"Circles", lg_thin:"Thinnest = undisclosed or under $1B", lg_pool:"Dashed circle = pooled counterparty / SPV", lg_arrow:"Arrow points to who receives the money: buyer → seller, investor → company, lender → borrower", lg_undisc:"Dashed line = amount undisclosed", lg_soft:"Dotted line = rumored / LOI",
     tl_title:"Monthly pace", tl_amt:"Amount", tl_count:"Count", tl_cum:"Cumulative", tl_hint:"Columns = deals announced that month (stacked by type, current basis); line below = cumulative. Click a month to filter to it, click again to clear; follows the filters above (except period).", tl_sum:"Peak month {m}: {a} ({n} deals) · last 3 months {b} ({k} deals), {p}% of the cumulative total.",
     v_flow:"Sector flows", flow_title:"Which sector pays which sector", flow_note:"Rows = paying sector, columns = receiving sector; each cell shows amount and deal count, shade = relative size (current filters and basis). Guarantees are contingent and excluded. Net inflow = inflow − outflow: a direction fact, not a risk verdict.", flow_from:"Payer", flow_to:"Receiver", flow_out:"Total out", flow_in:"Total in", flow_net:"Net inflow", flow_top:"Largest flows",
-    n_deals:"{n} deals", in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_where:"Where to see it on the map (click to jump)", v_chain:"If the money does not arrive", v_flip:"What would change this call", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show triggers and data basis", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order", covered:"Covered deal"}
+    n_deals:"{n} deals", gp_title:"Four gaps readers should know about", gp_note:"These four gaps change how the map should be read; computed on the current filters and basis. Internal to-dos for checkers (ratings not verified, GPU counts, etc.) are kept in the maintenance log at the bottom.",
+    gp1:"Amount undisclosed", gp1_stat:"{a} deals have no amount at all; another {b} have a headline but no firm amount, headline total {h}.", gp1_impact:"Impact: the firm total is a floor, not the whole picture. Headline-only deals sit mainly with: {top}. On the firm basis these backlogs drop to zero, which does not mean there is no contract.",
+    gp2:"Maturity unknown", gp2_stat:"{n} of {m} debt deals have no maturity date, {h}, or {p}% of all debt.", gp2_impact:"Impact: the maturity wall only draws what has a date; the \"undisclosed maturity\" bar is this money. How much to trust the wall depends on this share.",
+    gp3:"Lender / counterparty undisclosed", gp3_stat:"{n} deals are funded by an undisclosed counterparty or an unsplit syndicate, {h}.", gp3_impact:"Impact: this money starts from a placeholder node; the financier column and the exposure ranking exclude it, and the real lender may be a bank or fund already on the map.",
+    gp4:"Guarantee terms incomplete", gp4_stat:"{n} of {m} guarantees have no amount or cap (those with amounts total {h}).", gp4_impact:"Impact: these guarantees are drawn but cannot be sized. The guarantee ranking and the guarantee figures in the current call include only the capped ones.",
+    gp_show:"Show the {n} deals", gp_maint:"Maintenance log (internal checks, no effect on reader conclusions)", in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_where:"Where to see it on the map (click to jump)", v_chain:"If the money does not arrive", v_flip:"What would change this call", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show triggers and data basis", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order", covered:"Covered deal"}
 };
 const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const KCOL = {}, SCOL = {};
@@ -499,9 +509,24 @@ function renderConc(){
   $("#v_conc").innerHTML = `<div class="pad"><h3>${t("conc_title")}</h3><table class="tbl"><thead><tr><th>${t("conc_sup")}</th><th>${t("conc_total")}</th><th>HHI</th><th>${t("conc_top")}</th></tr></thead><tbody>${Object.entries(C).filter(([,v])=>v.total_musd).sort((a,b)=>b[1].total_musd-a[1].total_musd).map(([s,v])=>`<tr><td><b>${nm(s)}</b></td><td>${fmt(v.total_musd)}</td><td>${v.hhi??"n/a"}</td><td>${v.top3.map(x=>`${nm(x.buyer)} ${x.share==null?"n/a":Math.round(x.share*100)+"%"}`).join("<br>")}</td></tr>`).join("")}</tbody></table></div>`;
 }
 function renderGaps(edges){
+  /* 读者要知道的四类缺口：各给金额、笔数、影响哪个结论；内部核对项收进"数据维护记录" */
+  const SN=t("sectors"); const sumH=L=>L.reduce((x,e)=>x+(e.amount_headline_musd||0),0);
+  const noAmt=edges.filter(e=>e.amount_headline_musd==null), headOnly=edges.filter(e=>e.amount_headline_musd!=null&&e.amount_firm_musd==null);
+  const debt=edges.filter(e=>e.kind==="DEBT"), noMat=debt.filter(e=>!(e.debt||{}).maturity_date);
+  const pooled=edges.filter(e=>e.from==="undisclosed_counterparty"||e.from==="syndicate");
+  const guar=edges.filter(e=>e.kind==="GUARANTEE"), guarNo=guar.filter(e=>e.amount_headline_musd==null&&(e.guarantee||{}).cap_musd==null);
+  const byTo={}; headOnly.forEach(e=>{ const k=endpoint(e.to); byTo[k]=(byTo[k]||0)+(e.amount_headline_musd||0); });
+  const topTo=Object.entries(byTo).sort((x,y)=>y[1]-x[1]).slice(0,4).map(([k,v])=>`${esc(nm(k))} ${fmt(v)}`).join("、");
+  const pct=(x,y)=>y?Math.round(100*x/y):0;
+  const block=(title,stat,impact,list)=>`<section class="gp"><h3>${title}</h3><p class="gpstat">${stat}</p><p class="fine">${impact}</p>${list.length?`<details><summary class="fine">${t("gp_show",{n:list.length})}</summary><table class="tbl"><tbody>${list.sort((x,y)=>(y.amount_headline_musd||0)-(x.amount_headline_musd||0)).map(dealRow).join("")}</tbody></table></details>`:""}</section>`;
   const G=D.metrics.data_gaps_summary||[];
-  $("#v_gaps").innerHTML = `<div class="pad"><h3>${t("gaps_title")}</h3><table class="tbl"><tbody>${G.map(([g,n])=>`<tr><td class="gap">${esc(g)}</td><td class="amt">${n}</td></tr>`).join("")}</tbody></table>
-    <h3>${t("gaps_edges")}</h3><table class="tbl"><tbody>${edges.filter(e=>(e.data_gaps||[]).length).map(e=>`<tr><td class="deal-cell" data-id="${e.edge_id}"><b>${esc(S.lang==="zh"?e.title_zh:e.title_en)}</b></td><td class="gap">${e.data_gaps.map(esc).join("；")}</td></tr>`).join("")}</tbody></table></div>`;
+  $("#v_gaps").innerHTML = `<div class="pad"><h3>${t("gp_title")}</h3><p class="fine">${t("gp_note")}</p>
+    ${block(t("gp1"), t("gp1_stat",{a:noAmt.length,b:headOnly.length,h:fmt(sumH(headOnly))}), t("gp1_impact",{top:topTo||t("none")}), noAmt.concat(headOnly))}
+    ${block(t("gp2"), t("gp2_stat",{n:noMat.length,m:debt.length,h:fmt(sumH(noMat)),p:pct(sumH(noMat),sumH(debt))}), t("gp2_impact"), noMat)}
+    ${block(t("gp3"), t("gp3_stat",{n:pooled.length,h:fmt(sumH(pooled))}), t("gp3_impact"), pooled)}
+    ${block(t("gp4"), t("gp4_stat",{n:guarNo.length,m:guar.length,h:fmt(sumH(guar))}), t("gp4_impact"), guarNo)}
+    <details class="maint"><summary class="fine">${t("gp_maint")}</summary><table class="tbl"><tbody>${G.map(([g,n])=>`<tr><td class="gap">${esc(g)}</td><td class="amt">${n}</td></tr>`).join("")}</tbody></table>
+    <table class="tbl"><tbody>${edges.filter(e=>(e.data_gaps||[]).length).map(e=>`<tr><td class="deal-cell" data-id="${e.edge_id}"><b>${esc(S.lang==="zh"?e.title_zh:e.title_en)}</b></td><td class="gap">${e.data_gaps.map(esc).join("；")}</td></tr>`).join("")}</tbody></table></details></div>`;
   $$("#v_gaps .deal-cell").forEach(c=>c.onclick=()=>openEdge(D.edges.find(e=>e.edge_id===c.dataset.id)));
 }
 function renderRecent(){
