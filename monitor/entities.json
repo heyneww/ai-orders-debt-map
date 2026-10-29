@@ -1356,7 +1356,117 @@
    ],
    "parent": null,
    "notes": "东南亚云服务商；WSJ 2026-03 报道其在马来西亚为 ByteDance 部署约 36,000 颗 NVIDIA B200（约 $2.5B 硬件，服务器购自 Aivres）（bf_e_033）。"
+  },
+  {
+   "id": "disney",
+   "name": "The Walt Disney Company",
+   "type": "corporate",
+   "ticker": "DIS",
+   "listed": true,
+   "aliases": [
+    "Disney",
+    "Walt Disney",
+    "迪士尼"
+   ],
+   "parent": null,
+   "notes": "2025-12-11 宣布对 OpenAI 作 $1B 股权投资并获认股权证，附三年期角色授权（Sora/ChatGPT Images）；交易以最终协议与审批为前提（bf_f_001）。"
+  },
+  {
+   "id": "io",
+   "name": "io Products Inc.",
+   "type": "corporate",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "io",
+    "IO Products",
+    "Jony Ive io"
+   ],
+   "parent": "openai",
+   "notes": "Jony Ive 等于 2024 年创立的 AI 硬件公司；OpenAI 2025-05-21 宣布以约 $6.5B 全股票收购（此前持 23%），2025-07-09 完成（bf_f_002）。交割后为 OpenAI 全资子公司，parent=openai。"
+  },
+  {
+   "id": "arm",
+   "name": "Arm Holdings",
+   "type": "chip",
+   "ticker": "ARM",
+   "listed": true,
+   "aliases": [
+    "Arm",
+    "Arm Holdings plc",
+    "Arm AGI CPU"
+   ],
+   "parent": "softbank",
+   "notes": "SoftBank Group 控股的 CPU IP 公司；2026-03 发布首款自研数据中心 CPU 'Arm AGI CPU'，Meta 为首发伙伴，OpenAI 列为将部署的商业伙伴（bf_f_004）。Stargate 初始技术伙伴之一。"
+  },
+  {
+   "id": "bloom",
+   "name": "Bloom Energy",
+   "type": "power",
+   "ticker": "BE",
+   "listed": true,
+   "aliases": [
+    "Bloom Energy Corporation",
+    "Bloom"
+   ],
+   "parent": null,
+   "notes": "固体氧化物燃料电池供应商；Brookfield 2025-10-13 最多 $5B、2026-06-30 扩至 $25B 的 AI 基础设施电力融资框架对手方（bf_g_006/007）。"
+  },
+  {
+   "id": "verizon",
+   "name": "Verizon",
+   "type": "corporate",
+   "ticker": "VZ",
+   "listed": true,
+   "aliases": [
+    "Verizon Communications",
+    "Verizon Business",
+    "Verizon AI Connect"
+   ],
+   "parent": null,
+   "notes": "美国电信运营商；schema 无 telecom 类型，沿用 tesla/apple 的 corporate；2025-11-03 为 AWS 建设连接其数据中心的长途光纤（bf_g_010）。"
+  },
+  {
+   "id": "psmc",
+   "name": "Powerchip Semiconductor Manufacturing Corp. (PSMC)",
+   "type": "chip",
+   "ticker": null,
+   "listed": true,
+   "aliases": [
+    "Powerchip",
+    "PSMC",
+    "力積電",
+    "6770.TW"
+   ],
+   "parent": null,
+   "notes": "台湾代工厂；2026-03-15 以 $1.8B 向 Micron 出售苗栗铜锣 P5 厂区（bf_g_012）。"
+  },
+  {
+   "id": "mistral",
+   "name": "Mistral AI",
+   "type": "lab",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Mistral"
+   ],
+   "parent": null,
+   "notes": "法国模型实验室；2026-02-11 与 EcoDataCenter 在瑞典 Borlänge 建设 AI 基础设施（约 SEK 128 亿 / €1.2B）（bf_g_013）。"
+  },
+  {
+   "id": "ecodatacenter",
+   "name": "EcoDataCenter",
+   "type": "dc_developer",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "EcoDataCenter AB",
+    "EcoDC Holding AB",
+    "EcoDC"
+   ],
+   "parent": null,
+   "notes": "瑞典数据中心开发/运营商（Falun、Borlänge）；Mistral AI 瑞典站点的设计/建设/运营方（bf_g_013）；2026 年在 Nasdaq Stockholm 发行债券（未入图）。"
   }
  ],
- "last_updated": "2026-10-28"
+ "last_updated": "2026-10-29"
 }
