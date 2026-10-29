@@ -31,7 +31,7 @@ const I18N = {
      lg_lines:"连线", lg_circles:"圆圈", lg_thin:"最细 = 未披露或低于 $1B", lg_pool:"虚线圆 = 占位对手方 / SPV", lg_arrow:"箭头指向收钱方：买方→供应方、投资方→公司、出借方→借款方", lg_undisc:"虚线 = 金额未披露", lg_soft:"点线 = 传闻 / 意向",
     tl_title:"月度节奏", tl_amt:"金额", tl_count:"笔数", tl_cum:"累计", tl_hint:"柱 = 当月公告的交易（按类型堆叠，当前口径）；下方折线 = 累计。点击某月只看该月，再点取消；随上方筛选变化（期间除外）。", tl_sum:"峰值月 {m}：{a}（{n} 笔）· 最近 3 个月 {b}（{k} 笔），占累计 {p}%。",
     v_flow:"板块流向", flow_title:"钱从哪个板块流向哪个板块", flow_note:"行 = 付钱方板块，列 = 收钱方板块；格内为金额与笔数，颜色深浅 = 金额相对大小（当前筛选与口径）。担保是或有敞口，不计入。净流入 = 流入 − 流出，只是方向事实，不代表任何风险结论。", flow_from:"付钱方", flow_to:"收钱方", flow_out:"流出合计", flow_in:"流入合计", flow_net:"净流入", flow_top:"最大流向",
-    n_deals:"{n} 笔", in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_evidence:"依据（图中可核对）", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开依据与触发条件", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联的订单", covered:"被担保的交易"},
+    n_deals:"{n} 笔", in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_where:"在图上哪里看（点击可跳转）", v_chain:"若资金不到位，会怎样", v_flip:"什么会改变这个判断", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开触发条件与数据依据", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联的订单", covered:"被担保的交易"},
   en: {eyebrow:"LIVE DATA · AI CAPITAL FLOWS", title:"AI Orders & Debt Map", subtitle:"Who owes whom: orders, equity, debt and guarantees. Every deal links to a source; headline and firm amounts shown side by side; no valuation calls.",
     search:"Find a company or deal (e.g. NVDA, Beignet, residual value)", sector:"Sector", minsize:"Min size", period:"Period", status:"Status", basis:"Basis", any:"Any", alldates:"All dates",
     last90:"Last 90 days", last12m:"Last 12 months", st_active:"Active (incl. rumored/LOI)", st_firm:"Firm only", st_all:"All (incl. superseded/cancelled)", b_headline:"Headline", b_firm:"Firm",
@@ -62,7 +62,7 @@ const I18N = {
      lg_lines:"Lines", lg_circles:"Circles", lg_thin:"Thinnest = undisclosed or under $1B", lg_pool:"Dashed circle = pooled counterparty / SPV", lg_arrow:"Arrow points to who receives the money: buyer → seller, investor → company, lender → borrower", lg_undisc:"Dashed line = amount undisclosed", lg_soft:"Dotted line = rumored / LOI",
     tl_title:"Monthly pace", tl_amt:"Amount", tl_count:"Count", tl_cum:"Cumulative", tl_hint:"Columns = deals announced that month (stacked by type, current basis); line below = cumulative. Click a month to filter to it, click again to clear; follows the filters above (except period).", tl_sum:"Peak month {m}: {a} ({n} deals) · last 3 months {b} ({k} deals), {p}% of the cumulative total.",
     v_flow:"Sector flows", flow_title:"Which sector pays which sector", flow_note:"Rows = paying sector, columns = receiving sector; each cell shows amount and deal count, shade = relative size (current filters and basis). Guarantees are contingent and excluded. Net inflow = inflow − outflow: a direction fact, not a risk verdict.", flow_from:"Payer", flow_to:"Receiver", flow_out:"Total out", flow_in:"Total in", flow_net:"Net inflow", flow_top:"Largest flows",
-    n_deals:"{n} deals", in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_evidence:"Evidence (verifiable on the map)", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show evidence and triggers", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order", covered:"Covered deal"}
+    n_deals:"{n} deals", in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_where:"Where to see it on the map (click to jump)", v_chain:"If the money does not arrive", v_flip:"What would change this call", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show triggers and data basis", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order", covered:"Covered deal"}
 };
 const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const KCOL = {}, SCOL = {};
@@ -597,12 +597,19 @@ function toast(msg){ const el=document.createElement("div"); el.className="toast
 function renderVerdict(){
   const c=D.commentary; const el=$("#verdict"); if(!c||!c[S.lang]){ el.classList.add("hidden"); return; }
   const v=c[S.lang];
+  const where=(v.where||[]).map(w=>`<li>${w.node?`<a class="vlink" data-node="${esc(w.node)}">`:w.view?`<a class="vlink" data-view="${esc(w.view)}">`:""}${esc(w.text)}${(w.node||w.view)?"</a>":""}</li>`).join("");
   el.innerHTML=`<div class="vh"><span class="tag" style="background:var(--debt);color:var(--halo)">${t("v_title")}</span><h2>${esc(v.stance)}</h2><span class="fine">${c.asof}</span></div>
     <p class="vt">${esc(v.verdict)}</p>
-    <details><summary>${t("v_more")}</summary><div class="vg" style="margin-top:8px"><div><h3>${t("v_evidence")}</h3><ul>${(v.evidence||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
-    <div><h3>${t("v_watch")}</h3><ul class="w">${(v.watch||[]).map(w=>`<li><span class="k">${t("v_if")}</span>${esc(w.if)}<br><span class="k">${t("v_then")}</span><b>${esc(w.then)}</b><br><span class="k">${t("v_watchk")}</span>${esc(w.watch)}</li>`).join("")}</ul></div></div>
+    <div class="vg"><div><h3>${t("v_where")}</h3><ul class="where">${where}</ul></div>
+    <div><h3>${esc(v.chain_title||t("v_chain"))}</h3><ol class="chain">${(v.chain||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div></div>
+    <details><summary>${t("v_more")}</summary>
+    <h3>${t("v_watch")}</h3><ul class="w">${(v.watch||[]).map(w=>`<li><span class="k">${t("v_if")}</span>${esc(w.if)}<br><span class="k">${t("v_then")}</span><b>${esc(w.then)}</b><br><span class="k">${t("v_watchk")}</span>${esc(w.watch)}</li>`).join("")}</ul>
+    ${v.flip?`<h3>${t("v_flip")}</h3><p class="vt">${esc(v.flip)}</p>`:""}
     <p class="fine" style="margin:8px 0 0">${esc(S.lang==="zh"?c.basis:c.basis_en)} ${esc(v.note||"")}</p></details>`;
   el.classList.remove("hidden");
+  $$("#verdict .vlink").forEach(a=>a.onclick=()=>{ const vw=a.dataset.view, nd=a.dataset.node;
+    if(nd){ S.view="graph"; selectNode(nd); } else if(vw==="basis"){ S.basis=S.basis==="headline"?"firm":"headline"; $("#f_basis").value=S.basis; renderAll(); } else if(vw){ S.view=vw; renderAll(); }
+    window.scrollTo({top:$(".panel").offsetTop-10,behavior:"smooth"}); });
 }
 function renderAll(){
   refreshColors(); applyI18n(); renderLive(); renderVerdict();

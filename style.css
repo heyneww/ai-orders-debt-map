@@ -168,7 +168,7 @@ button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{ou
 .verdict .vh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.verdict .vh h2{font-size:16px;margin:0}.verdict .vh .fine{margin:0}
 .verdict .vt{margin:6px 0 8px;font-size:13.5px;line-height:1.6;max-width:72em}
 .verdict .vg{display:grid;grid-template-columns:1fr 1fr;gap:12px}.verdict h3{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0}
-.verdict ul{margin:0;padding-left:18px;font-size:12.5px}.verdict li{margin:3px 0}
+.verdict ul,.verdict ol{margin:0;padding-left:18px;font-size:12.5px}.verdict li{margin:3px 0}.verdict ol.chain li{margin:6px 0;line-height:1.55}.verdict .where li{line-height:1.5}.verdict .vlink{color:inherit;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}.verdict .vlink:hover{color:var(--accent);text-decoration-color:var(--accent)}.verdict .vg{margin-top:6px}
 .verdict .w{list-style:none;padding:0}.verdict .w li{border-top:1px dashed var(--line);padding:6px 0}.verdict .w b{color:var(--debt)}.verdict .w .k{color:var(--muted);font-size:11px;letter-spacing:.04em;margin-right:4px}
 .verdict details{margin-top:6px}.verdict summary{cursor:pointer;font-size:12px;color:var(--accent)}
 @media(max-width:900px){.verdict .vg{grid-template-columns:1fr}}
