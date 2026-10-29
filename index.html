@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI 巨头订单与债务关系图</title>
 <meta name="description" content="谁欠谁：AI 巨头之间的订单、股权、债务与担保关系图，每条边可追溯到来源，双口径（标题 / 已约束）。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 </head>
@@ -29,6 +32,13 @@
   <section class="cards" id="cards"></section>
   <p class="fine" id="countnote"></p>
 
+  <section id="timeline" class="box hidden">
+    <div class="boxhead"><h2 data-i18n="tl_title">月度节奏</h2><div class="tabs small" id="tlmode"><button data-m="amt" class="on" data-i18n="tl_amt">金额</button><button data-m="count" data-i18n="tl_count">笔数</button></div></div>
+    <p class="fine" data-i18n="tl_hint">柱 = 当月公告的交易（按类型堆叠，当前口径）；下方折线 = 累计。点击某月只看该月，再点取消；随上方筛选变化（期间除外）。</p>
+    <svg id="tl-svg"></svg>
+    <p class="fine" id="tlsum"></p>
+  </section>
+
   <section class="controls">
     <div class="row">
       <input id="search" type="search" data-i18n-ph="search" placeholder="搜公司或交易（例如 NVDA、Beignet、残值担保）">
@@ -45,7 +55,7 @@
       <label><span data-i18n="basis">口径</span><select id="f_basis">
         <option value="headline" data-i18n="b_headline">标题口径</option><option value="firm" data-i18n="b_firm">已约束口径</option></select></label>
       <label class="chk"><input type="checkbox" id="f_collapse"><span data-i18n="collapse">SPV 折叠到发起人</span></label>
-      <label class="chk"><input type="checkbox" id="f_layered" checked><span data-i18n="layered">按板块分层布局</span></label>
+      <label class="chk"><input type="checkbox" id="f_layered" checked><span data-i18n="layered">按板块分区</span></label>
     </div>
   </section>
 
@@ -55,6 +65,7 @@
         <button data-view="graph" class="on" data-i18n="v_graph">关系图</button>
         <button data-view="table" data-i18n="v_table">表格</button>
         <button data-view="cycles" data-i18n="v_cycles">资金闭环</button>
+        <button data-view="flow" data-i18n="v_flow">板块流向</button>
         <button data-view="maturity" data-i18n="v_maturity">到期墙</button>
         <button data-view="conc" data-i18n="v_conc">集中度</button>
         <button data-view="gaps" data-i18n="v_gaps">数据缺口</button>
@@ -68,9 +79,10 @@
       <div class="zoom"><button id="zin">+</button><button id="zout">−</button><button id="zfit">⤢</button></div>
     </div>
     <div class="viewarea">
-      <div id="v_graph" class="view"><svg id="svg"></svg><div id="legend" class="legend"></div></div>
+      <div id="v_graph" class="view"><svg id="svg"></svg><div id="legend" class="legend"></div><div id="gtip" class="tooltip" hidden></div></div>
       <div id="v_table" class="view hidden"></div>
       <div id="v_cycles" class="view hidden"></div>
+      <div id="v_flow" class="view hidden"></div>
       <div id="v_maturity" class="view hidden"></div>
       <div id="v_conc" class="view hidden"></div>
       <div id="v_gaps" class="view hidden"></div>

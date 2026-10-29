@@ -4,7 +4,7 @@ const I18N = {
   zh: {eyebrow:"实时数据 · AI 资本流向", title:"AI 巨头订单与债务关系图", subtitle:"谁欠谁：订单、股权、债务与担保。每笔交易可追溯到来源，标题口径与已约束口径并列，不做估值判断。",
     search:"搜公司或交易（例如 NVDA、Beignet、残值担保）", sector:"板块", minsize:"最小金额", period:"期间", status:"状态", basis:"口径", any:"不限", alldates:"全部",
     last90:"近 90 天", last12m:"近 12 个月", st_active:"有效（含传闻/意向）", st_firm:"仅已约束", st_all:"全部（含已修订/取消）", b_headline:"标题口径", b_firm:"已约束口径",
-    collapse:"SPV 折叠到发起人", layered:"按板块分层布局", v_graph:"关系图", v_table:"表格", v_cycles:"资金闭环", v_maturity:"到期墙", v_conc:"集中度", v_gaps:"数据缺口", v_delta:"本次变动", all:"全部",
+    collapse:"SPV 折叠到发起人", layered:"按板块分区", v_graph:"关系图", v_table:"表格", v_cycles:"资金闭环", v_maturity:"到期墙", v_conc:"集中度", v_gaps:"数据缺口", v_delta:"本次变动", all:"全部",
     replay:"回放至", csv:"复制 CSV", rank_title:"最大敞口", rank_total:"合计", rank_borrowed:"借入", rank_orders:"订单支出", rank_guar:"担保敞口",
     rank_hint:"点击公司查看它欠谁、谁欠它、下了哪些订单。条形 = 边类型构成。", rank_note:"占位对手方（公募债投资者、未披露贷款人、未拆分银团）不参与排名。",
     latest_title:"监控最新动态", news:"新闻", filings:"SEC 申报", method_title:"口径说明",
@@ -28,11 +28,14 @@ const I18N = {
     conc_title:"供应方按买方集中度（订单流入）", conc_sup:"供应方", conc_total:"合计", conc_top:"前三买方", gaps_title:"数据缺口 Top 10", gaps_edges:"逐笔缺口（当前筛选）",
     delta_new:"新增交易", delta_status:"状态变更", delta_amt:"金额修订", revised_from:"修订自", revised_by:"已被修订为", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"交易 / 公司", feed_n:"新闻 / 申报",
     ago_min:"{n} 分钟前", ago_h:"{n} 小时前", just:"刚刚", view_src:"来源", confidence:"置信度", basis_:{total_contract:"合同总额",annual:"年度",facility_size:"额度",drawn:"已提款"},
-    in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_evidence:"依据（图中可核对）", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开依据与触发条件", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联的订单", covered:"被担保的交易"},
+     lg_lines:"连线", lg_circles:"圆圈", lg_thin:"最细 = 未披露或低于 $1B", lg_pool:"虚线圆 = 占位对手方 / SPV", lg_arrow:"箭头指向收钱方：买方→供应方、投资方→公司、出借方→借款方", lg_undisc:"虚线 = 金额未披露", lg_soft:"点线 = 传闻 / 意向",
+    tl_title:"月度节奏", tl_amt:"金额", tl_count:"笔数", tl_cum:"累计", tl_hint:"柱 = 当月公告的交易（按类型堆叠，当前口径）；下方折线 = 累计。点击某月只看该月，再点取消；随上方筛选变化（期间除外）。", tl_sum:"峰值月 {m}：{a}（{n} 笔）· 最近 3 个月 {b}（{k} 笔），占累计 {p}%。",
+    v_flow:"板块流向", flow_title:"钱从哪个板块流向哪个板块", flow_note:"行 = 付钱方板块，列 = 收钱方板块；格内为金额与笔数，颜色深浅 = 金额相对大小（当前筛选与口径）。担保是或有敞口，不计入。净流入 = 流入 − 流出，只是方向事实，不代表任何风险结论。", flow_from:"付钱方", flow_to:"收钱方", flow_out:"流出合计", flow_in:"流入合计", flow_net:"净流入", flow_top:"最大流向",
+    n_deals:"{n} 笔", in_graph:"在图中高亮", snapshot:"快照", v_title:"本期判断", v_evidence:"依据（图中可核对）", v_watch:"触发条件与关注点", v_if:"若", v_then:"则", v_watchk:"关注", v_more:"展开依据与触发条件", v_less:"收起", term:"期限", years:"年", capacity:"容量", coupon:"票息", maturity:"到期", rating:"评级", collateral:"抵押", structure:"结构", cap:"上限", trigger:"触发条件", linked:"关联的订单", covered:"被担保的交易"},
   en: {eyebrow:"LIVE DATA · AI CAPITAL FLOWS", title:"AI Orders & Debt Map", subtitle:"Who owes whom: orders, equity, debt and guarantees. Every deal links to a source; headline and firm amounts shown side by side; no valuation calls.",
     search:"Find a company or deal (e.g. NVDA, Beignet, residual value)", sector:"Sector", minsize:"Min size", period:"Period", status:"Status", basis:"Basis", any:"Any", alldates:"All dates",
     last90:"Last 90 days", last12m:"Last 12 months", st_active:"Active (incl. rumored/LOI)", st_firm:"Firm only", st_all:"All (incl. superseded/cancelled)", b_headline:"Headline", b_firm:"Firm",
-    collapse:"Collapse SPVs into sponsors", layered:"Layered by sector", v_graph:"Graph", v_table:"Table", v_cycles:"Funding loops", v_maturity:"Maturity wall", v_conc:"Concentration", v_gaps:"Data gaps", v_delta:"Latest changes", all:"All",
+    collapse:"Collapse SPVs into sponsors", layered:"Cluster by sector", v_graph:"Graph", v_table:"Table", v_cycles:"Funding loops", v_maturity:"Maturity wall", v_conc:"Concentration", v_gaps:"Data gaps", v_delta:"Latest changes", all:"All",
     replay:"Replay to", csv:"Copy CSV", rank_title:"Largest exposures", rank_total:"Total", rank_borrowed:"Borrowed", rank_orders:"Orders placed", rank_guar:"Guarantees given",
     rank_hint:"Click a company to see who it owes, who owes it, and every order. Bar = mix of edge types.", rank_note:"Pooled counterparties (bond investors, undisclosed lenders, unsplit syndicates) are not ranked.",
     latest_title:"Latest from the monitor", news:"News", filings:"SEC filings", method_title:"Methodology",
@@ -56,7 +59,10 @@ const I18N = {
     conc_title:"Supplier concentration by buyer (order inflow)", conc_sup:"Supplier", conc_total:"Total", conc_top:"Top 3 buyers", gaps_title:"Top 10 data gaps", gaps_edges:"Gaps by deal (current filter)",
     delta_new:"New deals", delta_status:"Status changes", delta_amt:"Amount revisions", revised_from:"Revised from", revised_by:"Superseded by", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Deals / companies", feed_n:"News / filings",
     ago_min:"{n} min ago", ago_h:"{n} h ago", just:"just now", view_src:"source", confidence:"Confidence", basis_:{total_contract:"total contract",annual:"annual",facility_size:"facility size",drawn:"drawn"},
-    in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_evidence:"Evidence (verifiable on the map)", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show evidence and triggers", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order", covered:"Covered deal"}
+     lg_lines:"Lines", lg_circles:"Circles", lg_thin:"Thinnest = undisclosed or under $1B", lg_pool:"Dashed circle = pooled counterparty / SPV", lg_arrow:"Arrow points to who receives the money: buyer → seller, investor → company, lender → borrower", lg_undisc:"Dashed line = amount undisclosed", lg_soft:"Dotted line = rumored / LOI",
+    tl_title:"Monthly pace", tl_amt:"Amount", tl_count:"Count", tl_cum:"Cumulative", tl_hint:"Columns = deals announced that month (stacked by type, current basis); line below = cumulative. Click a month to filter to it, click again to clear; follows the filters above (except period).", tl_sum:"Peak month {m}: {a} ({n} deals) · last 3 months {b} ({k} deals), {p}% of the cumulative total.",
+    v_flow:"Sector flows", flow_title:"Which sector pays which sector", flow_note:"Rows = paying sector, columns = receiving sector; each cell shows amount and deal count, shade = relative size (current filters and basis). Guarantees are contingent and excluded. Net inflow = inflow − outflow: a direction fact, not a risk verdict.", flow_from:"Payer", flow_to:"Receiver", flow_out:"Total out", flow_in:"Total in", flow_net:"Net inflow", flow_top:"Largest flows",
+    n_deals:"{n} deals", in_graph:"Highlight in graph", snapshot:"snapshot", v_title:"Current call", v_evidence:"Evidence (verifiable on the map)", v_watch:"Triggers and what to watch", v_if:"If", v_then:"then", v_watchk:"Watch", v_more:"Show evidence and triggers", v_less:"Collapse", term:"Term", years:"yr", capacity:"Capacity", coupon:"Coupon", maturity:"Maturity", rating:"Rating", collateral:"Collateral", structure:"Structure", cap:"Cap", trigger:"Trigger", linked:"Linked order", covered:"Covered deal"}
 };
 const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const KCOL = {}, SCOL = {};
@@ -68,7 +74,7 @@ const KINDS = ["ORDER","DEBT","EQUITY","GUARANTEE"];
 const FIRM = new Set(["definitive","amended","drawn","completed"]);
 const POOLED = new Set(["public_bondholders","public_equity_investors","undisclosed_counterparty","syndicate"]);
 
-const S = {lang:"zh", newsLang:"all", basis:"headline", kinds:new Set(KINDS), sector:"all", min:0, period:"all", status:"active", collapse:false, topn:50, layered:true, view:"graph", replay:1, q:"", sel:null, hl:new Set(), rank:"total", sort:["announced_date",-1]};
+const S = {tlMode:"amt", lang:"zh", newsLang:"all", basis:"headline", kinds:new Set(KINDS), sector:"all", min:0, period:"all", status:"active", collapse:false, topn:50, layered:true, view:"graph", replay:1, q:"", sel:null, hl:new Set(), rank:"total", sort:["announced_date",-1]};
 let D = null, E = {}, sim = null, zoom = null, lastGen = null, nextCheck = Date.now()+300000;
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const t = (k, v={}) => { let s = (I18N[S.lang][k] ?? I18N.zh[k] ?? k); if (typeof s !== "string") return s; return s.replace(/\{(\w+)\}/g,(_,x)=>v[x]); };
@@ -97,7 +103,7 @@ function baseEdges(){
 }
 function periodOk(e){
   const d = e.announced_date||""; if(S.period==="all") return true;
-  if(/^\d{4}$/.test(S.period)) return d.startsWith(S.period);
+  if(/^\d{4}(-\d{2})?$/.test(S.period)) return d.startsWith(S.period);
   const days = S.period==="90d"?90:365; const lim = new Date(Date.now()-days*864e5).toISOString().slice(0,10); return d>=lim;
 }
 function replayDate(){ const a=new Date(S.dmin).getTime(), b=new Date(S.dmax).getTime(); return new Date(a+(b-a)*S.replay).toISOString().slice(0,10); }
@@ -112,7 +118,7 @@ function filtered(opts={}){
     if(!opts.ignoreKind && !S.kinds.has(e.kind)) return false;
     if(S.sector!=="all"){ const sf=E[endpoint(e.from)]?.sector, st=E[endpoint(e.to)]?.sector; if(sf!==S.sector && st!==S.sector) return false; }
     const a = amt(e); if(S.min>0 && !(a>=S.min)) return false;
-    if(!periodOk(e)) return false;
+    if(!opts.ignorePeriod && !periodOk(e)) return false;
     if(e.announced_date && e.announced_date>rd) return false;
     if(S.collapse && endpoint(e.from)===endpoint(e.to)) return false;
     return matchQ(e);
@@ -163,75 +169,279 @@ function renderChips(){
 }
 
 /* ---------- graph ---------- */
-const RING = {labs:0.14, hyperscalers:0.36, chips:0.56, neoclouds:0.56, datacenters:0.76, spvs:0.76, energy:0.76, financiers:0.95, other:0.66};
+/* 画法照 helajo：公司 = 中性墨色圆（大小 = 敞口），颜色只给钱（线 = 交易类型），板块 = 位置 + 文字 */
+const RING = ["chips","labs","hyperscalers","neoclouds","datacenters","energy","spvs","financiers","other"];
+const G = {nodes:new Map(), k:1, fitK:1, tr:null, key:""};
+function anchorFor(sector, W, H){
+  let i = RING.indexOf(sector); if(i<0) i = RING.length-1;
+  const ang = (i/RING.length)*Math.PI*2 - Math.PI/2, portrait = H > W*1.1;
+  const rx = W*(portrait?.3:.4), ry = H*(portrait?.4:.36);
+  return {x: W/2 + Math.cos(ang)*rx, y: H/2 + Math.sin(ang)*ry};
+}
+/* 线宽：$100M → 1px，$300B → 5.6px（对数） */
+const widthScale = musd => { if(!musd) return 1; const v = (Math.log10(musd*1e6)-8)/(Math.log10(3e11)-8); return 1 + Math.max(0,Math.min(1,v))*4.6; };
+function edgeGeometry(l, w){
+  const s=l.source, tg=l.target; const dx=tg.x-s.x, dy=tg.y-s.y, dist=Math.hypot(dx,dy)||1;
+  let nx=-dy/dist, ny=dx/dist; if(l.flip){ nx=-nx; ny=-ny; }
+  const off = l.offset*2; const cx=(s.x+tg.x)/2+nx*off, cy=(s.y+tg.y)/2+ny*off;
+  const sdx=cx-s.x, sdy=cy-s.y, sl=Math.hypot(sdx,sdy)||1; const edx=tg.x-cx, edy=tg.y-cy, el=Math.hypot(edx,edy)||1; const ux=edx/el, uy=edy/el;
+  const head = 5 + (w||l.w)*1.3;
+  const x1=s.x+(sdx/sl)*(s.r+2), y1=s.y+(sdy/sl)*(s.r+2);
+  const tipX=tg.x-ux*(tg.r+3), tipY=tg.y-uy*(tg.r+3);
+  const x2=tipX-ux*head*.85, y2=tipY-uy*head*.85;
+  const line = Math.abs(off)<.5 ? `M${x1},${y1}L${x2},${y2}` : `M${x1},${y1}Q${cx},${cy} ${x2},${y2}`;
+  const bx=tipX-ux*head, by=tipY-uy*head, hw=head*.55;
+  return {line, arrow:`M${tipX},${tipY}L${bx-uy*hw},${by+ux*hw}L${bx+uy*hw},${by-ux*hw}Z`};
+}
+/* 共用的小提示框（关系图与月度图都借用） */
+const tip = () => $("#gtip");
+function showTipIn(ev, host, html){ const el=tip(); if(!el) return; if(el.parentNode!==host) host.appendChild(el); el.innerHTML=html; el.hidden=false; moveTipIn(ev,host); }
+function moveTipIn(ev, host){ const el=tip(); if(!el||el.hidden) return; const box=host.getBoundingClientRect(); let x=ev.clientX-box.left+14, y=ev.clientY-box.top+14; const tw=el.offsetWidth, th=el.offsetHeight; if(x+tw>box.width-8) x=Math.max(8,ev.clientX-box.left-tw-14); if(y+th>box.height-8) y=Math.max(8,ev.clientY-box.top-th-14); el.style.left=x+"px"; el.style.top=y+"px"; }
+function hideTip(){ const el=tip(); if(el) el.hidden=true; }
+const titleOf = e => esc(S.lang==="zh"?e.title_zh:e.title_en);
+
 function renderGraph(edges){
-  const svg = d3.select("#svg"); const W = svg.node().clientWidth, H = svg.node().clientHeight;
-  svg.selectAll("*").remove();
-  const g = svg.append("g");
-  zoom = d3.zoom().scaleExtent([.25,5]).extent([[0,0],[W,H]]).translateExtent([[-4000,-4000],[4000+W,4000+H]]).on("zoom",ev=>g.attr("transform",ev.transform)); svg.call(zoom);
-  const defs = svg.append("defs");
-  for(const [k,c] of Object.entries({...KCOL, soft:cssVar("--soft"), hl:cssVar("--hl")})) defs.append("marker").attr("id","arr_"+k).attr("viewBox","0 -5 10 10").attr("refX",12).attr("markerWidth",4.5).attr("markerHeight",4.5).attr("orient","auto").append("path").attr("d","M0,-5L10,0L0,5").attr("fill",c);
+  const svg = d3.select("#svg"); const W = svg.node().clientWidth, H = svg.node().clientHeight; const host = $("#v_graph");
+  svg.selectAll("*").remove(); svg.attr("data-lang",S.lang);
+  const root = svg.append("g");
+  const layers = {sector:root.append("g"), edge:root.append("g"), hot:root.append("g"), node:root.append("g"), label:root.append("g")};
+  zoom = d3.zoom().scaleExtent([.25,5]).extent([[0,0],[W,H]]).translateExtent([[-4000,-4000],[4000+W,4000+H]])
+    .on("zoom",ev=>{ root.attr("transform",ev.transform); G.k=ev.transform.k; G.tr=ev.transform; updateSectorVis(); clearTimeout(G.lt); G.lt=setTimeout(declutter,120); });
+  svg.call(zoom).on("dblclick.zoom",null);
   const tot = nodeTotals(edges);
   let ids = Object.keys(tot); if(S.topn>0) ids = ids.sort((a,b)=>tot[b]-tot[a]).slice(0,S.topn);
   const idset = new Set(ids);
   const es = edges.filter(e=>idset.has(endpoint(e.from))&&idset.has(endpoint(e.to)));
-  const nodes = ids.map(id=>({id, ...(E[id]||{name:id,sector:"other"}), tot:tot[id]||0}));
-  const nm_ = Object.fromEntries(nodes.map(n=>[n.id,n]));
-  const links = es.map(e=>({source:nm_[endpoint(e.from)], target:nm_[endpoint(e.to)], e}));
+  const maxTot = Math.max(1, ...ids.map(id=>tot[id]||0));
+  const rScale = d3.scaleSqrt().domain([0,maxTot]).range([6, W<600?24:32]);
+  const deals = {}; es.forEach(e=>{ for(const id of [endpoint(e.from),endpoint(e.to)]) deals[id]=(deals[id]||0)+1; });
+  const nodes = ids.map(id=>{ const ent = E[id]||{name:id,sector:"other"}; const a = anchorFor(ent.sector||"other",W,H); let n = G.nodes.get(id);
+    if(!n){ n = {id, x:a.x+(Math.random()-.5)*60, y:a.y+(Math.random()-.5)*60}; G.nodes.set(id,n); }
+    n.ent=ent; n.sector=ent.sector||"other"; n.tot=tot[id]||0; n.r=rScale(n.tot); n.deals=deals[id]||0; n.pool=POOLED.has(id)||ent.type==="spv"; return n; });
+  const byId = new Map(nodes.map(n=>[n.id,n]));
+  /* 同一对公司、同一类型的多笔合并成一条线（宽度 = 合计）；不同类型 / 反向的线彼此错开 */
+  const bundles = new Map();
+  es.forEach(e=>{ const k=`${endpoint(e.from)}|${endpoint(e.to)}|${e.kind}`; if(!bundles.has(k)) bundles.set(k,[]); bundles.get(k).push(e); });
+  const pairs = new Map(), links = [];
+  bundles.forEach((arr,bk)=>{ arr.sort((a,b)=>(amt(b)||0)-(amt(a)||0)); const e=arr[0]; const from=endpoint(e.from), to=endpoint(e.to);
+    const sum = arr.reduce((s,x)=>s+(amt(x)||0),0); const firm = arr.some(x=>x.firm); const undisclosed = arr.every(x=>amt(x)==null);
+    const key = from<to ? from+"|"+to : to+"|"+from;
+    const l = {id:bk, e, edges:arr, from, to, kind:e.kind, source:byId.get(from), target:byId.get(to), key, w:widthScale(sum), sum, firm, undisclosed, flip:from>to, offset:0};
+    if(!pairs.has(key)) pairs.set(key,[]); pairs.get(key).push(l); links.push(l); });
+  pairs.forEach(arr=>{ arr.sort((a,b)=>(b.sum||0)-(a.sum||0)); const k=arr.length; arr.forEach((l,i)=>{ l.offset = k===1?0:(i-(k-1)/2)*16; }); });
+  links.sort((a,b)=>b.w-a.w);
   $("#viewcount").textContent = t("showing",{n:es.length,c:nodes.length});
-  const amts = es.map(e=>amt(e)||0).filter(v=>v>0); const amax = Math.log10(Math.max(1000, ...amts)+1), amin = Math.log10(500);
-  const norm = v => v>0 ? Math.max(0, Math.min(1, (Math.log10(v+1)-amin)/Math.max(.01,amax-amin))) : 0;
-  const r = n => 4 + Math.sqrt((n.tot||0)/1000)*1.5;
-  const ranked = nodes.slice().sort((a,b)=>b.tot-a.tot); const big = new Set(ranked.slice(0, Math.min(28, Math.ceil(nodes.length*.35))).map(n=>n.id));
-  const neighbors = {}; links.forEach(l=>{ (neighbors[l.source.id] ??= new Set()).add(l.target.id); (neighbors[l.target.id] ??= new Set()).add(l.source.id); });
-  const R = Math.min(W,H)*0.46;
-  // 同心环底图：按板块分层
-  if(S.layered){
-    const ringg = g.append("g").attr("pointer-events","none");
-    const used = {}; nodes.forEach(n=>{ const k = (RING[n.sector]??0.6); (used[k] ??= []).push(n.sector); });
-    Object.entries(used).sort((a,b)=>a[0]-b[0]).forEach(([k,secs])=>{ const rr = +k*R; if(rr<=0) return;
-      ringg.append("circle").attr("cx",W/2).attr("cy",H/2).attr("r",rr).attr("fill","none").attr("stroke",cssVar("--line")).attr("stroke-dasharray","3,5");
-      ringg.append("text").attr("x",W/2+rr*0.71+4).attr("y",H/2-rr*0.71-4).attr("font-size",10).attr("fill",cssVar("--muted")).text([...new Set(secs)].map(x=>t("sectors")[x]||x).join(" / ")); });
-  }
-  let hover = null;
-  const edgeColor = l => S.hl.size ? (S.hl.has(l.e.edge_id)?cssVar("--hl"):cssVar("--track")) : (l.e.firm?KCOL[l.e.kind]:cssVar("--soft"));
-  const focusIds = () => { const f = S.sel || hover; return f ? new Set([f, ...(neighbors[f]||[])]) : null; };
-  const edgeOpacity = l => { const f = focusIds(); if(S.hl.size) return S.hl.has(l.e.edge_id)?1:.12; if(f) return (l.source.id===(S.sel||hover)||l.target.id===(S.sel||hover))?.95:.06; return l.e.firm ? .25+.6*norm(amt(l.e)||0) : .22; };
-  const link = g.append("g").selectAll("path").data(links).join("path").attr("fill","none")
-    .attr("stroke",edgeColor).attr("stroke-width",l=>.7+3.3*norm(amt(l.e)||0)).attr("stroke-dasharray",l=>l.e.firm?null:"4,4").attr("opacity",edgeOpacity)
-    .attr("marker-end",l=>`url(#arr_${S.hl.size?(S.hl.has(l.e.edge_id)?"hl":"soft"):(l.e.firm?l.e.kind:"soft")})`)
-    .style("cursor","pointer").on("click",(ev,l)=>{ev.stopPropagation(); openEdge(l.e);});
-  link.append("title").text(l=>`${S.lang==="zh"?l.e.title_zh:l.e.title_en}\n${t("status_")[l.e.status]} · ${l.e.announced_date}`);
-  const node = g.append("g").selectAll("g").data(nodes).join("g").style("cursor","pointer")
-    .call(d3.drag().on("start",(ev,d)=>{if(!ev.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y}).on("drag",(ev,d)=>{d.fx=ev.x;d.fy=ev.y}).on("end",(ev,d)=>{if(!ev.active)sim.alphaTarget(0);d.fx=null;d.fy=null}))
-    .on("click",(ev,d)=>{ev.stopPropagation(); selectNode(d.id);})
-    .on("mouseenter",(ev,d)=>{ hover=d.id; restyle(); }).on("mouseleave",()=>{ hover=null; restyle(); });
-  const fill = d => { const c = d3.color(SCOL[d.sector]||cssVar("--muted")); if(!c) return "#999"; if(d.type==="spv") return cssVar("--panel"); return big.has(d.id) ? c.formatHex() : c.brighter(.9).formatHex(); };
-  node.append("circle").attr("r",r).attr("fill",fill).attr("stroke",d=>d.type==="spv"?(SCOL[d.sector]||"#999"):cssVar("--halo")).attr("stroke-width",d=>d.type==="spv"?1.5:1.2).attr("stroke-dasharray",d=>d.type==="spv"?"2,2":null);
+  let hover = null, hotSet = null;
+
+  /* 连线：底衬 + 线 + 箭头 + 透明命中带 */
+  const eg = layers.edge.selectAll("g").data(links).join("g").attr("class","edge-g").style("--c",l=>KCOL[l.kind]).style("--wh",l=>Math.max(l.w,2.5)+"px")
+    .classed("is-soft",l=>!l.firm).classed("is-undisclosed",l=>l.undisclosed);
+  eg.append("path").attr("class","edge-casing").style("stroke-width",l=>(Math.max(l.w,2.5)+4)+"px");
+  eg.append("path").attr("class","edge").style("stroke-width",l=>l.w+"px");
+  eg.append("path").attr("class","arrow");
+  eg.append("path").attr("class","edge-hit").attr("stroke-width",l=>Math.max(12,l.w+8))
+    .on("pointerenter",(ev,l)=>{ hover={type:"edge",l}; restyle(); showTipIn(ev,host,tipEdge(l)); }).on("pointermove",ev=>moveTipIn(ev,host)).on("pointerleave",()=>{ hover=null; hideTip(); restyle(); })
+    .on("click",(ev,l)=>{ ev.stopPropagation(); hideTip(); openEdge(l.e); });
+  /* 节点：外环（选中态）+ 圆 + 命中圆 */
+  const node = layers.node.selectAll("g").data(nodes).join("g").attr("class",d=>"node"+(d.pool?" node--pool":""))
+    .call(d3.drag().clickDistance(4).on("start",(ev,d)=>{ if(!ev.active) sim.alphaTarget(.25).restart(); d.fx=d.x; d.fy=d.y; hideTip(); }).on("drag",(ev,d)=>{ d.fx=ev.x; d.fy=ev.y; }).on("end",(ev,d)=>{ if(!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }))
+    .on("click",(ev,d)=>{ ev.stopPropagation(); hideTip(); selectNode(d.id); })
+    .on("pointerenter",(ev,d)=>{ hover={type:"node",id:d.id}; restyle(); showTipIn(ev,host,tipNode(d)); }).on("pointermove",ev=>moveTipIn(ev,host)).on("pointerleave",()=>{ hover=null; hideTip(); restyle(); });
+  node.append("circle").attr("class","node__ring").attr("r",d=>d.r+4);
+  node.append("circle").attr("class","node__c").attr("r",d=>d.r);
+  node.append("circle").attr("class","node__hit").attr("r",d=>Math.max(d.r+3,12));
+  /* 标签单独一层，压在所有圆上面 */
+  const bigR = d3.quantile(nodes.map(n=>n.r).sort(d3.ascending), .55) || 10;
   const short = id => { const s=nm(id); return s.length>22 ? s.slice(0,20)+"…" : s; };
-  node.append("text").text(d=>short(d.id)).attr("dy",d=>-r(d)-3).attr("text-anchor","middle").style("font-size",d=>big.has(d.id)?"11px":"9.5px").style("font-weight",d=>big.has(d.id)?"600":"400")
-    .style("fill",d=>big.has(d.id)?cssVar("--fg"):cssVar("--muted")).style("paint-order","stroke").style("stroke",cssVar("--halo")).style("stroke-width","3px").style("pointer-events","none");
-  node.append("title").text(d=>`${nm(d.id)} · ${fmt(d.tot)}`);
-  function restyle(){
-    const f = focusIds();
-    link.attr("opacity",edgeOpacity).attr("stroke",edgeColor);
-    node.select("circle").attr("opacity",d=>f?(f.has(d.id)?1:.18):1).attr("stroke",d=>d.id===S.sel?cssVar("--hl"):(d.type==="spv"?(SCOL[d.sector]||"#999"):cssVar("--halo"))).attr("stroke-width",d=>d.id===S.sel?3:(d.type==="spv"?1.5:1.2));
-    node.select("text").style("display",d=>(big.has(d.id)||(f&&f.has(d.id)))?null:"none").style("opacity",d=>f?(f.has(d.id)?1:.25):1);
+  const label = layers.label.selectAll("text").data(nodes).join("text").attr("class",d=>"node__label"+(d.r>=bigR?" node__label--big":"")).attr("text-anchor","middle").text(d=>short(d.id))
+    .on("pointerenter",(ev,d)=>{ hover={type:"node",id:d.id}; restyle(); showTipIn(ev,host,tipNode(d)); }).on("pointerleave",()=>{ hover=null; hideTip(); restyle(); }).on("click",(ev,d)=>{ ev.stopPropagation(); hideTip(); selectNode(d.id); });
+
+  const tipNode = d => `<span class="tooltip__v">${fmt(d.tot)}</span><span class="tooltip__t">${esc(nm(d.id))}${d.ent.ticker?" · "+esc(d.ent.ticker):""}</span><span class="tooltip__m">${t("sectors")[d.sector]||d.sector} · ${t("n_deals",{n:d.deals})}</span>`;
+  const tipEdge = l => { const e=l.e; const one=l.edges.length===1;
+    return (one ? `<span class="tooltip__v">${fmt(amt(e))}</span><span class="tooltip__t">${titleOf(e)}</span>` : `<span class="tooltip__v">${fmt(l.sum)}</span><span class="tooltip__t">${t("n_deals",{n:l.edges.length})} · ${esc(nm(l.from))} → ${esc(nm(l.to))}</span>`)
+      + `<span class="tooltip__m"><i class="key" style="--c:${KCOL[l.kind]}"></i>${t(l.kind)} · ${esc(nm(l.from))} → ${esc(nm(l.to))}</span>`
+      + (one ? `<span class="tooltip__m">${e.announced_date||""} · ${t("status_")[e.status]||e.status}</span>` : l.edges.slice(0,4).map(x=>`<span class="tooltip__m">${fmt(amt(x))} · ${titleOf(x)}</span>`).join("") + (l.edges.length>4?`<span class="tooltip__m">+${l.edges.length-4}</span>`:"")); };
+
+  /* 焦点：悬停 / 选中的公司及其邻居；闭环高亮时点亮闭环上的公司 */
+  function lit(){
+    const f = hover || (S.sel ? {type:"node",id:S.sel} : null);
+    const hl = S.hl.size ? new Set(links.filter(l=>l.edges.some(e=>S.hl.has(e.edge_id))).map(l=>l.id)) : null;
+    let nodesOn=null, edgesOn=null, focusId=null;
+    if(f && f.type==="node"){ focusId=f.id; nodesOn=new Set([f.id]); edgesOn=new Set(); links.forEach(l=>{ if(l.from===f.id||l.to===f.id){ edgesOn.add(l.id); nodesOn.add(l.from); nodesOn.add(l.to); } }); }
+    else if(f){ nodesOn=new Set([f.l.from,f.l.to]); edgesOn=new Set([f.l.id]); }
+    else if(hl){ nodesOn=new Set(); edgesOn=hl; links.forEach(l=>{ if(hl.has(l.id)){ nodesOn.add(l.from); nodesOn.add(l.to); } }); }
+    return {nodesOn, edgesOn, focusId, hl};
   }
+  function restyle(){
+    const {nodesOn, edgesOn, hl} = lit(); const hotNode = hover&&hover.type==="node" ? hover.id : null;
+    const dim = d => nodesOn ? !nodesOn.has(d.id) : false, nbr = d => nodesOn ? nodesOn.has(d.id) : false, isSel = d => d.id===S.sel;
+    node.classed("is-dim",dim).classed("is-nbr",nbr).classed("is-sel",isSel).classed("is-hot",d=>d.id===hotNode);
+    label.classed("is-dim",dim).classed("is-nbr",nbr).classed("is-sel",isSel);
+    eg.classed("is-dim",l=>edgesOn?!edgesOn.has(l.id):false).classed("is-hot",l=>edgesOn?edgesOn.has(l.id):false).classed("is-loop",l=>hl?hl.has(l.id):false);
+    /* 选中公司的线、闭环的线抬到圆上面 */
+    const lift = S.sel ? new Set(links.filter(l=>l.from===S.sel||l.to===S.sel).map(l=>l.id)) : hl;
+    eg.each(function(l){ const want = lift&&lift.has(l.id) ? layers.hot.node() : layers.edge.node(); if(this.parentNode!==want) want.appendChild(this); });
+    const changed = !!(hotSet||edgesOn); hotSet=edgesOn; if(changed) drawPositions();
+    updateSectorVis(); clearTimeout(G.dt); G.dt=setTimeout(declutter,60);
+  }
+  function drawPositions(){
+    eg.each(function(l){ const hot = hotSet&&hotSet.has(l.id); const geo=edgeGeometry(l, hot?Math.max(l.w,2.5):l.w); const g=d3.select(this);
+      g.select(".edge").attr("d",geo.line); g.select(".edge-casing").attr("d",geo.line); g.select(".edge-hit").attr("d",geo.line); g.select(".arrow").attr("d",geo.arrow); });
+    node.attr("transform",d=>`translate(${d.x},${d.y})`); label.attr("transform",d=>`translate(${d.x},${d.y})`);
+  }
+  /* 标签：能放几个放几个。无焦点时按敞口大的先放（有上限）；有焦点时只放焦点和邻居。每个标签在圆周围试 4 个位置，全被占才隐藏 */
+  function declutter(){
+    const k=G.k||1, pad=2.5/k; const {nodesOn, focusId}=lit();
+    const items=[];
+    label.each(function(d){ this.classList.remove("is-hidden"); this.setAttribute("x",0); this.setAttribute("y",d.r+13); this.setAttribute("text-anchor","middle"); });
+    label.each(function(d){ if(nodesOn&&!nodesOn.has(d.id)){ this.classList.add("is-hidden"); return; } let b; try{ b=this.getBBox(); }catch(e){ return; } items.push({el:this,d,w:b.width,h:b.height,asc:(d.r+13)-b.y}); });
+    if(nodesOn){ const am={}; links.forEach(l=>{ if(l.from===focusId) am[l.to]=(am[l.to]||0)+l.sum; else if(l.to===focusId) am[l.from]=(am[l.from]||0)+l.sum; });
+      items.sort((a,b)=> a.d.id===focusId ? -1 : b.d.id===focusId ? 1 : ((am[b.d.id]||0)-(am[a.d.id]||0)) || (b.d.r-a.d.r)); }
+    else items.sort((a,b)=>(b.d.r-a.d.r)||(b.d.tot-a.d.tot));
+    const narrow=W<600; const cap = (nodesOn || k>(G.fitK||1)*1.4) ? Infinity : (narrow?14:28); const always = narrow?5:8;
+    const placed=[]; const circles = nodes.filter(n=>!nodesOn||nodesOn.has(n.id));
+    const tr=d3.zoomTransform(svg.node()); const vx0=(4-tr.x)/tr.k, vy0=(4-tr.y)/tr.k, vx1=(W-4-tr.x)/tr.k, vy1=(H-4-tr.y)/tr.k;
+    const free=(it,x0,y0,loose)=>{ let x1=x0+it.w, y1=y0+it.h; if(x0<vx0||x1>vx1||y0<vy0||y1>vy1) return null; x0-=pad; y0-=pad; x1+=pad; y1+=pad;
+      if(placed.some(p=>x0<p.x1&&x1>p.x0&&y0<p.y1&&y1>p.y0)) return null;
+      const hit=circles.some(c=>{ if(c.id===it.d.id) return false; if(loose ? c.r<=it.d.r : c.r<it.d.r*.6) return false; const cx=Math.max(x0,Math.min(c.x,x1)), cy=Math.max(y0,Math.min(c.y,y1)); return (cx-c.x)**2+(cy-c.y)**2 < c.r*c.r; });
+      return hit ? null : {x0,y0,x1,y1}; };
+    let shown=0;
+    items.forEach((it,rank)=>{ if(shown>=cap){ it.el.classList.add("is-hidden"); return; } const d=it.d, r=d.r, gap=4;
+      const opts=[{x:0,y:r+13,a:"middle",bx:d.x-it.w/2,by:d.y+r+13-it.asc},{x:0,y:-(r+gap+it.h-it.asc),a:"middle",bx:d.x-it.w/2,by:d.y-r-gap-it.h},{x:r+gap,y:it.asc-it.h/2,a:"start",bx:d.x+r+gap,by:d.y-it.h/2},{x:-(r+gap),y:it.asc-it.h/2,a:"end",bx:d.x-r-gap-it.w,by:d.y-it.h/2}];
+      if(nodesOn) [14,-14].forEach(dy=>{ opts.push({x:r+gap,y:it.asc-it.h/2+dy,a:"start",bx:d.x+r+gap,by:d.y-it.h/2+dy}); opts.push({x:-(r+gap),y:it.asc-it.h/2+dy,a:"end",bx:d.x-r-gap-it.w,by:d.y-it.h/2+dy}); });
+      const passes = nodesOn ? ((d.id===focusId||!focusId)?2:1) : (rank<always?2:1);
+      for(let pass=0;pass<passes;pass++) for(const o of opts){ const box=free(it,o.bx,o.by,pass===1); if(box){ it.el.setAttribute("x",o.x); it.el.setAttribute("y",o.y); it.el.setAttribute("text-anchor",o.a); placed.push(box); shown++; return; } }
+      it.el.classList.add("is-hidden"); });
+    G.boxes=placed; G.circles=circles; fitSectorLabels();
+  }
+  /* 板块名：淡淡地写在每个 ≥3 家的板块簇外侧；挤到公司名就挪开，挪不开就不画 */
+  function placeSectorLabels(){
+    const groups={}; nodes.forEach(n=>(groups[n.sector]??=[]).push(n)); const data=[];
+    for(const [g,arr] of Object.entries(groups)){ if(arr.length<3) continue; const mx=d3.mean(arr,n=>n.x), my=d3.mean(arr,n=>n.y); const dx=mx-W/2, dy=my-H/2, dd=Math.hypot(dx,dy)||1; data.push({g,mx,my,ux:dx/dd,uy:dy/dd,x:mx+dx/dd*60,y:my+dy/dd*60}); }
+    layers.sector.selectAll("text").data(data,d=>d.g).join("text").attr("class","sector-label").attr("text-anchor","middle").attr("x",d=>d.x).attr("y",d=>d.y).text(d=>t("sectors")[d.g]||d.g);
+    updateSectorVis(); fitSectorLabels();
+  }
+  function updateSectorVis(){ const hide = (G.k||1) > 2*(G.fitK||1) || !!hover || !!S.sel || S.hl.size>0; layers.sector.selectAll("text").classed("is-hidden",hide); }
+  function fitSectorLabels(){
+    const boxes=G.boxes||[], circles=G.circles||[], k=G.k||1, pad=3/k; const mine=[];
+    const tr=d3.zoomTransform(svg.node()); const inset=W<600?44:8; const vx0=(8-tr.x)/tr.k, vy0=(inset-tr.y)/tr.k, vx1=(W-inset-tr.x)/tr.k, vy1=(H-8-tr.y)/tr.k;
+    layers.sector.selectAll("text").each(function(d){ if(this.classList.contains("is-hidden")) return; this.classList.remove("is-clash"); this.setAttribute("x",d.x); this.setAttribute("y",d.y);
+      let b; try{ b=this.getBBox(); }catch(e){ return; } if(!b.width) return; const w=b.width, hgt=b.height, ox=b.x-d.x, oy=b.y-d.y;
+      const tries=[[60,0],[90,0],[120,0],[36,0],[60,-18],[60,18],[90,-18],[90,18]];
+      for(const [dist,dy] of tries){ const x=d.mx+d.ux*dist, y=d.my+d.uy*dist+dy/k; const x0=x+ox-pad, y0=y+oy-pad, x1=x0+w+2*pad, y1=y0+hgt+2*pad;
+        if(x0<vx0||x1>vx1||y0<vy0||y1>vy1) continue;
+        const clash = boxes.concat(mine).some(p=>x0<p.x1&&x1>p.x0&&y0<p.y1&&y1>p.y0) || circles.some(c=>{ const cx=Math.max(x0,Math.min(c.x,x1)), cy=Math.max(y0,Math.min(c.y,y1)); return (cx-c.x)**2+(cy-c.y)**2 < c.r*c.r; });
+        if(!clash){ this.setAttribute("x",x); this.setAttribute("y",y); mine.push({x0,y0,x1,y1}); return; } }
+      this.classList.add("is-clash"); });
+  }
+  function fitView(animate){
+    let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity; nodes.forEach(n=>{ x0=Math.min(x0,n.x-n.r-40); x1=Math.max(x1,n.x+n.r+40); y0=Math.min(y0,n.y-n.r-10); y1=Math.max(y1,n.y+n.r+26); });
+    if(!Number.isFinite(x0)||!Number.isFinite(x1)) return; const k=Math.min(1.7,.96*Math.min(W/(x1-x0),H/(y1-y0))); if(!(k>0)) return; G.fitK=k;
+    const tr=d3.zoomIdentity.translate(W/2-k*(x0+x1)/2, H/2-k*(y0+y1)/2).scale(k); (animate?svg.transition().duration(400):svg).call(zoom.transform,tr);
+  }
+
+  /* 力导向：板块各有锚点（椭圆上均布），弱力拉向锚点；关系线拉近，圆之间互斥 */
   if(sim){ sim.stop(); sim.on("tick",null).on("end",null); }
-  sim = d3.forceSimulation(nodes).force("link",d3.forceLink(links).distance(l=>60+Math.min(60,(amt(l.e)||0)/5000)).strength(S.layered?.12:.35))
-    .force("charge",d3.forceManyBody().strength(S.layered?-120:-260)).force("center",d3.forceCenter(W/2,H/2)).force("col",d3.forceCollide(d=>r(d)+7));
-  if(S.layered) sim.force("radial",d3.forceRadial(d=>(RING[d.sector]??0.6)*R, W/2, H/2).strength(.9));
-  else sim.force("x",d3.forceX(W/2).strength(.05)).force("y",d3.forceY(H/2).strength(.07));
-  sim.on("tick",()=>{ link.attr("d",l=>{const dx=l.target.x-l.source.x,dy=l.target.y-l.source.y,dr=Math.hypot(dx,dy)*1.9;return `M${l.source.x},${l.source.y}A${dr},${dr} 0 0,1 ${l.target.x},${l.target.y}`}); node.attr("transform",d=>`translate(${d.x},${d.y})`); })
-    .on("end",function(){ if(this!==sim || !nodes.length || !W || !H) return; const xs=nodes.map(n=>n.x), ys=nodes.map(n=>n.y); if(!xs.every(Number.isFinite)||!ys.every(Number.isFinite)) return;
-      const x0=Math.min(...xs)-40,x1=Math.max(...xs)+40,y0=Math.min(...ys)-40,y1=Math.max(...ys)+40; const k=Math.min(1.6,.95/Math.max((x1-x0)/W,(y1-y0)/H,1e-6)); if(!Number.isFinite(k)) return;
-      svg.transition().duration(500).call(zoom.transform,d3.zoomIdentity.translate(W/2,H/2).scale(k).translate(-(x0+x1)/2,-(y0+y1)/2)); });
+  const sc = Math.max(.42, Math.min(1, W/900)), portrait = H>W*1.1;
+  const forceLinks = [...pairs.keys()].map(key=>{ const [a,b]=key.split("|"); return {source:a,target:b}; });
+  sim = d3.forceSimulation(nodes).alphaDecay(.035).velocityDecay(.38)
+    .force("link", d3.forceLink(forceLinks).id(d=>d.id).distance(l=>70*sc+l.source.r+l.target.r).strength(l=>.5/Math.max(1,Math.min(l.source.deals||1,l.target.deals||1))))
+    .force("charge", d3.forceManyBody().strength(d=>(-200-d.r*9)*sc).distanceMax(420*sc))
+    .force("collide", d3.forceCollide().radius(d=>d.r+14*sc).iterations(2));
+  if(S.layered) sim.force("x", d3.forceX(d=>anchorFor(d.sector,W,H).x).strength(d=>(portrait?.16:.07)*(d.deals<=1?1.8:1))).force("y", d3.forceY(d=>anchorFor(d.sector,W,H).y).strength(d=>(portrait?.06:.08)*(d.deals<=1?1.8:1)));
+  else sim.force("x", d3.forceX(W/2).strength(.05)).force("y", d3.forceY(H/2).strength(.07));
+  sim.on("tick",drawPositions).on("end",()=>{ declutter(); placeSectorLabels(); });
+  const key = `${S.layered?1:0}|${W}x${H}|${ids.slice().sort().join(",")}`;
+  if(key===G.key && G.tr){ /* 同一批公司：保留位置与视角，不重新布局 */
+    sim.stop(); drawPositions(); svg.call(zoom.transform, G.tr); placeSectorLabels(); declutter();
+  } else {
+    G.key=key; sim.stop(); sim.alpha(1); for(let i=0;i<320;i++) sim.tick(); drawPositions(); fitView(false); placeSectorLabels(); declutter(); sim.alpha(0).restart();
+  }
   restyle();
-  svg.on("click",()=>{ if(S.sel){S.sel=null; $("#detail").classList.add("hidden"); renderGraph(filtered());} });
-  $("#legend").innerHTML = Object.entries(t("sectors")).filter(([k])=>k!=="all").map(([k,v])=>`<span><i style="background:${SCOL[k]}"></i>${v}</span>`).join("")+
-    KINDS.map(k=>`<span><i style="border-radius:0;height:2px;width:14px;background:${KCOL[k]}"></i>${t(k)}</span>`).join("")+`<span><i style="border-radius:0;height:2px;width:14px;background:${cssVar("--soft")}"></i>${t("status_").rumored}/${t("status_").loi}</span><span><i style="background:${cssVar("--panel")};border:1.5px dashed ${cssVar("--muted")}"></i>SPV</span>`;
-  $("#zin").onclick=()=>svg.transition().call(zoom.scaleBy,1.4); $("#zout").onclick=()=>svg.transition().call(zoom.scaleBy,.7); $("#zfit").onclick=()=>svg.transition().call(zoom.transform,d3.zoomIdentity);
+  svg.on("click",()=>{ if(S.sel){ S.sel=null; $("#detail").classList.add("hidden"); renderGraph(filtered()); } else if(S.hl.size){ S.hl=new Set(); restyle(); } });
+  /* 图例：照 helajo，连线一行、圆圈一行、注释一行 */
+  const present = new Set(links.map(l=>l.kind));
+  const kindsHtml = KINDS.filter(k=>present.has(k)).map(k=>`<span class="lk-kind" style="--c:${KCOL[k]}"><i></i>${t(k)}</span>`).join("");
+  const widthsHtml = [1000,10000,100000].map(x=>`<span class="lk-w"><i style="height:${widthScale(x).toFixed(1)}px"></i>${fmt(x)}${x===100000?"+":""}</span>`).join("")+`<span class="legend__hint">${t("lg_thin")}</span>`;
+  const vals=[10000,100000].filter(v=>v<maxTot*.8).concat([maxTot]);
+  const circlesHtml = vals.map(v=>{ const r=Math.min(18,rScale(v)), s=Math.ceil(r*2+3); return `<span class="legend__key"><svg class="lk-c" width="${s}" height="${s}"><circle cx="${s/2}" cy="${s/2}" r="${r.toFixed(1)}"/></svg><span>${fmt(v)}</span></span>`; }).join("")
+    +`<span class="legend__key"><svg width="16" height="16"><circle cx="8" cy="8" r="6" class="lk-pool"/></svg><span>${t("lg_pool")}</span></span>`;
+  $("#legend").innerHTML = `<div class="legend__row"><span class="legend__h">${t("lg_lines")}</span><span class="legend__kinds">${kindsHtml}</span><span class="legend__widths">${widthsHtml}</span></div>
+    <div class="legend__row"><span class="legend__h">${t("lg_circles")}</span><span class="legend__circles">${circlesHtml}</span></div>
+    <div class="legend__row"><span class="legend__key"><svg width="26" height="10"><line x1="1" y1="5" x2="20" y2="5" class="lk-line"/><path d="M19 1 L25 5 L19 9 Z" class="lk-head"/></svg><span>${t("lg_arrow")}</span></span><span class="legend__key"><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" class="lk-line" stroke-dasharray="4 3"/></svg><span>${t("lg_undisc")}</span></span><span class="legend__key"><svg width="26" height="10"><line x1="1" y1="5" x2="25" y2="5" class="lk-line" stroke-dasharray="2 3" opacity=".6"/></svg><span>${t("lg_soft")}</span></span></div>`;
+  $("#zin").onclick=()=>svg.transition().call(zoom.scaleBy,1.4); $("#zout").onclick=()=>svg.transition().call(zoom.scaleBy,.7); $("#zfit").onclick=()=>fitView(true);
+}
+
+/* ---------- 月度节奏（照 helajo 的 timeline：按月柱 + 累计线） ---------- */
+function monthLabel(ym, short){
+  const [y,m]=ym.split("-").map(Number); if(!y||!m) return ym;
+  if(S.lang==="zh") return short ? `${m}月` : `${y}年${m}月`;
+  const en=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m-1]; return short ? en : `${en} ${y}`;
+}
+function setMonth(m){
+  S.period = S.period===m ? "all" : m; const sel=$("#f_period");
+  if(S.period!=="all" && ![...sel.options].some(o=>o.value===S.period)){ const o=document.createElement("option"); o.value=S.period; o.textContent=monthLabel(S.period); sel.appendChild(o); }
+  sel.value=S.period; renderAll();
+}
+function renderTimeline(){
+  const sec=$("#timeline"); if(!sec) return; const edges=filtered({ignorePeriod:true}).filter(e=>/^\d{4}-\d{2}/.test(e.announced_date||""));
+  if(edges.length<2){ sec.classList.add("hidden"); return; } sec.classList.remove("hidden");
+  const ym=d=>d.slice(0,7); const months=[]; const a=ym(d3.min(edges,e=>e.announced_date)), b=ym(d3.max(edges,e=>e.announced_date));
+  for(let [y,m]=a.split("-").map(Number), i=0; i<160; i++){ const cur=`${y}-${String(m).padStart(2,"0")}`; months.push(cur); if(cur===b) break; m++; if(m>12){ m=1; y++; } }
+  const rows=months.map(month=>({month,usd:0,count:0,by:{},undisc:0})); const idx=Object.fromEntries(rows.map((r,i)=>[r.month,i]));
+  edges.forEach(e=>{ const r=rows[idx[ym(e.announced_date)]]; if(!r) return; const v=amt(e); r.count++; if(v==null) r.undisc++; else { r.usd+=v; r.by[e.kind]=(r.by[e.kind]||0)+v; } });
+  let ca=0, cc=0; rows.forEach(r=>{ ca+=r.usd; cc+=r.count; r.cumA=ca; r.cumC=cc; });
+  const mode=S.tlMode; const val=r=>mode==="count"?r.count:r.usd; const cum=r=>mode==="count"?r.cumC:r.cumA; const fv=v=>mode==="count"?String(v):fmt(v);
+  $$("#tlmode button").forEach(x=>x.classList.toggle("on",x.dataset.m===mode));
+  const svg=d3.select("#tl-svg"); const W=Math.max(320,sec.clientWidth-28), narrow=W<600;
+  const M={l:4,r:narrow?52:64,t:6,b:18}, H1=narrow?64:84, H2=narrow?30:40, gap=8, H=M.t+H1+gap+H2+M.b;
+  svg.attr("viewBox",`0 0 ${W} ${H}`).attr("width",W).attr("height",H); svg.selectAll("*").remove();
+  const x=d3.scaleBand().domain(months).range([M.l,W-M.r]).paddingInner(.25);
+  const y1=d3.scaleLinear().domain([0,d3.max(rows,val)||1]).nice().range([M.t+H1,M.t]);
+  const y2=d3.scaleLinear().domain([0,d3.max(rows,cum)||1]).range([M.t+H1+gap+H2,M.t+H1+gap]);
+  const g=svg.append("g").attr("class","tl"); const ticks=y1.ticks(2);
+  g.append("g").attr("class","tl__grid").selectAll("line").data(ticks).join("line").attr("x1",M.l).attr("x2",W-M.r).attr("y1",y1).attr("y2",y1);
+  g.append("g").attr("class","tl__ticks").selectAll("text").data(ticks).join("text").attr("x",W-M.r+6).attr("y",d=>y1(d)+4).text(d=>d?fv(d):"0");
+  const inPeriod=r=>periodOk({announced_date:r.month+"-15"});
+  const tipMonth=r=>`<span class="tooltip__v">${fmt(r.usd)}</span><span class="tooltip__t">${monthLabel(r.month)} · ${t("n_deals",{n:r.count})}${r.undisc?` · ${t("more_undisc",{n:r.undisc})}`:""}</span>`
+    +KINDS.filter(k=>r.by[k]).map(k=>`<span class="tooltip__m"><i class="key" style="--c:${KCOL[k]}"></i>${t(k)} ${fmt(r.by[k])}</span>`).join("")+`<span class="tooltip__m">${t("tl_cum")} ${fmt(r.cumA)} · ${t("n_deals",{n:r.cumC})}</span>`;
+  const cols=g.append("g").selectAll("g").data(rows).join("g").attr("class",r=>"tl__col"+(inPeriod(r)?"":" is-out")+(S.period===r.month?" is-on":"")).attr("transform",r=>`translate(${x(r.month)},0)`)
+    .on("click",(ev,r)=>setMonth(r.month)).on("pointerenter",(ev,r)=>showTipIn(ev,sec,tipMonth(r))).on("pointermove",ev=>moveTipIn(ev,sec)).on("pointerleave",hideTip);
+  const bw=Math.max(2,Math.min(24,x.bandwidth()));
+  cols.each(function(r){ const cg=d3.select(this); cg.append("rect").attr("class","tl__hit").attr("x",-x.step()*.125).attr("y",M.t).attr("width",x.step()).attr("height",H1+gap+H2);
+    if(mode==="count"){ const top=y1(r.count); cg.append("rect").attr("class","tl__seg").attr("x",0).attr("width",bw).attr("y",top).attr("height",Math.max(0,y1(0)-top)).style("fill",cssVar("--ink2")); return; }
+    let yy=y1(0); KINDS.forEach(k=>{ const v=r.by[k]; if(!v) return; const top=y1(y1.invert(yy)+v); const hgt=Math.max(0,yy-top-(yy===y1(0)?0:2)); cg.append("rect").attr("class","tl__seg").attr("x",0).attr("width",bw).attr("y",top).attr("height",hgt).style("fill",KCOL[k]); yy=top; }); });
+  const line=d3.line().x(r=>x(r.month)+x.bandwidth()/2).y(r=>y2(cum(r)));
+  g.append("path").attr("class","tl__cum").attr("d",line(rows));
+  const last=rows[rows.length-1];
+  g.append("circle").attr("class","tl__dot").attr("r",4).attr("cx",x(last.month)+x.bandwidth()/2).attr("cy",y2(cum(last)));
+  g.append("text").attr("class","tl__ticks").attr("x",W-M.r+6).attr("y",y2(cum(last))+4).text(fv(cum(last)));
+  g.append("text").attr("class","tl__panel").attr("x",M.l).attr("y",M.t+H1+gap+10).text(t("tl_cum"));
+  const every=Math.max(1,Math.ceil(months.length/Math.max(1,Math.floor((W-M.l-M.r)/(narrow?56:72)))));
+  g.append("g").attr("class","tl__axis").selectAll("text").data(rows.filter((r,i)=>i%every===0)).join("text").attr("x",(r,i)=>i===0?M.l:x(r.month)+x.bandwidth()/2).attr("y",H-4).attr("text-anchor",(r,i)=>i===0?"start":"middle")
+    .text((r,i)=>(every>=12||r.month.slice(5)==="01"||i===0)?monthLabel(r.month):monthLabel(r.month,true));
+  /* 一句话摘要：峰值月 + 最近 3 个月占累计比例（只描述，不评价） */
+  const peak=rows.slice().sort((p,q)=>q.usd-p.usd)[0]; const last3=rows.slice(-3); const l3=last3.reduce((s,r)=>s+r.usd,0);
+  $("#tlsum").textContent = t("tl_sum",{m:monthLabel(peak.month), a:fmt(peak.usd), n:peak.count, b:fmt(l3), p:ca?Math.round(100*l3/ca):0, k:last3.reduce((s,r)=>s+r.count,0)});
+}
+
+/* ---------- 板块流向矩阵：钱从哪个板块流到哪个板块 ---------- */
+function renderFlow(edges){
+  const secs=Object.keys(t("sectors")).filter(k=>k!=="all"); const SN=t("sectors");
+  const M={}, cnt={}, rowT={}, colT={}; let mx=0;
+  edges.filter(e=>e.kind!=="GUARANTEE").forEach(e=>{ const a=E[endpoint(e.from)]?.sector||"other", b=E[endpoint(e.to)]?.sector||"other"; const v=amt(e)||0; const k=a+"|"+b; M[k]=(M[k]||0)+v; cnt[k]=(cnt[k]||0)+1; rowT[a]=(rowT[a]||0)+v; colT[b]=(colT[b]||0)+v; });
+  Object.values(M).forEach(v=>{ if(v>mx) mx=v; });
+  const used=secs.filter(s=>rowT[s]||colT[s]); const total=Object.values(M).reduce((s,v)=>s+v,0);
+  if(!total){ $("#v_flow").innerHTML=`<div class="pad fine">${t("none")}</div>`; return; }
+  const cell=(a,b)=>{ const k=a+"|"+b, v=M[k]||0; if(!cnt[k]) return `<td class="fc"></td>`; const al=v?Math.sqrt(v/mx):0;
+    return `<td class="fc" style="--a:${al.toFixed(3)}" title="${esc(SN[a])} → ${esc(SN[b])}: ${fmt(v)} · ${t("n_deals",{n:cnt[k]})}"><b>${v?fmt(v):"—"}</b><small>${cnt[k]}</small></td>`; };
+  const top=Object.entries(M).filter(([,v])=>v>0).sort((p,q)=>q[1]-p[1]).slice(0,8);
+  $("#v_flow").innerHTML = `<div class="pad"><h3>${t("flow_title")}</h3><p class="fine">${t("flow_note")}</p>
+    <div class="flowwrap"><table class="tbl flow"><thead><tr><th>${t("flow_from")} ↓ &nbsp;/&nbsp; ${t("flow_to")} →</th>${used.map(s=>`<th>${SN[s]}</th>`).join("")}<th class="amt">${t("flow_out")}</th></tr></thead>
+    <tbody>${used.map(a=>`<tr><th>${SN[a]}</th>${used.map(b=>cell(a,b)).join("")}<td class="amt">${fmt(rowT[a]||0)}</td></tr>`).join("")}
+    <tr class="sumrow"><th>${t("flow_in")}</th>${used.map(b=>`<td class="amt">${fmt(colT[b]||0)}</td>`).join("")}<td class="amt">${fmt(total)}</td></tr>
+    <tr class="sumrow"><th>${t("flow_net")}</th>${used.map(b=>{ const n=(colT[b]||0)-(rowT[b]||0); return `<td class="amt ${n<0?"neg":"pos"}">${n<0?"−":"+"}${fmt(Math.abs(n))}</td>`; }).join("")}<td></td></tr></tbody></table></div>
+    <h3>${t("flow_top")}</h3><ol class="flows">${top.map(([k,v])=>{ const [a,b]=k.split("|"); return `<li><span>${SN[a]} → ${SN[b]}<small>${t("n_deals",{n:cnt[k]})}</small></span><div class="bar" style="--c:var(--accent)"><i style="width:${(100*v/top[0][1]).toFixed(1)}%"></i></div><b>${fmt(v)}<small>${Math.round(100*v/total)}%</small></b></li>`; }).join("")}</ol></div>`;
 }
 
 /* ---------- table ---------- */
@@ -373,7 +583,8 @@ function renderAll(){
   $$("#views button").forEach(b=>b.classList.toggle("on",b.dataset.view===S.view));
   $$(".view").forEach(v=>v.classList.toggle("hidden",v.id!=="v_"+S.view));
   $("#replaydate").textContent=replayDate();
-  if(S.view==="graph") renderGraph(edges); else if(S.view==="table") renderTable(edges); else if(S.view==="cycles") renderCycles(); else if(S.view==="maturity") renderMaturity(edges); else if(S.view==="conc") renderConc(); else if(S.view==="gaps") renderGaps(edges); else if(S.view==="delta") renderDelta();
+  if(S.view==="graph") renderGraph(edges); else if(S.view==="table") renderTable(edges); else if(S.view==="cycles") renderCycles(); else if(S.view==="maturity") renderMaturity(edges); else if(S.view==="conc") renderConc(); else if(S.view==="gaps") renderGaps(edges); else if(S.view==="delta") renderDelta(); else if(S.view==="flow") renderFlow(edges);
+  renderTimeline();
   if(S.view!=="graph"&&S.view!=="table") $("#viewcount").textContent="";
   renderRank(edges); renderFeeds();
   if(S.sel && !$("#detail").classList.contains("hidden")) selectNode(S.sel);
@@ -393,14 +604,15 @@ function bind(){
   $("#csv").onclick=()=>csv(filtered());
   $("#mclose").onclick=()=>$("#modal").classList.add("hidden"); $("#modal").onclick=ev=>{if(ev.target.id==="modal") $("#modal").classList.add("hidden");};
   document.addEventListener("keydown",ev=>{if(ev.key==="Escape"){$("#modal").classList.add("hidden"); $("#livepop").classList.add("hidden");}});
-  window.addEventListener("resize",()=>{ if(S.view==="graph") renderGraph(filtered()); });
+  window.addEventListener("resize",()=>{ if(S.view==="graph") renderGraph(filtered()); renderTimeline(); });
+  $$("#tlmode button").forEach(b=>b.onclick=()=>{ S.tlMode=b.dataset.m; renderTimeline(); });
   if(window.matchMedia){ window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>renderAll()); }
   new MutationObserver(()=>renderAll()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 }
 (async function init(){
   try{ S.lang = localStorage.getItem("lang") || "zh"; }catch(_){ S.lang = "zh"; }
   bind();
-  try{ await load(true); renderAll(); const h=location.hash.replace("#n-",""); if(h&&E[h]) selectNode(h); }
+  try{ await load(true); const qv=new URLSearchParams(location.search).get("view"); if(qv && $("#v_"+qv)) S.view=qv; renderAll(); const h=location.hash.replace("#n-",""); if(h&&E[h]) selectNode(h); }
   catch(err){ $("#cards").innerHTML=`<div class="card"><div class="k">error</div><div class="s">${esc(err.message)}</div></div>`; }
   setInterval(async()=>{ nextCheck=Date.now()+300000; try{ if(await load(false)) renderAll(); else renderLive(); }catch(_){} }, 300000);
   setInterval(()=>{ if(D) renderLive(); }, 60000);
