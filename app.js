@@ -4,7 +4,7 @@ const I18N = {
   zh: {eyebrow:"实时数据 · AI 资本流向", title:"AI 巨头订单与债务关系图", subtitle:"谁欠谁：订单、股权、债务与担保。每笔交易可追溯到来源，标题口径与已约束口径并列，不做估值判断。",
     search:"搜公司或交易（例如 NVDA、Beignet、残值担保）", sector:"板块", minsize:"最小金额", period:"期间", status:"状态", basis:"口径", any:"不限", alldates:"全部",
     last90:"近 90 天", last12m:"近 12 个月", st_active:"有效（含传闻/意向）", st_firm:"仅已约束", st_all:"全部（含已修订/取消）", b_headline:"标题口径", b_firm:"已约束口径",
-    collapse:"SPV 折叠到发起人", layered:"按板块分区", v_graph:"关系图", v_table:"表格", v_cycles:"资金闭环", v_maturity:"到期墙", v_conc:"集中度", v_gaps:"数据缺口", v_delta:"本次变动", all:"全部",
+    collapse:"SPV 折叠到发起人", layered:"按板块分区", v_graph:"关系图", v_table:"表格", v_cycles:"资金闭环", v_maturity:"到期墙", v_conc:"集中度", v_gaps:"数据缺口", v_recent:"近期公告", all:"全部",
     replay:"回放至", csv:"复制 CSV", rank_title:"最大敞口", rank_total:"合计", rank_borrowed:"借入", rank_orders:"订单支出", rank_guar:"担保敞口",
     rank_hint:"点击公司查看它欠谁、谁欠它、下了哪些订单。条形 = 边类型构成。", rank_note:"占位对手方（公募债投资者、未披露贷款人、未拆分银团）不参与排名。",
     latest_title:"监控最新动态", news:"新闻", filings:"SEC 申报", method_title:"口径说明",
@@ -26,7 +26,7 @@ const I18N = {
     cyc_firm:"已约束口径的闭环", cyc_soft:"含传闻/意向的闭环", cyc_note:"闭环 = 资金方向上的闭合路径（A 投/借给 B，B 向 C 采购，C 向 A 采购……）。只是结构事实，不代表任何风险结论。按全部有效交易计算，不随上方筛选变化。点击可在关系图中高亮。",
     bottleneck:"瓶颈额", headline_only:"含标题口径", mat_title:"债务到期墙（按到期年，当前口径）", mat_unknown:"未披露到期", mix_title:"融资结构 × 评级（债务边计数）",
     conc_title:"供应方按买方集中度（订单流入）", conc_sup:"供应方", conc_total:"合计", conc_top:"前三买方", gaps_title:"数据缺口 Top 10", gaps_edges:"逐笔缺口（当前筛选）",
-    delta_new:"新增交易", delta_status:"状态变更", delta_amt:"金额修订", revised_from:"修订自", revised_by:"已被修订为", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"交易 / 公司", feed_n:"新闻 / 申报",
+    rc_title:"近期新公告（按公告日期）", rc_days:"近 {n} 天", rc_note:"截至 {d}（数据生成日），按交易公告日期倒序。内部修订与历史补录不算新公告：修订记录沿用原公告日期。受上方筛选影响（期间除外）。", rc_firm:"其中已约束 {n} 笔", rc_none:"该窗口内没有新公告。", revised_from:"修订自", revised_by:"已被修订为", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"交易 / 公司", feed_n:"新闻 / 申报",
     ago_min:"{n} 分钟前", ago_h:"{n} 小时前", just:"刚刚", view_src:"来源", confidence:"置信度", basis_:{total_contract:"合同总额",annual:"年度",facility_size:"额度",drawn:"已提款"},
      lg_lines:"连线", lg_circles:"圆圈", lg_thin:"最细 = 未披露或低于 $1B", lg_pool:"虚线圆 = 占位对手方 / SPV", lg_arrow:"箭头指向收钱方：买方→供应方、投资方→公司、出借方→借款方", lg_undisc:"虚线 = 金额未披露", lg_soft:"点线 = 传闻 / 意向",
     tl_title:"月度节奏", tl_amt:"金额", tl_count:"笔数", tl_cum:"累计", tl_hint:"柱 = 当月公告的交易（按类型堆叠，当前口径）；下方折线 = 累计。点击某月只看该月，再点取消；随上方筛选变化（期间除外）。", tl_sum:"峰值月 {m}：{a}（{n} 笔）· 最近 3 个月 {b}（{k} 笔），占累计 {p}%。",
@@ -35,7 +35,7 @@ const I18N = {
   en: {eyebrow:"LIVE DATA · AI CAPITAL FLOWS", title:"AI Orders & Debt Map", subtitle:"Who owes whom: orders, equity, debt and guarantees. Every deal links to a source; headline and firm amounts shown side by side; no valuation calls.",
     search:"Find a company or deal (e.g. NVDA, Beignet, residual value)", sector:"Sector", minsize:"Min size", period:"Period", status:"Status", basis:"Basis", any:"Any", alldates:"All dates",
     last90:"Last 90 days", last12m:"Last 12 months", st_active:"Active (incl. rumored/LOI)", st_firm:"Firm only", st_all:"All (incl. superseded/cancelled)", b_headline:"Headline", b_firm:"Firm",
-    collapse:"Collapse SPVs into sponsors", layered:"Cluster by sector", v_graph:"Graph", v_table:"Table", v_cycles:"Funding loops", v_maturity:"Maturity wall", v_conc:"Concentration", v_gaps:"Data gaps", v_delta:"Latest changes", all:"All",
+    collapse:"Collapse SPVs into sponsors", layered:"Cluster by sector", v_graph:"Graph", v_table:"Table", v_cycles:"Funding loops", v_maturity:"Maturity wall", v_conc:"Concentration", v_gaps:"Data gaps", v_recent:"Recent deals", all:"All",
     replay:"Replay to", csv:"Copy CSV", rank_title:"Largest exposures", rank_total:"Total", rank_borrowed:"Borrowed", rank_orders:"Orders placed", rank_guar:"Guarantees given",
     rank_hint:"Click a company to see who it owes, who owes it, and every order. Bar = mix of edge types.", rank_note:"Pooled counterparties (bond investors, undisclosed lenders, unsplit syndicates) are not ranked.",
     latest_title:"Latest from the monitor", news:"News", filings:"SEC filings", method_title:"Methodology",
@@ -57,7 +57,7 @@ const I18N = {
     cyc_firm:"Loops on firm edges", cyc_soft:"Loops incl. rumored/LOI", cyc_note:"A loop is a closed path in the direction of money (A invests in B, B orders from C, C orders from A…). Topology only, not a risk verdict. Computed on all active edges, independent of the filters above. Click to highlight in the graph.",
     bottleneck:"Bottleneck", headline_only:"headline amounts", mat_title:"Debt maturity wall (by year, current basis)", mat_unknown:"Undisclosed maturity", mix_title:"Structure × rating (debt edge count)",
     conc_title:"Supplier concentration by buyer (order inflow)", conc_sup:"Supplier", conc_total:"Total", conc_top:"Top 3 buyers", gaps_title:"Top 10 data gaps", gaps_edges:"Gaps by deal (current filter)",
-    delta_new:"New deals", delta_status:"Status changes", delta_amt:"Amount revisions", revised_from:"Revised from", revised_by:"Superseded by", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Deals / companies", feed_n:"News / filings",
+    rc_title:"Recent announcements (by announcement date)", rc_days:"Last {n} days", rc_note:"As of {d} (data build date), newest first by announcement date. Internal revisions and backfills are not news: revised records keep the original date. Follows the filters above (except period).", rc_firm:"{n} firm", rc_none:"No announcements in this window.", revised_from:"Revised from", revised_by:"Superseded by", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Deals / companies", feed_n:"News / filings",
     ago_min:"{n} min ago", ago_h:"{n} h ago", just:"just now", view_src:"source", confidence:"Confidence", basis_:{total_contract:"total contract",annual:"annual",facility_size:"facility size",drawn:"drawn"},
      lg_lines:"Lines", lg_circles:"Circles", lg_thin:"Thinnest = undisclosed or under $1B", lg_pool:"Dashed circle = pooled counterparty / SPV", lg_arrow:"Arrow points to who receives the money: buyer → seller, investor → company, lender → borrower", lg_undisc:"Dashed line = amount undisclosed", lg_soft:"Dotted line = rumored / LOI",
     tl_title:"Monthly pace", tl_amt:"Amount", tl_count:"Count", tl_cum:"Cumulative", tl_hint:"Columns = deals announced that month (stacked by type, current basis); line below = cumulative. Click a month to filter to it, click again to clear; follows the filters above (except period).", tl_sum:"Peak month {m}: {a} ({n} deals) · last 3 months {b} ({k} deals), {p}% of the cumulative total.",
@@ -74,7 +74,7 @@ const KINDS = ["ORDER","DEBT","EQUITY","GUARANTEE"];
 const FIRM = new Set(["definitive","amended","drawn","completed"]);
 const POOLED = new Set(["public_bondholders","public_equity_investors","undisclosed_counterparty","syndicate"]);
 
-const S = {tlMode:"amt", lang:"zh", newsLang:"all", basis:"headline", kinds:new Set(KINDS), sector:"all", min:0, period:"all", status:"active", collapse:false, topn:50, layered:true, view:"graph", replay:1, q:"", sel:null, hl:new Set(), rank:"total", sort:["announced_date",-1]};
+const S = {recentDays:30, tlMode:"amt", lang:"zh", newsLang:"all", basis:"headline", kinds:new Set(KINDS), sector:"all", min:0, period:"all", status:"active", collapse:false, topn:50, layered:true, view:"graph", replay:1, q:"", sel:null, hl:new Set(), rank:"total", sort:["announced_date",-1]};
 let D = null, E = {}, sim = null, zoom = null, lastGen = null, nextCheck = Date.now()+300000;
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const t = (k, v={}) => { let s = (I18N[S.lang][k] ?? I18N.zh[k] ?? k); if (typeof s !== "string") return s; return s.replace(/\{(\w+)\}/g,(_,x)=>v[x]); };
@@ -486,11 +486,21 @@ function renderGaps(edges){
     <h3>${t("gaps_edges")}</h3><table class="tbl"><tbody>${edges.filter(e=>(e.data_gaps||[]).length).map(e=>`<tr><td class="deal-cell" data-id="${e.edge_id}"><b>${esc(S.lang==="zh"?e.title_zh:e.title_en)}</b></td><td class="gap">${e.data_gaps.map(esc).join("；")}</td></tr>`).join("")}</tbody></table></div>`;
   $$("#v_gaps .deal-cell").forEach(c=>c.onclick=()=>openEdge(D.edges.find(e=>e.edge_id===c.dataset.id)));
 }
-function renderDelta(){
-  const d=D.metrics.delta||{new:[],status_changed:[],amount_changed:[]}; const byId=Object.fromEntries(D.edges.map(e=>[e.edge_id,e]));
-  const sec=(k,lab)=>`<h3>${lab}（${d[k].length}）</h3><table class="tbl"><tbody>${d[k].map(id=>byId[id]).filter(Boolean).map(dealRow).join("")}</tbody></table>`;
-  $("#v_delta").innerHTML = `<div class="pad">${sec("new",t("delta_new"))}${sec("status_changed",t("delta_status"))}${sec("amount_changed",t("delta_amt"))}</div>`;
-  $$("#v_delta .deal-cell").forEach(c=>c.onclick=()=>openEdge(byId[c.dataset.id]));
+function renderRecent(){
+  /* 按公告日期的近期新公告：截止 = 数据生成日；修订记录沿用原公告日期，历史补录按其本来日期落位，所以内部动作不会冒充"新闻" */
+  const asof=(D.generated_at||"").slice(0,10)||new Date().toISOString().slice(0,10); const days=S.recentDays;
+  const lim=new Date(new Date(asof).getTime()-days*864e5).toISOString().slice(0,10);
+  const es=filtered({ignorePeriod:true}).filter(e=>e.announced_date && e.announced_date>lim && e.announced_date<=asof)
+    .sort((a,b)=>b.announced_date.localeCompare(a.announced_date)||(amt(b)||0)-(amt(a)||0));
+  const sum={}; KINDS.forEach(k=>sum[k]=0); let und=0; es.forEach(e=>{ const v=amt(e); if(v==null) und++; else sum[e.kind]+=v; });
+  const firm=es.filter(e=>e.firm).length;
+  const byId=Object.fromEntries(es.map(e=>[e.edge_id,e]));
+  $("#v_recent").innerHTML = `<div class="pad"><div class="boxhead"><h3>${t("rc_title")}</h3><div class="tabs small" id="rcdays">${[7,30,90].map(d=>`<button data-d="${d}" class="${d===days?"on":""}">${t("rc_days",{n:d})}</button>`).join("")}</div></div>
+    <p class="fine">${t("rc_note",{d:asof})}</p>
+    <div class="rcsum">${KINDS.filter(k=>sum[k]).map(k=>`<span><i style="background:${KCOL[k]}"></i>${t(k)} ${fmt(sum[k])}</span>`).join("")}<span>${t("n_deals",{n:es.length})} · ${t("rc_firm",{n:firm})}${und?` · ${t("more_undisc",{n:und})}`:""}</span></div>
+    ${es.length?`<table class="tbl"><thead><tr><th>${t("col_date")}</th><th>${t("col_type")}</th><th>${t("col_deal")}</th><th>${t("col_amt")}</th><th>${t("col_status")}</th><th>${t("col_src")}</th></tr></thead><tbody>${es.map(dealRow).join("")}</tbody></table>`:`<p class="fine">${t("rc_none")}</p>`}</div>`;
+  $$("#rcdays button").forEach(b=>b.onclick=()=>{ S.recentDays=+b.dataset.d; renderRecent(); });
+  $$("#v_recent .deal-cell").forEach(c=>c.onclick=()=>openEdge(byId[c.dataset.id]));
 }
 
 /* ---------- rank & feeds ---------- */
@@ -583,7 +593,7 @@ function renderAll(){
   $$("#views button").forEach(b=>b.classList.toggle("on",b.dataset.view===S.view));
   $$(".view").forEach(v=>v.classList.toggle("hidden",v.id!=="v_"+S.view));
   $("#replaydate").textContent=replayDate();
-  if(S.view==="graph") renderGraph(edges); else if(S.view==="table") renderTable(edges); else if(S.view==="cycles") renderCycles(); else if(S.view==="maturity") renderMaturity(edges); else if(S.view==="conc") renderConc(); else if(S.view==="gaps") renderGaps(edges); else if(S.view==="delta") renderDelta(); else if(S.view==="flow") renderFlow(edges);
+  if(S.view==="graph") renderGraph(edges); else if(S.view==="table") renderTable(edges); else if(S.view==="cycles") renderCycles(); else if(S.view==="maturity") renderMaturity(edges); else if(S.view==="conc") renderConc(); else if(S.view==="gaps") renderGaps(edges); else if(S.view==="recent") renderRecent(); else if(S.view==="flow") renderFlow(edges);
   renderTimeline();
   if(S.view!=="graph"&&S.view!=="table") $("#viewcount").textContent="";
   renderRank(edges); renderFeeds();
