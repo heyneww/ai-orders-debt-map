@@ -10,7 +10,7 @@ const I18N = {
     latest_title:"监控最新动态", news:"新闻", filings:"SEC 申报", method_title:"口径说明",
     m1:"四类交易：订单（买方→供应方）、债务（出借方→借款方）、股权（投资方→被投方）、担保（担保方→被担保主体）。图中每条连线是一笔交易，箭头方向 = 资金方向。",
     m2:"标题口径 = 媒体标题金额（含 \"up to\"、多年总额）；已约束口径 = 已签约/已提款部分。两者并列，不互相替代。",
-    m3:"修订不覆盖旧记录：新记录指向被修订的旧记录，统计只计最新版本。传闻/意向灰显，只有公告或申报才记为已约束。",
+    m3:"修订不覆盖旧记录：统计只计最新版本。公告引起的修订（金额上调、意向变签约等）在表格与详情里写出变了什么；我们核对时的修正不显示。传闻/意向灰显，只有公告或申报才记为已约束。",
     m4:"SPV 是独立节点：项目债记在 SPV，承租人只以租约（订单）和残值担保（担保）出现。勾选\"折叠\"可把 SPV 并回发起人。",
     m5:"每笔只计一次、不做净额；供应链两端都计。资金闭环只是拓扑事实，不代表任何风险结论。",
     disc:"仅供参考，不构成投资建议：本站只描述交易，不做评价。金额为公司公告或具名媒体披露的名义美元；每笔交易附来源链接与来源等级（1 申报 / 2 新闻稿 / 3 通讯社 / 4 其他）。",
@@ -26,7 +26,7 @@ const I18N = {
     cyc_firm:"已约束口径的闭环", cyc_soft:"含传闻/意向的闭环", cyc_note:"闭环 = 资金方向上的闭合路径（A 投/借给 B，B 向 C 采购，C 向 A 采购……）。只是结构事实，不代表任何风险结论。按全部有效交易计算，不随上方筛选变化。点击可在关系图中高亮。",
     bottleneck:"瓶颈额", headline_only:"含标题口径", mat_title:"债务到期墙（按到期年，当前口径）", mat_unknown:"未披露到期", mix_title:"融资结构 × 评级（债务边计数）",
     conc_title:"供应方按买方集中度（订单流入）", conc_sup:"供应方", conc_total:"合计", conc_top:"前三买方", gaps_title:"数据缺口 Top 10", gaps_edges:"逐笔缺口（当前筛选）",
-    rc_title:"近期新公告（按公告日期）", rc_days:"近 {n} 天", rc_note:"截至 {d}（数据生成日），按交易公告日期倒序。内部修订与历史补录不算新公告：修订记录沿用原公告日期。受上方筛选影响（期间除外）。", rc_firm:"其中已约束 {n} 笔", rc_none:"该窗口内没有新公告。", revised_from:"修订自", revised_by:"已被修订为", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"交易 / 公司", feed_n:"新闻 / 申报",
+    rc_title:"近期新公告（按公告日期）", rc_days:"近 {n} 天", rc_note:"截至 {d}（数据生成日），按交易公告日期倒序。内部修订与历史补录不算新公告：修订记录沿用原公告日期。受上方筛选影响（期间除外）。", rc_firm:"其中已约束 {n} 笔", rc_none:"该窗口内没有新公告。", rev_label:"公告修订", rev_was:"原公告", rev_amount:"金额", rev_firm:"已约束", revised_by:"已被修订（旧版本）", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"交易 / 公司", feed_n:"新闻 / 申报",
     ago_min:"{n} 分钟前", ago_h:"{n} 小时前", just:"刚刚", view_src:"来源", confidence:"置信度", basis_:{total_contract:"合同总额",annual:"年度",facility_size:"额度",drawn:"已提款"},
      lg_lines:"连线", lg_circles:"圆圈", lg_thin:"最细 = 未披露或低于 $1B", lg_pool:"虚线圆 = 占位对手方 / SPV", lg_arrow:"箭头指向收钱方：买方→供应方、投资方→公司、出借方→借款方", lg_undisc:"虚线 = 金额未披露", lg_soft:"点线 = 传闻 / 意向",
     tl_title:"月度节奏", tl_amt:"金额", tl_count:"笔数", tl_cum:"累计", tl_hint:"柱 = 当月公告的交易（按类型堆叠，当前口径）；下方折线 = 累计。点击某月只看该月，再点取消；随上方筛选变化（期间除外）。", tl_sum:"峰值月 {m}：{a}（{n} 笔）· 最近 3 个月 {b}（{k} 笔），占累计 {p}%。",
@@ -41,7 +41,7 @@ const I18N = {
     latest_title:"Latest from the monitor", news:"News", filings:"SEC filings", method_title:"Methodology",
     m1:"Four deal kinds: ORDER (buyer→supplier), DEBT (lender→borrower), EQUITY (investor→investee), GUARANTEE (guarantor→obligor). Arrow = direction of money.",
     m2:"Headline = the reported amount (incl. \"up to\", multi-year totals); firm = signed / drawn portion. Both shown, never substituted.",
-    m3:"Revisions never overwrite: a new edge supersedes the old one and only the latest version is counted. Rumors/LOIs are greyed; only announcements or filings count as firm.",
+    m3:"Revisions never overwrite: only the latest version is counted. Amendments driven by a new announcement (amount raised, LOI to signed, etc.) are spelled out in the table and detail; our own verification fixes are not shown. Rumors/LOIs are greyed; only announcements or filings count as firm.",
     m4:"SPVs are nodes: project debt sits on the SPV; the tenant appears only via lease (ORDER) and residual-value guarantee. Tick \"collapse\" to fold SPVs into sponsors.",
     m5:"Each deal counted once, not netted; both ends of a supply chain count. Funding loops are topology, not a risk verdict.",
     disc:"For information only, not investment advice: this site describes deals and does not rate them. Amounts are nominal USD as disclosed by companies or named outlets; every edge carries a source link and tier (1 filing / 2 press release / 3 wire / 4 other).",
@@ -57,7 +57,7 @@ const I18N = {
     cyc_firm:"Loops on firm edges", cyc_soft:"Loops incl. rumored/LOI", cyc_note:"A loop is a closed path in the direction of money (A invests in B, B orders from C, C orders from A…). Topology only, not a risk verdict. Computed on all active edges, independent of the filters above. Click to highlight in the graph.",
     bottleneck:"Bottleneck", headline_only:"headline amounts", mat_title:"Debt maturity wall (by year, current basis)", mat_unknown:"Undisclosed maturity", mix_title:"Structure × rating (debt edge count)",
     conc_title:"Supplier concentration by buyer (order inflow)", conc_sup:"Supplier", conc_total:"Total", conc_top:"Top 3 buyers", gaps_title:"Top 10 data gaps", gaps_edges:"Gaps by deal (current filter)",
-    rc_title:"Recent announcements (by announcement date)", rc_days:"Last {n} days", rc_note:"As of {d} (data build date), newest first by announcement date. Internal revisions and backfills are not news: revised records keep the original date. Follows the filters above (except period).", rc_firm:"{n} firm", rc_none:"No announcements in this window.", revised_from:"Revised from", revised_by:"Superseded by", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Deals / companies", feed_n:"News / filings",
+    rc_title:"Recent announcements (by announcement date)", rc_days:"Last {n} days", rc_note:"As of {d} (data build date), newest first by announcement date. Internal revisions and backfills are not news: revised records keep the original date. Follows the filters above (except period).", rc_firm:"{n} firm", rc_none:"No announcements in this window.", rev_label:"Amended by announcement", rev_was:"originally", rev_amount:"amount", rev_firm:"firm", revised_by:"superseded (old version)", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Deals / companies", feed_n:"News / filings",
     ago_min:"{n} min ago", ago_h:"{n} h ago", just:"just now", view_src:"source", confidence:"Confidence", basis_:{total_contract:"total contract",annual:"annual",facility_size:"facility size",drawn:"drawn"},
      lg_lines:"Lines", lg_circles:"Circles", lg_thin:"Thinnest = undisclosed or under $1B", lg_pool:"Dashed circle = pooled counterparty / SPV", lg_arrow:"Arrow points to who receives the money: buyer → seller, investor → company, lender → borrower", lg_undisc:"Dashed line = amount undisclosed", lg_soft:"Dotted line = rumored / LOI",
     tl_title:"Monthly pace", tl_amt:"Amount", tl_count:"Count", tl_cum:"Cumulative", tl_hint:"Columns = deals announced that month (stacked by type, current basis); line below = cumulative. Click a month to filter to it, click again to clear; follows the filters above (except period).", tl_sum:"Peak month {m}: {a} ({n} deals) · last 3 months {b} ({k} deals), {p}% of the cumulative total.",
@@ -445,10 +445,28 @@ function renderFlow(edges){
 }
 
 /* ---------- table ---------- */
+/* 修订链：只把"公告修订"（scout 依据新公告记的 supersedes）讲给读者，核对修正（notes 带 [spot_check]）不显示 */
+const byEdgeId = id => D && D.edges.find(x=>x.edge_id===id);
+function revInfo(e){
+  if(!e||!e.supersedes) return null;
+  /* 跳过我们自己的核对修正，找到最近一次由公告引起的修订；拿它修订前的记录与当前记录比 */
+  let cur=e; while(cur&&cur.supersedes&&/\[spot_check/.test(cur.notes||"")) cur=byEdgeId(cur.supersedes);
+  if(!cur||!cur.supersedes) return null; const p=byEdgeId(cur.supersedes); if(!p) return null;
+  const ch=[]; const st=t("status_");
+  if(p.amount_headline_musd!==e.amount_headline_musd) ch.push(`${t("rev_amount")} ${fmt(p.amount_headline_musd)} → ${fmt(e.amount_headline_musd)}`);
+  if(p.amount_firm_musd!==e.amount_firm_musd && (p.amount_firm_musd!=null||e.amount_firm_musd!=null)) ch.push(`${t("rev_firm")} ${fmt(p.amount_firm_musd)} → ${fmt(e.amount_firm_musd)}`);
+  if(p.status!==e.status && !(e.status==="amended" && FIRM.has(p.status))) ch.push(`${t("col_status")} ${st[p.status]||p.status} → ${st[e.status]||e.status}`);
+  if(!ch.length) return null;
+  return {prev:p, changes:ch, text:`${t("rev_label")}（${cur.announced_date||""}，${t("rev_was")} ${p.announced_date||""}）：${ch.join(" · ")}`};
+}
+function revChain(e){ /* 只含公告修订的可读链：日期 金额 状态 → … */
+  const steps=[]; let cur=e; while(cur&&cur.supersedes){ const p=byEdgeId(cur.supersedes); if(!p) break; if(!/\[spot_check/.test(cur.notes||"")) steps.unshift(p); cur=p; }
+  if(!steps.length) return []; steps.push(e); return steps;
+}
 function dealRow(e){
   const h=e.amount_headline_musd, f=e.amount_firm_musd; const bar = h? Math.min(100, 100*(f||0)/h) : 0;
   return `<tr><td class="mono">${e.announced_date||""}</td><td><span style="color:${KCOL[e.kind]};font-weight:600">${t(e.kind)}</span></td>
-    <td class="deal-cell" data-id="${e.edge_id}"><b>${esc(S.lang==="zh"?e.title_zh:e.title_en)}</b><div class="mono">${esc(nm(e.from))} → ${esc(nm(e.to))}${e.supersedes?` · ${t("revised_from")} ${e.supersedes}`:""}${e.superseded_by?` · ${t("revised_by")} ${e.superseded_by}`:""}</div></td>
+    <td class="deal-cell" data-id="${e.edge_id}"><b>${esc(S.lang==="zh"?e.title_zh:e.title_en)}</b><div class="mono">${esc(nm(e.from))} → ${esc(nm(e.to))}${e.superseded_by?` · ${t("revised_by")}`:""}</div>${(r=>r?`<div class="rev">${r.text}</div>`:"")(revInfo(e))}</td>
     <td class="amt">${fmt(h)}<small>${f==null?t("undisclosed"):fmt(f)}</small><div class="bar" style="--c:${KCOL[e.kind]}"><i style="width:${bar}%"></i></div></td>
     <td>${tagStatus(e.status)}<br>${tagTier(e.source_tier)}</td><td><a href="${esc(e.source_url)}" target="_blank" rel="noopener">${t("view_src")} ↗</a>${(e.data_gaps||[]).length?`<div class="gap">⚠ ${e.data_gaps.length}</div>`:""}</td></tr>`;
 }
@@ -529,7 +547,7 @@ function renderFeeds(){
 /* ---------- detail & modal ---------- */
 function dealItem(e,other){
   return `<div class="deal" data-id="${e.edge_id}"><div class="h"><span>${esc(nm(other))}</span><span class="amt" style="color:${KCOL[e.kind]}">${fmt(amt(e))}</span></div><div class="t">${esc(S.lang==="zh"?e.title_zh:e.title_en)}</div>
-    <div class="m"><span>${e.announced_date||""}</span>${tagStatus(e.status)}${tagTier(e.source_tier)}${e.amount_firm_musd!=null&&S.basis==="headline"?`<span>${t("firm_of")} ${fmt(e.amount_firm_musd)}</span>`:""}${e.supersedes?`<span class="tag">${t("revised_from")} ${e.supersedes}</span>`:""}</div>
+    <div class="m"><span>${e.announced_date||""}</span>${tagStatus(e.status)}${tagTier(e.source_tier)}${e.amount_firm_musd!=null&&S.basis==="headline"?`<span>${t("firm_of")} ${fmt(e.amount_firm_musd)}</span>`:""}</div>${(r=>r?`<div class="rev">${r.text}</div>`:"")(revInfo(e))}
     ${(e.data_gaps||[]).length?`<div class="gap">⚠ ${e.data_gaps.map(esc).join("；")}</div>`:""}</div>`;
 }
 function selectNode(id){
@@ -556,10 +574,10 @@ function openEdge(e){
   if(e.debt){ kv.push([t("structure"),`${e.debt.instrument||""} · ${e.debt.structure_type||""}`]); if(e.debt.coupon_pct!=null) kv.push([t("coupon"),`${e.debt.coupon_pct}%`]); if(e.debt.maturity_date) kv.push([t("maturity"),e.debt.maturity_date]); if(e.debt.rating?.grade) kv.push([t("rating"),`${e.debt.rating.agency||""} ${e.debt.rating.grade}`]); if(e.debt.collateral) kv.push([t("collateral"),e.debt.collateral]); }
   if(e.equity){ kv.push([t("structure"),e.equity.form||""]); if(e.equity.linked_order_edge) kv.push([t("linked"),e.equity.linked_order_edge]); }
   if(e.guarantee){ kv.push([t("structure"),e.guarantee.form||""]); if(e.guarantee.cap_musd!=null) kv.push([t("cap"),fmt(e.guarantee.cap_musd)]); if(e.guarantee.trigger) kv.push([t("trigger"),e.guarantee.trigger]); if(e.guarantee.covered_edge) kv.push([t("covered"),e.guarantee.covered_edge]); }
-  const chain=[]; let cur=e; while(cur&&cur.supersedes){ const p=D.edges.find(x=>x.edge_id===cur.supersedes); if(!p) break; chain.unshift(p); cur=p; } let nx=e; while(nx&&nx.superseded_by){ const n=D.edges.find(x=>x.edge_id===nx.superseded_by); if(!n) break; chain.push(n); nx=n; }
+  const chain=revChain(e);
   $("#mbody").innerHTML = `<span class="tag" style="background:${KCOL[e.kind]};color:var(--halo)">${t(e.kind)}</span><h2 style="margin:6px 0">${esc(S.lang==="zh"?e.title_zh:e.title_en)}</h2><dl class="kv">${kv.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>
-    ${(e.data_gaps||[]).length?`<p class="gap">⚠ ${e.data_gaps.map(esc).join("；")}</p>`:""}${e.notes?`<p class="fine">${esc(e.notes)}</p>`:""}
-    ${chain.length?`<div class="chain">${S.lang==="zh"?"修订链":"Revision chain"}：${chain.map(x=>`${x.edge_id===e.edge_id?"<b>":""}${x.edge_id} (${x.announced_date}, ${fmt(x.amount_headline_musd)}, ${t("status_")[x.status]})${x.edge_id===e.edge_id?"</b>":""}`).join(" → ")}</div>`:""}
+    ${(e.data_gaps||[]).length?`<p class="gap">⚠ ${e.data_gaps.map(esc).join("；")}</p>`:""}${e.notes?`<p class="fine">${esc(e.notes.replace(/\s*\[spot_check[^\]]*\]/g,""))}</p>`:""}
+    ${chain.length?`<div class="chain">${t("rev_label")}：${chain.map(x=>`${x.edge_id===e.edge_id?"<b>":""}${x.announced_date||""} ${fmt(x.amount_headline_musd)} ${t("status_")[x.status]||x.status}${x.edge_id===e.edge_id?"</b>":""}`).join(" → ")}</div>`:""}
     <p><button class="btn" id="mhl">${t("in_graph")}</button></p>`;
   $("#modal").classList.remove("hidden"); $("#mhl").onclick=()=>{ S.hl=new Set([e.edge_id]); S.view="graph"; $("#modal").classList.add("hidden"); renderAll(); };
 }
