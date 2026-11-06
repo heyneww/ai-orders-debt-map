@@ -37,15 +37,18 @@ jobs:
           # 注意：SEC 对 GitHub 托管 runner 的 IP 段常返回 403；失败时 export 会沿用上一版申报列表并标记 stale
           python3 monitor/edgar_watch.py --entities monitor/entities.json --since $(date -u -d '60 days ago' +%Y-%m-%d) \
             --out data/filings_raw.jsonl --forms "8-K,8-K/A,6-K,424B2,424B5,FWP,10-Q,10-K,D" --items "" --cik-cache monitor/cik_cache.json || true
+      - name: Minsky-moment monitor (FRED + Yahoo, no key)
+        run: |
+          python3 monitor/minsky_watch.py --out data/minsky.json --prev data/minsky.json || true
       - name: Export graph.json
         run: |
-          python3 monitor/export_site_data.py --entities monitor/entities.json --edges monitor/edges.jsonl --metrics monitor/metrics.json \
+          python3 monitor/export_site_data.py --minsky data/minsky.json --entities monitor/entities.json --edges monitor/edges.jsonl --metrics monitor/metrics.json \
             --news data/news_raw.jsonl --filings data/filings_raw.jsonl --commentary monitor/commentary.json --fallback data/graph.json --out data/graph.json --archive data/archive \
             --monitor-note "github-actions $(date -u +%Y-%m-%dT%H:%MZ)"
       - name: Commit refreshed data
         run: |
           git config user.name "deal-graph-bot"; git config user.email "deal-graph-bot@users.noreply.github.com"
-          git add data/graph.json data/archive monitor/press_state.json monitor/cik_cache.json
+          git add data/graph.json data/minsky.json data/archive monitor/press_state.json monitor/cik_cache.json
           git diff --cached --quiet || git commit -m "Refresh $(date -u +%Y-%m-%d\ %H:%M) UTC"
           git push || true
       - uses: actions/configure-pages@v5

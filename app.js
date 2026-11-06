@@ -29,6 +29,14 @@ const I18N = {
     rc_title:"近期新公告（按公告日期）", rc_days:"近 {n} 天", rc_note:"截至 {d}（数据生成日），按交易公告日期倒序。这里是监控的出水口：只列已抽取、已确认进图的交易；下方「监控最新动态」是未经抽取的原始新闻与申报，新交易会先出现在那里，经本地抽取后才进这里。内部修订与历史补录不算新公告。受上方筛选影响（期间除外）。", rc_firm:"其中已约束 {n} 笔", rc_none:"该窗口内没有新公告。", rev_label:"公告修订", rev_was:"原公告", rev_amount:"金额", rev_firm:"已约束", revised_by:"已被修订（旧版本）", rebuilt:"数据重建于", next_check:"下次自检", edges_n:"交易 / 公司", feed_n:"新闻 / 申报",
     ago_min:"{n} 分钟前", ago_h:"{n} 小时前", just:"刚刚", view_src:"来源", confidence:"置信度", basis_:{total_contract:"合同总额",annual:"年度",facility_size:"额度",drawn:"已提款"},
      lg_lines:"连线", lg_circles:"圆圈", lg_thin:"最细 = 未披露或低于 $1B", lg_pool:"虚线圆 = 占位对手方 / SPV", lg_arrow:"箭头指向收钱方：买方→供应方、投资方→公司、出借方→借款方", lg_undisc:"虚线 = 金额未披露", lg_soft:"点线 = 传闻 / 意向",
+    mk_title:"明斯基时刻监控", mk_hint:"德银 2025-11 报告沿用的 GHSS 双门槛：非金融企业信贷/GDP 三年升幅 > 9 个百分点，且标普 500 扣除 CPI 后三年涨幅 > 26%。两轴同时越线 = 红区（样本内未来三年危机概率约 45%）。下面是标准与现状的逐轴对照，只摆数字，不下结论。",
+    mk_debt:"债务轴 · 非金融企业信贷 / GDP", mk_eq:"股价轴 · 标普 500 实际涨幅", mk_std:"标准", mk_now:"现状", mk_win:"三年变化", mk_in:"红区内", mk_out:"红区外", mk_stale:"数据未刷新",
+    mk_debt_std:"三年上升 > 9 pp", mk_eq_std:"三年实际涨幅 > 26%", mk_over:"超门槛 {n}", mk_under:"距门槛 {n}", mk_pp:"pp", mk_level:"{a}：{l}%（三年前 {s}%）", mk_alt:"备用口径 Fed Z.1 公司制企业：{l}%（{a}），三年 {c} pp",
+    mk_eqd:"{s}（{sd}）→ {e}（{ed}）名义 {n}%，CPI {c}%", mk_both_yes:"两轴同时越线：是。", mk_both_no:"两轴同时越线：否。",
+    mk_sum_one:"当前只有{ax}越线，另一轴在门槛之下{x}。要进红区，企业信贷/GDP 需从 {l}% 升到 {need}% 以上（三年基期 {s}%）。",
+    mk_sum_none:"两轴都在门槛之下。", mk_sum_both:"两轴都在门槛之上。", mk_ax_eq:"股价轴", mk_ax_debt:"债务轴", mk_debt_neg:"，且为负值（过去三年企业杠杆率在下降）",
+    mk_hist:"1988 年以来两轴同时越线的季度：{q}。", mk_hist_none:"1988 年以来没有两轴同时越线的季度。", mk_chart_debt:"企业信贷/GDP 三年变化（pp）", mk_chart_eq:"标普 500 三年实际涨幅（%）", mk_thr:"门槛",
+    mk_note:"口径：债务轴 = BIS「非金融企业信贷/GDP」（全部非金融企业，公司制+非公司制，所有信贷来源；不含金融机构、家庭、政府），季度，最新 {da}；股价轴 = 标普 500 ÷ CPI，{ea} 收盘，CPI 到 {ca}。框架出处：Greenwood–Hanson–Shleifer–Sørensen (2022)，德意志银行 2025-11。盲区：SPV 项目债、私募信贷与表外租赁未必计入「非金融企业」口径，本图追踪的债务与担保边正是这个盲区。",
     tl_title:"月度节奏", tl_amt:"金额", tl_count:"笔数", tl_cum:"累计", tl_hint:"柱 = 当月公告的交易（按类型堆叠，当前口径）；下方折线 = 累计。点击某月只看该月，再点取消；随上方筛选变化（期间除外）。", tl_sum:"峰值月 {m}：{a}（{n} 笔）· 最近 3 个月 {b}（{k} 笔），占累计 {p}%。",
     v_flow:"板块流向", flow_title:"钱从哪个板块流向哪个板块", flow_note:"行 = 付钱方板块，列 = 收钱方板块；格内为金额与笔数，颜色深浅 = 金额相对大小（当前筛选与口径）。担保是或有敞口，不计入。净流入 = 流入 − 流出，只是方向事实，不代表任何风险结论。", flow_from:"付钱方", flow_to:"收钱方", flow_out:"流出合计", flow_in:"流入合计", flow_net:"净流入", flow_top:"最大流向",
     n_deals:"{n} 笔", gp_title:"读者要知道的四类缺口", gp_note:"这四类缺口会改变对图的解读，按当前筛选与口径计算。核对员的内部待办（评级未核对、GPU 数量等）收在最下方的维护记录里。",
@@ -65,6 +73,14 @@ const I18N = {
     rc_title:"Recent announcements (by announcement date)", rc_days:"Last {n} days", rc_note:"As of {d} (data build date), newest first by announcement date. This is the monitor's output: only deals that have been extracted and confirmed onto the map. \"Latest from the monitor\" below is the raw intake of news and filings; a new deal shows up there first and reaches this list after extraction. Internal revisions and backfills are not news. Follows the filters above (except period).", rc_firm:"{n} firm", rc_none:"No announcements in this window.", rev_label:"Amended by announcement", rev_was:"originally", rev_amount:"amount", rev_firm:"firm", revised_by:"superseded (old version)", rebuilt:"Data rebuilt", next_check:"Next check", edges_n:"Deals / companies", feed_n:"News / filings",
     ago_min:"{n} min ago", ago_h:"{n} h ago", just:"just now", view_src:"source", confidence:"Confidence", basis_:{total_contract:"total contract",annual:"annual",facility_size:"facility size",drawn:"drawn"},
      lg_lines:"Lines", lg_circles:"Circles", lg_thin:"Thinnest = undisclosed or under $1B", lg_pool:"Dashed circle = pooled counterparty / SPV", lg_arrow:"Arrow points to who receives the money: buyer → seller, investor → company, lender → borrower", lg_undisc:"Dashed line = amount undisclosed", lg_soft:"Dotted line = rumored / LOI",
+    mk_title:"Minsky-moment monitor", mk_hint:"The GHSS double threshold used in Deutsche Bank's Nov-2025 note: non-financial corporate credit/GDP up more than 9 pp over three years AND the S&P 500 up more than 26% in real terms over three years. Both over the line = red zone (about 45% probability of a crisis within three years, in sample). Below, standard vs. current reading per axis. Numbers only, no verdict.",
+    mk_debt:"Debt axis · non-financial corporate credit / GDP", mk_eq:"Equity axis · S&P 500 real change", mk_std:"Standard", mk_now:"Now", mk_win:"3-year change", mk_in:"In red zone", mk_out:"Outside", mk_stale:"not refreshed",
+    mk_debt_std:"3-year rise > 9 pp", mk_eq_std:"3-year real gain > 26%", mk_over:"{n} above threshold", mk_under:"{n} below threshold", mk_pp:"pp", mk_level:"{a}: {l}% (3 years earlier {s}%)", mk_alt:"Alt basis, Fed Z.1 corporate only: {l}% ({a}), 3-year {c} pp",
+    mk_eqd:"{s} ({sd}) → {e} ({ed}) nominal {n}%, CPI {c}%", mk_both_yes:"Both axes over the line: yes.", mk_both_no:"Both axes over the line: no.",
+    mk_sum_one:"Only the {ax} is over the line; the other axis is below its threshold{x}. To enter the red zone, corporate credit/GDP would have to rise from {l}% to above {need}% (3-year base {s}%).",
+    mk_sum_none:"Both axes are below their thresholds.", mk_sum_both:"Both axes are above their thresholds.", mk_ax_eq:"equity axis", mk_ax_debt:"debt axis", mk_debt_neg:", and negative (corporate leverage fell over the past three years)",
+    mk_hist:"Quarters since 1988 with both axes over the line: {q}.", mk_hist_none:"No quarter since 1988 with both axes over the line.", mk_chart_debt:"Corporate credit/GDP, 3-year change (pp)", mk_chart_eq:"S&P 500, 3-year real change (%)", mk_thr:"threshold",
+    mk_note:"Basis: debt axis = BIS credit to non-financial corporations / GDP (all non-financial business, corporate and non-corporate, all lenders; excludes financials, households, government), quarterly, latest {da}; equity axis = S&P 500 deflated by CPI, close of {ea}, CPI through {ca}. Framework: Greenwood–Hanson–Shleifer–Sørensen (2022), Deutsche Bank Nov-2025. Blind spot: SPV project debt, private credit and off-balance-sheet leases need not fall inside the non-financial-corporate measure; the debt and guarantee edges tracked on this page sit in that blind spot.",
     tl_title:"Monthly pace", tl_amt:"Amount", tl_count:"Count", tl_cum:"Cumulative", tl_hint:"Columns = deals announced that month (stacked by type, current basis); line below = cumulative. Click a month to filter to it, click again to clear; follows the filters above (except period).", tl_sum:"Peak month {m}: {a} ({n} deals) · last 3 months {b} ({k} deals), {p}% of the cumulative total.",
     v_flow:"Sector flows", flow_title:"Which sector pays which sector", flow_note:"Rows = paying sector, columns = receiving sector; each cell shows amount and deal count, shade = relative size (current filters and basis). Guarantees are contingent and excluded. Net inflow = inflow − outflow: a direction fact, not a risk verdict.", flow_from:"Payer", flow_to:"Receiver", flow_out:"Total out", flow_in:"Total in", flow_net:"Net inflow", flow_top:"Largest flows",
     n_deals:"{n} deals", gp_title:"Four gaps readers should know about", gp_note:"These four gaps change how the map should be read; computed on the current filters and basis. Internal to-dos for checkers (ratings not verified, GPU counts, etc.) are kept in the maintenance log at the bottom.",
@@ -435,6 +451,53 @@ function renderTimeline(){
   $("#tlsum").textContent = t("tl_sum",{m:monthLabel(peak.month), a:fmt(peak.usd), n:peak.count, b:fmt(l3), p:ca?Math.round(100*l3/ca):0, k:last3.reduce((s,r)=>s+r.count,0)});
 }
 
+/* ---------- 明斯基时刻监控：GHSS/德银双门槛 vs 现状 ---------- */
+function qLabel(d){ const m=+d.slice(5,7); return `${d.slice(0,4)}Q${Math.ceil(m/3)}`; }
+function renderMinsky(){
+  const sec=$("#minsky"); if(!sec) return; const k=D.minsky; if(!k||!k.debt||!k.equity){ sec.classList.add("hidden"); return; } sec.classList.remove("hidden");
+  const dbt=k.debt, eq=k.equity, T=k.framework.thresholds; const pp=v=>`${v>0?"+":""}${v.toFixed(1)}`;
+  $("#mk_asof").innerHTML=`${k.stale?`<span class="tag mk_stale">${t("mk_stale")} · ${esc((k.stale_since||"").slice(0,10))}</span> `:""}${esc(k.fetched_at.slice(0,10))}`;
+  const bar=(lo,hi,thr,now,unit)=>{ const pct=v=>Math.max(0,Math.min(100,(v-lo)/(hi-lo)*100));
+    return `<div class="mk__bar"><div class="red" style="width:${100-pct(thr)}%"></div>${lo<0?`<div class="zero" style="left:${pct(0)}%"></div>`:""}<div class="thr" style="left:${pct(thr)}%"><i>${t("mk_thr")} ${thr>0?"+":""}${thr}${unit}</i></div><div class="now" style="left:${pct(now)}%" title="${pp(now)}${unit}"></div></div>`; };
+  const ax=(cls,color,title,std,nowV,unit,sub,inRed,lo,hi,thr,extra)=>`<div class="mk__ax" style="--c:${color}"><div class="mk__h"><b>${title}</b><span class="tag ${inRed?"mk_in":"mk_out"}">${inRed?t("mk_in"):t("mk_out")} · ${inRed?t("mk_over",{n:(nowV-thr).toFixed(1)+(unit==="%"?"%":" "+unit)}):t("mk_under",{n:(thr-nowV).toFixed(1)+(unit==="%"?"%":" "+unit)})}</span></div>
+    <div class="mk__cmp"><span class="k">${t("mk_std")}</span><span>${std}</span><span class="k">${t("mk_now")}</span><span class="v">${pp(nowV)}${unit==="%"?"%":""}<small>${unit==="%"?"":" "+unit} · ${t("mk_win")}</small></span></div>
+    ${bar(lo,hi,thr,nowV,unit)}<div class="fine">${sub}</div>${extra?`<div class="fine" style="margin-top:4px">${extra}</div>`:""}</div>`;
+  const dsub=t("mk_level",{a:qLabel(dbt.asof),l:dbt.level,s:dbt.start_level}); const dalt=dbt.alt?t("mk_alt",{l:dbt.alt.level,a:qLabel(dbt.alt.asof),c:pp(dbt.alt.chg_3y)}):"";
+  const esub=t("mk_eqd",{s:eq.sp_start,sd:eq.sp_start_date,e:eq.sp_end,ed:eq.sp_end_date,n:pp(eq.nominal_pct),c:pp(eq.cpi_pct)});
+  const both=dbt.in_red&&eq.in_red; let sum=both?t("mk_both_yes")+" "+t("mk_sum_both"):(!dbt.in_red&&!eq.in_red)?t("mk_both_no")+" "+t("mk_sum_none")
+    :t("mk_both_no")+" "+t("mk_sum_one",{ax:t(eq.in_red?"mk_ax_eq":"mk_ax_debt"),x:(!dbt.in_red&&dbt.chg_3y<0)?t("mk_debt_neg"):"",l:dbt.level,need:dbt.level_needed,s:dbt.start_level});
+  const hq=(k.status&&k.status.history_both_red_quarters)||[]; const hist=hq.length?t("mk_hist",{q:hq.map(qLabel).join(", ")}):t("mk_hist_none");
+  $("#mk_body").innerHTML=`<div class="mk">${ax("d",cssVar("--debt"),t("mk_debt"),t("mk_debt_std"),dbt.chg_3y,t("mk_pp"),dsub,dbt.in_red,-15,20,T.debt_pp,dalt)}${ax("e",cssVar("--accent"),t("mk_eq"),t("mk_eq_std"),eq.real_pct,"%",esub,eq.in_red,-40,100,T.equity_pct,"")}</div>
+    <p class="mk__sum"><b>${esc(sum)}</b> ${esc(hist)}</p>`;
+  $("#mk_note").textContent=t("mk_note",{da:qLabel(dbt.asof),ea:eq.sp_end_date,ca:(eq.cpi_end_date||"").slice(0,7)});
+  /* 两条历史线：同一时间轴，各自门槛虚线，双越线季度打阴影 */
+  const eqByQ={}; eq.history.forEach(r=>{ eqByQ[r.date.slice(0,4)+"-"+({"03":"01","06":"04","09":"07","12":"10"}[r.date.slice(5,7)]||r.date.slice(5,7))]=r.real_pct; });
+  const rows=dbt.history.map(r=>({d:r.date,debt:r.chg_3y,eq:eqByQ[r.date.slice(0,7)]})).filter(r=>r.eq!=null); if(rows.length<8) return;
+  const svg=d3.select("#mk-svg"); const W=Math.max(320,sec.clientWidth-28), narrow=W<600; const M={l:4,r:narrow?44:56,t:14,b:18}, H1=narrow?60:76, gap=22, H=M.t+H1*2+gap+M.b;
+  svg.attr("viewBox",`0 0 ${W} ${H}`).attr("width",W).attr("height",H); svg.selectAll("*").remove();
+  const x=d3.scaleTime().domain([new Date(rows[0].d),new Date(rows[rows.length-1].d)]).range([M.l,W-M.r]);
+  const g=svg.append("g");
+  const bands=rows.filter(r=>r.debt>T.debt_pp&&r.eq>T.equity_pct);
+  const panel=(top,key,thr,color,label,fmtV)=>{ const vals=rows.map(r=>r[key]); const y=d3.scaleLinear().domain([Math.min(d3.min(vals),thr<0?thr:0,0),Math.max(d3.max(vals),thr)]).nice().range([top+H1,top]);
+    const pg=g.append("g"); pg.append("g").attr("class","mk__grid").selectAll("line").data(y.ticks(3)).join("line").attr("x1",M.l).attr("x2",W-M.r).attr("y1",y).attr("y2",y);
+    pg.append("g").attr("class","mk__ticks").selectAll("text").data(y.ticks(3)).join("text").attr("x",W-M.r+5).attr("y",d=>y(d)+3).text(d=>fmtV(d));
+    bands.forEach(r=>pg.append("rect").attr("class","mk__band").attr("x",x(new Date(r.d))-2).attr("width",Math.max(3,(W-M.l-M.r)/rows.length)).attr("y",top).attr("height",H1));
+    pg.append("line").attr("class","mk__thr").attr("x1",M.l).attr("x2",W-M.r).attr("y1",y(thr)).attr("y2",y(thr));
+    pg.append("path").attr("class","mk__line").attr("stroke",color).attr("d",d3.line().x(r=>x(new Date(r.d))).y(r=>y(r[key]))(rows));
+    const last=rows[rows.length-1]; pg.append("circle").attr("r",3).attr("fill",color).attr("cx",x(new Date(last.d))).attr("cy",y(last[key]));
+    pg.append("text").attr("class","mk__lab").attr("x",M.l).attr("y",top-3).text(label+" · "+t("mk_thr")+" "+(thr>0?"+":"")+thr);
+    return y; };
+  panel(M.t,"debt",T.debt_pp,cssVar("--debt"),t("mk_chart_debt"),d=>d);
+  panel(M.t+H1+gap,"eq",T.equity_pct,cssVar("--accent"),t("mk_chart_eq"),d=>d);
+  const yrs=x.ticks(narrow?5:9); g.append("g").attr("class","mk__ticks").selectAll("text").data(yrs).join("text").attr("x",d=>x(d)).attr("y",H-5).attr("text-anchor","middle").text(d=>d.getFullYear());
+  /* 悬停：竖线 + 当季两值 */
+  const hover=g.append("line").attr("class","mk__cur").attr("y1",M.t).attr("y2",M.t+H1*2+gap).style("display","none");
+  svg.append("rect").attr("x",M.l).attr("y",M.t).attr("width",W-M.l-M.r).attr("height",H1*2+gap).attr("fill","transparent")
+    .on("pointermove",ev=>{ const [px]=d3.pointer(ev); const dt=x.invert(px); const i=d3.bisector(r=>new Date(r.d)).center(rows,dt); const r=rows[i]; if(!r) return; hover.style("display",null).attr("x1",x(new Date(r.d))).attr("x2",x(new Date(r.d)));
+      showTipIn(ev,sec,`<span class="tooltip__v">${qLabel(r.d)}</span><span class="tooltip__m"><i class="key" style="--c:${cssVar("--debt")}"></i>${t("mk_chart_debt")} ${pp(r.debt)}</span><span class="tooltip__m"><i class="key" style="--c:${cssVar("--accent")}"></i>${t("mk_chart_eq")} ${pp(r.eq)}</span>`); })
+    .on("pointerleave",()=>{ hover.style("display","none"); hideTip(); });
+}
+
 /* ---------- 板块流向矩阵：钱从哪个板块流到哪个板块 ---------- */
 function renderFlow(edges){
   const secs=Object.keys(t("sectors")).filter(k=>k!=="all"); const SN=t("sectors");
@@ -644,7 +707,7 @@ function renderAll(){
   $$(".view").forEach(v=>v.classList.toggle("hidden",v.id!=="v_"+S.view));
   $("#replaydate").textContent=replayDate();
   if(S.view==="graph") renderGraph(edges); else if(S.view==="table") renderTable(edges); else if(S.view==="cycles") renderCycles(); else if(S.view==="maturity") renderMaturity(edges); else if(S.view==="conc") renderConc(); else if(S.view==="gaps") renderGaps(edges); else if(S.view==="recent") renderRecent(); else if(S.view==="flow") renderFlow(edges);
-  renderTimeline();
+  renderTimeline(); renderMinsky();
   if(S.view!=="graph"&&S.view!=="table") $("#viewcount").textContent="";
   renderRank(edges); renderFeeds();
   if(S.sel && !$("#detail").classList.contains("hidden")) selectNode(S.sel);
@@ -664,7 +727,7 @@ function bind(){
   $("#csv").onclick=()=>csv(filtered());
   $("#mclose").onclick=()=>$("#modal").classList.add("hidden"); $("#modal").onclick=ev=>{if(ev.target.id==="modal") $("#modal").classList.add("hidden");};
   document.addEventListener("keydown",ev=>{if(ev.key==="Escape"){$("#modal").classList.add("hidden"); $("#livepop").classList.add("hidden");}});
-  window.addEventListener("resize",()=>{ if(S.view==="graph") renderGraph(filtered()); renderTimeline(); });
+  window.addEventListener("resize",()=>{ if(S.view==="graph") renderGraph(filtered()); renderTimeline(); renderMinsky(); });
   $$("#tlmode button").forEach(b=>b.onclick=()=>{ S.tlMode=b.dataset.m; renderTimeline(); });
   if(window.matchMedia){ window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>renderAll()); }
   new MutationObserver(()=>renderAll()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});

@@ -50,6 +50,7 @@ def main():
     ap.add_argument("--entities", required=True); ap.add_argument("--edges", required=True); ap.add_argument("--metrics", required=True)
     ap.add_argument("--news", default=None); ap.add_argument("--filings", default=None); ap.add_argument("--out", required=True)
     ap.add_argument("--archive", default=None); ap.add_argument("--monitor-note", default=""); ap.add_argument("--commentary", default=None); ap.add_argument("--fallback", default=None, help="上一版 graph.json：新闻/申报抓取为空时沿用其列表并标记 stale")
+    ap.add_argument("--minsky", default=None, help="minsky_watch.py 的输出；缺失或不可读时沿用上一版 graph.json 的 minsky")
     a = ap.parse_args()
     ents = json.load(open(a.entities))["entities"]
     edges = [json.loads(l) for l in open(a.edges) if l.strip()]
@@ -126,9 +127,15 @@ def main():
         for f in filings:
             k = (f["entity"], f["form"], tuple(f["items"]), f["filed"]); f["seq_total"] = seen_day[k]
     stale = {}
+    minsky = None
+    if a.minsky and os.path.exists(a.minsky):
+        try: minsky = json.load(open(a.minsky))
+        except Exception as ex: print(f"[warn] minsky unreadable: {ex}")
     if a.fallback and os.path.exists(a.fallback):
         try:
             prev = json.load(open(a.fallback))
+            if minsky is None and prev.get("minsky"):
+                minsky = dict(prev["minsky"]); minsky["stale"] = True; minsky.setdefault("stale_since", minsky.get("fetched_at"))
             if not filings and prev.get("filings"):
                 filings = prev["filings"]; stale["filings"] = (prev.get("monitor") or {}).get("filings_fetched_at") or prev.get("generated_at")
             if not news and prev.get("news"):
@@ -143,7 +150,8 @@ def main():
            "entities": out_ents, "edges": out_edges,
            "metrics": {k: m.get(k) for k in ("cycles", "cycles_soft", "concentration", "maturity_ladder", "structure_mix", "delta", "data_gaps_summary", "n_firm", "n_soft")},
            "news": news, "filings": filings,
-           "commentary": json.load(open(a.commentary)) if a.commentary and os.path.exists(a.commentary) else None}
+           "commentary": json.load(open(a.commentary)) if a.commentary and os.path.exists(a.commentary) else None,
+           "minsky": minsky}
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     json.dump(doc, open(a.out, "w"), ensure_ascii=False)
     if a.archive:
