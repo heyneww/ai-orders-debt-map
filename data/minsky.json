@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-10T04:41:53Z",
+ "fetched_at": "2026-11-10T15:02:22Z",
  "stale": false,
  "framework": {
   "name": "GHSS business R-zone (Greenwood–Hanson–Shleifer–Sørensen 2022) / Deutsche Bank 2025-11",
@@ -1630,10 +1630,10 @@
   "sp_start_date": "2023-11-09",
   "sp_end_date": "2026-11-09",
   "nominal_pct": 73.7,
-  "cpi_pct": 9.1,
+  "cpi_pct": 9.5,
   "cpi_start_date": "2023-11-01",
-  "cpi_end_date": "2026-09-01",
-  "real_pct": 59.1,
+  "cpi_end_date": "2026-10-01",
+  "real_pct": 58.6,
   "threshold": 26.0,
   "in_red": true,
   "history": [
