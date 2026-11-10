@@ -199,3 +199,12 @@ button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{ou
 .mk__lab{font-size:11px;fill:var(--muted)}.mk__ticks{font-size:10px;fill:var(--muted);font-family:var(--f-mono)}.mk__grid line{stroke:var(--line)}
 .mk__cur{stroke:var(--fg);stroke-width:1;stroke-dasharray:2 2}
 @media(max-width:900px){.mk{grid-template-columns:1fr}}
+#minsky summary{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;cursor:pointer;list-style:none}#minsky summary::-webkit-details-marker{display:none}
+#minsky summary::before{content:"▸";color:var(--muted);font-size:12px;flex:none}#minsky details[open] summary::before{content:"▾"}
+#minsky summary h2{display:inline}.mk__brief{font-size:12.5px;color:var(--ink2);flex:1;min-width:200px}.mk__brief .tag{margin-left:2px}
+.mk__scope{margin:10px 0 6px;font-size:13.5px;line-height:1.55;border-left:3px solid var(--line-strong);padding-left:10px;max-width:72em}
+.mk__bridge{margin:12px 0 8px;border-top:1px solid var(--line);padding-top:10px}.mk__bridge h3{margin:0 0 6px}
+.mk__bridge table{border-collapse:collapse;font-size:12.5px;width:100%;max-width:820px}.mk__bridge td{padding:4px 8px 4px 0;border-bottom:1px dashed var(--line);vertical-align:baseline}
+.mk__bridge td.sub{padding-left:16px;color:var(--ink2)}
+.mk__bridge td.n{text-align:right;white-space:nowrap;font-family:var(--f-display);font-stretch:85%;font-weight:700;font-variant-numeric:tabular-nums}.mk__bridge td.p{text-align:right;white-space:nowrap;color:var(--muted);font-family:var(--f-mono);font-size:11.5px}
+.mk__bridge p{margin:8px 0 0;font-size:12.5px;max-width:72em}

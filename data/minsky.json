@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-10T03:48:27Z",
+ "fetched_at": "2026-11-10T04:37:43Z",
  "stale": false,
  "framework": {
   "name": "GHSS business R-zone (Greenwood–Hanson–Shleifer–Sørensen 2022) / Deutsche Bank 2025-11",
@@ -14,6 +14,12 @@
    "https://www.nber.org/system/files/working_papers/w27396/w27396.pdf",
    "https://wallstreetcn.com/articles/3785328"
   ]
+ },
+ "scale": {
+  "gdp_asof": "2026-07-01",
+  "gdp_busd": 33010.0,
+  "nonfin_business_debt_asof": "2026-04-01",
+  "nonfin_business_debt_busd": 23971.5
  },
  "debt": {
   "series": "TBSDODNS / 4-quarter GDP",

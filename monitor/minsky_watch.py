@@ -188,6 +188,8 @@ def main():
         "framework": {"name": "GHSS business R-zone (Greenwood–Hanson–Shleifer–Sørensen 2022) / Deutsche Bank 2025-11", "thresholds": THRESH,
                       "sector": "all nonfinancial business (corporate + noncorporate), all credit sources; excludes financials, households, government",
                       "refs": ["https://www.nber.org/system/files/working_papers/w27396/w27396.pdf", "https://wallstreetcn.com/articles/3785328"]},
+        "scale": {"gdp_asof": max(gdp), "gdp_busd": round(gdp[max(gdp)], 1),
+                  "nonfin_business_debt_asof": (max(tb) if tb else None), "nonfin_business_debt_busd": (round(tb[max(tb)] / 1000, 1) if tb else None)},
         "debt": {"series": main_series, "series_label": main_label, "basis": "z1_replica" if use_rep else "bis", "official": official, "replica_fit": fit, "hf": hf,
                  "asof": cur_bis["date"], "level": cur_bis["level"], "start_date": shift_years(cur_bis["date"], W), "start_level": round(main_level[shift_years(cur_bis["date"], W)], 1),
                  "chg_3y": cur_bis["chg_3y"], "threshold": THRESH["debt_pp"], "in_red": red_debt, "gap_to_red": round(THRESH["debt_pp"] - cur_bis["chg_3y"], 1),
