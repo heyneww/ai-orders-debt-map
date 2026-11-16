@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-16T06:45:41Z",
+ "fetched_at": "2026-11-16T19:43:04Z",
  "stale": false,
  "framework": {
   "name": "GHSS business R-zone (Greenwood–Hanson–Shleifer–Sørensen 2022) / Deutsche Bank 2025-11",
@@ -28,15 +28,15 @@
   "official": {
    "series": "QUSNAM770A",
    "series_label": "BIS: US non-financial corporations credit / GDP, all sectors (%)",
-   "asof": "2025-10-01",
-   "level": 72.2,
-   "start_level": 78.9,
-   "chg_3y": -6.7,
-   "replica_chg_3y_same_quarter": -5.9
+   "asof": "2026-01-01",
+   "level": 72.5,
+   "start_level": 78.4,
+   "chg_3y": -5.9,
+   "replica_chg_3y_same_quarter": -4.9
   },
   "replica_fit": {
-   "n": 164,
-   "mean_abs_diff_pp": 0.25,
+   "n": 165,
+   "mean_abs_diff_pp": 0.26,
    "max_abs_diff_pp": 1.4,
    "same_red_quarters": true
   },
@@ -914,11 +914,6 @@
   ],
   "history_official": [
    {
-    "date": "2006-01-01",
-    "level": 65.3,
-    "chg_3y": -0.5
-   },
-   {
     "date": "2006-04-01",
     "level": 66.1,
     "chg_3y": 0.6
@@ -1100,8 +1095,8 @@
    },
    {
     "date": "2015-04-01",
-    "level": 72.9,
-    "chg_3y": 4.9
+    "level": 73.0,
+    "chg_3y": 5.0
    },
    {
     "date": "2015-07-01",
@@ -1115,8 +1110,8 @@
    },
    {
     "date": "2016-01-01",
-    "level": 74.6,
-    "chg_3y": 5.8
+    "level": 74.7,
+    "chg_3y": 5.9
    },
    {
     "date": "2016-04-01",
@@ -1125,8 +1120,8 @@
    },
    {
     "date": "2016-07-01",
-    "level": 75.5,
-    "chg_3y": 5.7
+    "level": 75.6,
+    "chg_3y": 5.8
    },
    {
     "date": "2016-10-01",
@@ -1161,7 +1156,7 @@
    {
     "date": "2018-04-01",
     "level": 78.3,
-    "chg_3y": 5.4
+    "chg_3y": 5.3
    },
    {
     "date": "2018-07-01",
@@ -1176,7 +1171,7 @@
    {
     "date": "2019-01-01",
     "level": 78.7,
-    "chg_3y": 4.1
+    "chg_3y": 4.0
    },
    {
     "date": "2019-04-01",
@@ -1186,7 +1181,7 @@
    {
     "date": "2019-07-01",
     "level": 78.8,
-    "chg_3y": 3.3
+    "chg_3y": 3.2
    },
    {
     "date": "2019-10-01",
@@ -1280,23 +1275,23 @@
    },
    {
     "date": "2024-04-01",
-    "level": 74.6,
-    "chg_3y": -10.0
+    "level": 74.5,
+    "chg_3y": -10.1
    },
    {
     "date": "2024-07-01",
-    "level": 74.3,
-    "chg_3y": -9.0
+    "level": 74.2,
+    "chg_3y": -9.1
    },
    {
     "date": "2024-10-01",
-    "level": 73.3,
-    "chg_3y": -9.3
+    "level": 73.2,
+    "chg_3y": -9.4
    },
    {
     "date": "2025-01-01",
-    "level": 73.1,
-    "chg_3y": -9.0
+    "level": 73.0,
+    "chg_3y": -9.1
    },
    {
     "date": "2025-04-01",
@@ -1312,6 +1307,11 @@
     "date": "2025-10-01",
     "level": 72.2,
     "chg_3y": -6.7
+   },
+   {
+    "date": "2026-01-01",
+    "level": 72.5,
+    "chg_3y": -5.9
    }
   ],
   "history_alt": [
