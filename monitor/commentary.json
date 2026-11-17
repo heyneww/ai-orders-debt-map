@@ -1,35 +1,35 @@
 {
- "asof": "2026-10-29",
- "basis": "基于 2026-10-29 构建的 356 条记录（有效 270 条）、239 条的全量独立核查（ok 179 / 口径修正 58 / 判错 2）与对公开数据集的逐对交叉比对；判断在每次 TRIAGE 后人工更新，数据自动刷新不改判断。",
- "basis_en": "Based on the 2026-10-29 build (356 records, 270 active), a full independent check of 239 deals (179 ok / 58 scope fixes / 2 wrong) and a pair-by-pair reconciliation against a public dataset; the call is updated after each triage, not by the automatic data refresh.",
+ "asof": "2026-11-17",
+ "basis": "基于 2026-11-17 构建的 410 条记录（有效 319 条）。本次补入 2026-10-28 至 11-17 的 54 条新记录（来自 94 条新闻稿候选与 81 条 SEC 申报候选），其中 3 条是对已有交易的修订；新记录尚未做独立抽查，此前 239 条的全量核查截至 10-29。判断在每次抽取入图后人工更新，数据自动刷新不改判断。",
+ "basis_en": "Based on the 2026-11-17 build (410 records, 319 active). This update adds 54 records dated 2026-10-28 to 11-17 (from 94 press candidates and 81 SEC filing candidates), 3 of them revisions of existing deals; the new records have not yet been independently spot-checked, and the earlier full check of 239 deals runs to 10-29. The call is updated after each triage, not by the automatic data refresh.",
  "zh": {
-  "stance": "承诺远超到位资金，压力链从 OpenAI 的付款一路传到园区项目贷款",
-  "verdict": "图上 $1.84T 的算力采购承诺，是买方未来 5–8 年要付的钱；买方手里已经到位的，只有股权融资和已提款的贷款。两边对不上：OpenAI 承诺采购 $730B，已到位的股权 $114B、贷款 $5.2B；Anthropic 承诺 $506B，到位股权 $66B。按板块看，模型实验室承诺付给云厂商 $933B，资金方投给实验室的只有 $357B。缺口要靠实验室未来的收入或新一轮融资来填，而这两样目前都不在图里。",
+  "stance": "承诺仍远超到位资金；近三周新进图的钱主要是云厂商自己发的债和股，两家实验室的到位股权没有变",
+  "verdict": "图上 $1.89T 的算力采购承诺，是买方未来 5–8 年要付的钱；买方手里已经到位的，只有股权融资和已提款的贷款。两边仍然对不上：OpenAI 承诺采购 $730B，已到位的股权 $114B、贷款 $5.2B；Anthropic 承诺 $516B，到位股权 $66B。10-28 以来这两组数字里只有 Anthropic 的承诺变了（对 Google 的算力承诺从 $114.5B 修订为 $121.3B；数字取自对其 SEC 申报的二手整理，申报正文未读到）。新进图的钱在另一头：Microsoft、Meta、Oracle、Alphabet 三周内发了 $66.8B 公募债，Meta 和 Oracle 另有 $24.4B 股票和优先股完成发行（其中 Meta 的 $14.4B 优先股在 10-26 定价、上期已按 $12.5B 入图），Amazon 披露 $80B 有担保贷款额度（尚未提款，出借方未披露）。也就是说，收钱的一方先借钱把园区建起来，付钱的一方的钱还没到。Anthropic 已启动 IPO，但尚未定价，在图里按意向计。",
   "where": [
    {
     "view": "basis",
-    "text": "顶部四张卡片：订单 $1.84T 是标题口径；把「口径」切到已约束，只剩 $254B（14%）。差额就是「up to」、意向书和多年总额。"
+    "text": "顶部四张卡片：订单 $1.89T 是标题口径；把「口径」切到已约束，只剩 $289B（15%）。比上期多出的 $35B 来自两笔：Riot 与一家未具名实验室的 $28B 租约，以及 Anthropic 对 Google 的承诺上调。"
    },
    {
     "node": "openai",
-    "text": "最大敞口 → OpenAI：订单支出 $730B，股权流入标题 $200B、已到位 $114B，借入 $5.2B。Anthropic 同理：承诺 $506B，到位股权 $66B。"
+    "text": "最大敞口 → OpenAI：订单支出 $730B，股权流入标题 $220B、已到位 $114B，借入 $5.2B。标题比上期多的 $20B 是报道中的新一轮融资，仅消息人士。Anthropic：承诺 $516B，到位股权 $66B。"
    },
    {
     "view": "flow",
-    "text": "板块流向：模型实验室 → 超大规模云 $933B，资金方 → 模型实验室 $357B；实验室承诺出去的钱是收进来的 2.6 倍。"
+    "text": "板块流向：模型实验室 → 超大规模云 $939B，资金方 → 模型实验室 $437B，约 2.2 倍。$437B 里有 $79B 尚未到位：Anthropic IPO 按区间中值计的 $59.3B，和 OpenAI 报道中的 $20B。"
    },
    {
     "view": "conc",
-    "text": "集中度：Oracle 在手合同 $327B 里 92% 来自 OpenAI，Microsoft $280B 里 89%；两家的在手合同已约束金额都未披露。"
+    "text": "集中度：Oracle 在手合同 $327B 里 92% 来自 OpenAI，Microsoft $280B 里 89%；两家的在手合同已约束金额都未披露。Oracle 的公募债已到 $60.8B。"
    }
   ],
   "chain_title": "如果 OpenAI 的钱不到位，按图上的边会这样传导",
   "chain": [
    "OpenAI 对 Oracle 的 $300B 合同 2027 年起付。OpenAI 已到位的 $114B 股权加 $5.2B 贷款覆盖不了 5 年合同，缺口要靠新融资或收入。",
-   "Oracle 为此向 Vantage、Crusoe、Related 等开发商租园区，又发了 $50.8B 公募债。租约不随 OpenAI 付款而免除，所以 OpenAI 一旦付慢，第一个顶上的是 Oracle 自己的现金流和这 $50.8B 债的持有人。",
+   "Oracle 为此向 Vantage、Crusoe、Related 等开发商租园区，公募债累计 $60.8B：11 月 2 日新发 $10B 五档票据，票息 7.000%–8.650%，同时发了 $10B 普通股。租约不随 OpenAI 付款而免除，所以 OpenAI 一旦付慢，第一个顶上的是 Oracle 自己的现金流和这 $60.8B 债的持有人。",
    "开发商的园区靠项目贷款建：Vantage Frontier $23B、Vantage Lighthouse $15B（两笔均为报道，未经申报确认）、Crusoe / Blue Owl Abilene $7.1B（已签约）。贷款靠 Oracle 租金偿还，Oracle 若也拖欠，摩根大通、Blue Owl 等贷款人才真正暴露。",
-   "芯片厂商的担保排在更后面：NVIDIA 对 OpenAI 4.25 GW 租约的 $105B 残值担保要到 2028 年起租才生效，兜的是出租人 SB Energy，不是 Oracle 或开发商。",
-   "Anthropic 这条链更短：TPU 租赁 SPV 向 Apollo 借 $35B，靠 Anthropic 的租金还；Anthropic 一旦欠付，Broadcom 按 85% 欠付额减机架处置价值兜底、上限约 $29B，风险直接转到 Broadcom 的资产负债表，而 Broadcom 自己还有 $18.5B 公募债在外。"
+   "芯片厂商的担保排在更后面：NVIDIA 对 OpenAI 4.25 GW 租约的 $105B 残值担保要到 2028 年起租才生效，兜的是出租人 SB Energy，不是 Oracle 或开发商。另有报道称 NVIDIA 在谈为 Nscale 西弗吉尼亚园区的债务提供担保，该园区的算力据报道租给 Anthropic；金额未披露，仅消息人士，图上按传闻画。",
+   "Anthropic 这条链更短：TPU 租赁 SPV 向 Apollo 借 $35B，靠 Anthropic 的租金还；Anthropic 一旦欠付，Broadcom 按 85% 欠付额减机架处置价值兜底、上限约 $29B，风险直接转到 Broadcom 的资产负债表，而 Broadcom 自己还有 $18.5B 公募债在外。Anthropic 的 IPO 若完成，按区间中值会带来约 $85B 新股权（新股 $59.3B，加上以 IPO 完成为前提的 $26B 定向配售），这条链的第一环会先松动。"
   ],
   "watch": [
    {
@@ -38,47 +38,52 @@
     "watch": "OpenAI 下一轮融资公告；Oracle 10-Q 的 RPO 与客户集中度；园区项目贷款的评级动作"
    },
    {
-    "if": "Anthropic 的 TPU 租约出现欠付",
-    "then": "Broadcom 兜底触发，Apollo $35B 贷款的信用风险转到 Broadcom，其公募债会同步重新定价",
-    "watch": "Anthropic S-1 之后的季度收入；Broadcom 10-Q 中 backstop 敞口的变动"
+    "if": "Anthropic 的 IPO 推迟或缩量",
+    "then": "$26B 定向配售以 IPO 完成为前提，会一并落空，Anthropic 的到位股权停在 $66B，对应 $516B 的采购承诺；TPU 租约的付款来源仍只有收入和已有股权",
+    "watch": "IPO 定价公告与最终募资额；定向配售的交割申报；Broadcom 10-Q 中 backstop 敞口的变动"
    },
    {
     "if": "芯片厂商按部署分期的投资（NVIDIA、AMD 对 OpenAI / Anthropic / xAI）与采购分期同步放缓",
-    "then": "15 条已约束口径的资金闭环两端同时缩水：图上表现为股权与订单的已约束口径一起下降而标题不变",
+    "then": "16 条已约束口径的资金闭环两端同时缩水：图上表现为股权与订单的已约束口径一起下降而标题不变",
     "watch": "NVIDIA、AMD 财报附注里的投资承诺余额；实验室的 GW 部署进度"
+   },
+   {
+    "if": "云厂商继续以公募债和贷款额度为园区建设融资，而实验室的付款与融资没有跟上",
+    "then": "图上「资金方 → 超大规模云」这一格继续变大，云厂商自己的债务成为链条上最先承压的一环；Oracle 新债 7.000%–8.650% 的票息是目前图里可核的融资成本读数",
+    "watch": "Amazon $80B 额度的提款时间（披露为 2027Q1–2028Q3 可提）与出借方；各家下一次发债的票息；10-Q 里的资本开支与租赁承诺"
    }
   ],
-  "flip": "OpenAI 或 Anthropic 新一轮股权到位并进入图里，两家的「股权流入（已约束）」明显抬升；或 Oracle、Microsoft 在申报中披露在手合同的已约束金额，订单的已约束占比从 14% 明显上升。出现任一项，这里的判断会重写。",
+  "flip": "Anthropic 的 IPO 与定向配售完成交割并进入图里，或 OpenAI 报道中的新一轮融资得到公司确认，两家的「股权流入（已约束）」明显抬升；或 Oracle、Microsoft 在申报中披露在手合同的已约束金额，订单的已约束占比从 15% 明显上升。出现任一项，这里的判断会重写。",
   "note": "以上只陈述图中可核的交易与触发条件，不构成对任何主体的评级或投资建议。"
  },
  "en": {
-  "stance": "Commitments far exceed funded capital; the stress path runs from OpenAI's payments down to campus project loans",
-  "verdict": "The $1.84T of compute purchase commitments on the map is money buyers will pay over the next 5–8 years; what they actually hold is equity raised and loans drawn. The two do not match: OpenAI has committed $730B of purchases against $114B of funded equity and $5.2B of debt; Anthropic $506B against $66B of funded equity. By sector, AI labs have promised $933B to hyperscalers while financiers have put $357B into the labs. The gap has to be filled by future lab revenue or new funding rounds, and neither is on the map yet.",
+  "stance": "Commitments still far exceed funded capital; the money added to the map in the past three weeks is mostly hyperscalers' own bonds and stock, while the two labs' funded equity is unchanged",
+  "verdict": "The $1.89T of compute purchase commitments on the map is money buyers will pay over the next 5–8 years; what they actually hold is equity raised and loans drawn. The two still do not match: OpenAI has committed $730B of purchases against $114B of funded equity and $5.2B of debt; Anthropic $516B against $66B of funded equity. Since 10-28 the only change in those figures is Anthropic's commitment (its compute commitment to Google was revised from $114.5B to $121.3B; the figure comes from a secondary summary of its SEC filing, the filing text itself was not read). The new money is on the other side: Microsoft, Meta, Oracle and Alphabet sold $66.8B of public bonds in three weeks, Meta and Oracle completed a further $24.4B of common and preferred stock (Meta's $14.4B preferred priced on 10-26 and was already on the map at $12.5B), and Amazon disclosed an $80B secured loan facility (undrawn, lenders not named). In other words, the receivers are borrowing first to build the campuses while the payers' money has not arrived. Anthropic has launched its IPO but has not priced it; the map carries it as an intention.",
   "where": [
    {
     "view": "basis",
-    "text": "Top cards: the $1.84T of orders is the headline basis; switch the basis to firm and only $254B (14%) remains. The difference is \"up to\", letters of intent and multi-year totals."
+    "text": "Top cards: the $1.89T of orders is the headline basis; switch the basis to firm and only $289B (15%) remains. The $35B added since the last update comes from two items: Riot's $28B lease with an unnamed lab, and Anthropic's raised commitment to Google."
    },
    {
     "node": "openai",
-    "text": "Largest exposures → OpenAI: orders placed $730B; equity in $200B headline, $114B funded; borrowed $5.2B. Anthropic likewise: $506B committed vs $66B funded equity."
+    "text": "Largest exposures → OpenAI: orders placed $730B; equity in $220B headline, $114B funded; borrowed $5.2B. The extra $20B of headline is a reported new round, sourced only to people familiar. Anthropic: $516B committed vs $66B funded equity."
    },
    {
     "view": "flow",
-    "text": "Sector flows: AI labs → hyperscalers $933B, financiers → AI labs $357B; labs have promised out 2.6× what they have taken in."
+    "text": "Sector flows: AI labs → hyperscalers $939B, financiers → AI labs $437B, about 2.2×. Of the $437B, $79B is not yet funded: $59.3B for Anthropic's IPO at the midpoint of the range, and OpenAI's reported $20B."
    },
    {
     "view": "conc",
-    "text": "Concentration: 92% of Oracle's $327B backlog comes from OpenAI, 89% of Microsoft's $280B; neither discloses the firm portion."
+    "text": "Concentration: 92% of Oracle's $327B backlog comes from OpenAI, 89% of Microsoft's $280B; neither discloses the firm portion. Oracle's public bonds now total $60.8B."
    }
   ],
   "chain_title": "If OpenAI's money does not arrive, this is how it travels along the map's edges",
   "chain": [
    "OpenAI's $300B contract with Oracle starts paying in 2027. OpenAI's funded $114B of equity plus $5.2B of debt cannot cover a 5-year contract; the gap needs new funding or revenue.",
-   "Oracle leases campuses from Vantage, Crusoe and Related to serve it, and has issued $50.8B of public bonds. The leases are not excused by OpenAI's payments, so if OpenAI pays slowly, the first to absorb it is Oracle's own cash flow and the holders of that $50.8B.",
+   "To deliver, Oracle leases campuses from developers such as Vantage, Crusoe and Related, and its public bonds now total $60.8B: on 2 November it sold $10B of notes in five tranches at coupons of 7.000%–8.650%, alongside $10B of common stock. The leases are not excused if OpenAI pays late, so the first to absorb a delay are Oracle's own cash flow and the holders of that $60.8B of bonds.",
    "The developers build on project loans: Vantage Frontier $23B and Vantage Lighthouse $15B (both reported, not confirmed in filings), Crusoe / Blue Owl Abilene $7.1B (signed). Those loans are repaid from Oracle's rent; only if Oracle also falls behind are lenders such as JPMorgan and Blue Owl truly exposed.",
-   "Chip vendors' guarantees sit further back: NVIDIA's $105B residual-value guarantee on OpenAI's 4.25 GW leases only takes effect at lease start in 2028, and it backstops the lessor SB Energy, not Oracle or the developers.",
-   "Anthropic's chain is shorter: its TPU lease SPV borrows $35B from Apollo, repaid from Anthropic's rent; if Anthropic defaults, Broadcom's backstop (85% of arrears less rack disposal value, capped near $29B) moves the risk straight onto Broadcom's balance sheet, which already carries $18.5B of public bonds."
+   "Chip vendors' guarantees sit further back: NVIDIA's $105B residual value guarantee on OpenAI's 4.25 GW lease only takes effect when the lease starts in 2028, and it protects the lessor SB Energy, not Oracle or the developers. Separately, NVIDIA is reported to be in talks to guarantee debt for Nscale's West Virginia campus, whose compute is reportedly rented to Anthropic; no amount is disclosed and the report rests on people familiar, so the map draws it as rumored.",
+   "Anthropic's chain is shorter: the TPU leasing SPV borrowed $35B from Apollo, repaid from Anthropic's rent; if Anthropic falls behind, Broadcom backstops 85% of the shortfall less rack disposal value, capped at about $29B, which moves the risk straight onto Broadcom's balance sheet, and Broadcom has $18.5B of its own public bonds outstanding. If Anthropic's IPO completes, at the midpoint of the range it would bring about $85B of new equity ($59.3B of new shares plus a $26B private placement contingent on the IPO), and the first link of this chain would ease first."
   ],
   "watch": [
    {
@@ -87,17 +92,22 @@
     "watch": "OpenAI's next funding announcement; RPO and customer concentration in Oracle's 10-Q; rating actions on the campus loans"
    },
    {
-    "if": "Anthropic falls behind on its TPU lease",
-    "then": "Broadcom's backstop triggers, the credit risk of Apollo's $35B loan moves to Broadcom, and Broadcom's own bonds reprice with it",
-    "watch": "Anthropic's quarterly revenue after the S-1; the backstop exposure in Broadcom's 10-Q"
+    "if": "Anthropic's IPO is delayed or downsized",
+    "then": "The $26B private placement is contingent on the IPO completing and would fall away with it; Anthropic's funded equity would stay at $66B against $516B of purchase commitments, and the TPU lease would still be paid only from revenue and existing equity",
+    "watch": "The IPO pricing announcement and final proceeds; closing filings for the private placement; changes in Broadcom's backstop exposure in its 10-Q"
    },
    {
     "if": "chip vendors' milestone-based investments (NVIDIA and AMD into OpenAI / Anthropic / xAI) slow together with the purchase milestones",
-    "then": "both ends of the 15 firm-basis funding loops shrink at once: on the map, firm equity and firm orders fall together while headlines stay put",
+    "then": "both ends of the 16 firm-basis funding loops shrink at once: on the map, firm equity and firm orders fall together while headlines stay put",
     "watch": "investment commitment balances in NVIDIA's and AMD's filing notes; the labs' GW deployment progress"
+   },
+   {
+    "if": "Hyperscalers keep funding campus construction with public bonds and loan facilities while the labs' payments and fundraising do not keep pace",
+    "then": "The \"financiers → hyperscalers\" cell on the map keeps growing and the hyperscalers' own debt becomes the first link under strain; the 7.000%–8.650% coupons on Oracle's new notes are the funding-cost reading that can be checked on the map today",
+    "watch": "Draw timing (disclosed as available 2027Q1–2028Q3) and lenders of Amazon's $80B facility; coupons on each company's next bond sale; capex and lease commitments in the 10-Qs"
    }
   ],
-  "flip": "If OpenAI or Anthropic closes a new equity round that enters the map, their firm equity inflow rises visibly; or if Oracle and Microsoft disclose the firm portion of their backlogs, the firm share of orders rises well above 14%. Either one rewrites this call.",
+  "flip": "Anthropic's IPO and private placement close and enter the map, or OpenAI's reported new round is confirmed by the company, so that the two labs' \"equity in (firm)\" rises visibly; or Oracle or Microsoft disclose the firm portion of their backlog in a filing and the firm share of orders rises visibly above 15%. Any one of these and this call will be rewritten.",
   "note": "This states only deals verifiable on the map and their trigger conditions; it is not a rating of any company or investment advice."
  }
 }

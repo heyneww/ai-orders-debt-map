@@ -1466,7 +1466,271 @@
    ],
    "parent": null,
    "notes": "瑞典数据中心开发/运营商（Falun、Borlänge）；Mistral AI 瑞典站点的设计/建设/运营方（bf_g_013）；2026 年在 Nasdaq Stockholm 发行债券（未入图）。"
+  },
+  {
+   "id": "tensorwave",
+   "name": "TensorWave",
+   "type": "neocloud",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "TensorWave, Inc."
+   ],
+   "parent": null,
+   "notes": "AMD GPU 云服务商；2026-11-16 与 OpenAI 签订六年期 457 MW 协议（tA_1117_019）。AMD 为其投资方与 GPU 供应方。"
+  },
+  {
+   "id": "onepwr",
+   "name": "OnePWR Solutions",
+   "type": "power",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "OnePWR"
+   ],
+   "parent": null,
+   "notes": "San Antonio 的发电设备供应商；FT（经 Fortune 转述）称其向 Anthropic 出售 1.7 GW 燃气发电机组（tA_1117_018，rumored）。Piper Sandler 为其顾问。"
+  },
+  {
+   "id": "bxdc",
+   "name": "Blackstone Digital Infrastructure Trust",
+   "type": "financier",
+   "ticker": "BXDC",
+   "listed": true,
+   "aliases": [
+    "Blackstone Digital Infrastructure Trust Inc.",
+    "BXDC"
+   ],
+   "parent": "bx",
+   "notes": "NYSE 上市的 Blackstone 数据中心信托（CIK 0002100161）；2026-11-16 签约收购两家 AWS 合资公司 75% 权益（tA_1117_020）。"
+  },
+  {
+   "id": "bxdc_aws_jv",
+   "name": "AWS / BXDC powered-shell joint ventures (two JVs, names undisclosed)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "AWS–Blackstone data center JV",
+    "BXDC AWS joint ventures"
+   ],
+   "parent": "amzn",
+   "notes": "两家合资公司合并为一个占位节点：BXDC 75% / AWS 25%；13 栋新建 powered shell，两个 AWS 园区（Commercial Observer：大芝加哥地区与密西西比州）；AWS 三净回租 12 年、最长 32 年。按 schema 以发起人/承租人 Amazon 为 parent；法律实体名未披露。"
+  },
+  {
+   "id": "naver",
+   "name": "NAVER Corporation",
+   "type": "hyperscaler",
+   "ticker": null,
+   "listed": true,
+   "aliases": [
+    "Naver",
+    "NAVER Cloud",
+    "035420.KS",
+    "네이버"
+   ],
+   "parent": null,
+   "notes": "韩国互联网/云公司；沿用 tencent/alibaba 的 hyperscaler 归类。NVIDIA 2026-07 签约、2026-11-06 缴款 $1B 取得 4.13%（tr1117_b_006）。GAK Sejong AI factory 计划 2027 上半年 55MW、2028 年 200MW（媒体口径）。"
+  },
+  {
+   "id": "wayve",
+   "name": "Wayve",
+   "type": "corporate",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Wayve Technologies"
+   ],
+   "parent": null,
+   "notes": "自动驾驶 AI 公司；schema 无更贴切类型，沿用 corporate。2026-11-09 与 CoreWeave 签多年期协议（tr1117_b_011）。"
+  },
+  {
+   "id": "rowan",
+   "name": "Rowan Digital Infrastructure",
+   "type": "dc_developer",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Rowan"
+   ],
+   "parent": null,
+   "notes": "超大规模数据中心开发商，股东 Quinbrook 与 Blackstone（持股比例各媒体口径不一，未核实，parent 留空）；项目储备约 5.5GW。"
+  },
+  {
+   "id": "grab",
+   "name": "Grab Holdings",
+   "type": "corporate",
+   "ticker": "GRAB",
+   "listed": true,
+   "aliases": [
+    "Grab Holdings Limited",
+    "Grab"
+   ],
+   "parent": null,
+   "notes": "东南亚平台公司；2026-11-09 与 SoftBank Group、PETROS 签署马来西亚 AI 基础设施 JDA。type 沿用 tesla/apple 的 corporate。"
+  },
+  {
+   "id": "petros",
+   "name": "Petroleum Sarawak Berhad (PETROS)",
+   "type": "sovereign",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "PETROS",
+    "Petroleum Sarawak"
+   ],
+   "parent": null,
+   "notes": "砂拉越州属综合能源公司；enum 无更贴切类型，暂归 sovereign（州属国企）。"
+  },
+  {
+   "id": "sb_sarawak_ai_jv",
+   "name": "SoftBank / Grab / PETROS Sarawak AI infrastructure JV (entity not yet formed)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Sarawak AI infrastructure project"
+   ],
+   "parent": "softbank",
+   "notes": "占位节点。种子资本 US$1.0B：SoftBank 80% / Grab 10% / PETROS 10%；合资实体设立仍以最终协议为前提。"
+  },
+  {
+   "id": "grab_peninsular_ai_jv",
+   "name": "Grab / SoftBank Peninsular Malaysia AI infrastructure JV (entity not yet formed)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Peninsular Malaysia AI infrastructure project"
+   ],
+   "parent": "grab",
+   "notes": "占位节点。种子资本 US$850M：Grab US$650M（创始股东、主导开发）/ SoftBank US$200M。"
+  },
+  {
+   "id": "drax_radiant_dc",
+   "name": "Drax Power Station data centre project (Drax / Brookfield / Radiant)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Drax data centre",
+    "Radiant Drax campus"
+   ],
+   "parent": "brookfield",
+   "notes": "占位节点（项目载体未披露）。Radiant 为 Brookfield 的英国 AI 基础设施平台；项目由 Brookfield–Qai 合资支持（媒体口径）。Drax Group（LSE: DRX）负责土地、电力接入与规划，未单独建节点。"
+  },
+  {
+   "id": "aep",
+   "name": "American Electric Power",
+   "type": "power",
+   "ticker": "AEP",
+   "listed": true,
+   "aliases": [
+    "AEP"
+   ],
+   "parent": null,
+   "notes": "Google 怀俄明州数据中心 702MW 燃料电池项目的签约方（Google 2026-11-05 稿）。"
+  },
+  {
+   "id": "riot",
+   "name": "Riot Platforms",
+   "type": "dc_developer",
+   "ticker": "RIOT",
+   "listed": true,
+   "aliases": [
+    "Riot Platforms, Inc.",
+    "Riot",
+    "Corsicana",
+    "Rockdale"
+   ],
+   "parent": null,
+   "notes": "矿企转型；Corsicana（TX）910 MW 15 年 powered land lease（未具名 Frontier AI Lab，2026-11-04 公告）；Rockdale 另有同一承租人 191 MW 与 AMD 50 MW 租约（早于本批窗口，未入图）。"
+  },
+  {
+   "id": "fermi",
+   "name": "Fermi Inc. (Fermi America)",
+   "type": "dc_developer",
+   "ticker": "FRMI",
+   "listed": true,
+   "aliases": [
+    "Fermi America",
+    "Project Matador"
+   ],
+   "parent": null,
+   "notes": "Project Matador（Texas Tech University System 土地租约）自备电力数据中心园区开发商。"
+  },
+  {
+   "id": "corvex",
+   "name": "Corvex, Inc.",
+   "type": "neocloud",
+   "ticker": "MOVE",
+   "listed": true,
+   "aliases": [
+    "Corvex"
+   ],
+   "parent": null,
+   "notes": "Nasdaq: MOVE；Arlington, VA；Mid-Atlantic 1 站点 NVIDIA Blackwell 算力租赁。"
+  },
+  {
+   "id": "corvex_b200_spv",
+   "name": "Corvex B200 deployment financing borrower (name undisclosed)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [],
+   "parent": "corvex",
+   "notes": "占位节点：USD.AI $38M 三年期资产支持贷款的借款主体；8-K 称贷款 'non-recourse to Corvex, Inc.'，主体名未披露。"
+  },
+  {
+   "id": "usd_ai",
+   "name": "USD.AI",
+   "type": "financier",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "USD.AI"
+   ],
+   "parent": null,
+   "notes": "Corvex 8-K（2026-11-16）所称 GPU 资产支持贷款出借方；主体法律名称未披露。"
+  },
+  {
+   "id": "sharonai",
+   "name": "SharonAI Holdings Inc.",
+   "type": "neocloud",
+   "ticker": "SHAZ",
+   "listed": true,
+   "aliases": [
+    "SharonAI",
+    "Sharon AI"
+   ],
+   "parent": null,
+   "notes": "Nasdaq: SHAZ；Austin, TX；澳大利亚与美国 GPU 云；2026 Q3 季报称自 Q2 起累计签约 TCV 约 $2.5B。"
+  },
+  {
+   "id": "vertical_data",
+   "name": "Vertical Data Inc.",
+   "type": "neocloud",
+   "ticker": "VDTA",
+   "listed": true,
+   "aliases": [
+    "Vertical Data",
+    "VDN"
+   ],
+   "parent": null,
+   "notes": "2026 Q3 收入估计约 $0.4–0.5M；两份 GPU 算力条款书/意向书（$2.8B、$1.4B）均未成最终协议。"
+  },
+  {
+   "id": "dlr_perpetual_capital",
+   "name": "Digital Realty perpetual capital strategy (vehicle name undisclosed)",
+   "type": "spv",
+   "ticker": null,
+   "listed": false,
+   "aliases": [
+    "Digital Realty perpetual capital strategy"
+   ],
+   "parent": "dlr",
+   "notes": "占位节点：聚焦北美稳定期超大规模数据中心；2026-10 完成 $1.4B 初始基石股权承诺（DLR 2026-10-29 季报）。"
   }
  ],
- "last_updated": "2026-10-29"
+ "last_updated": "2026-11-17"
 }
