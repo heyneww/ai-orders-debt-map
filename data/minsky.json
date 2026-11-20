@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-20T11:53:18Z",
+ "fetched_at": "2026-11-20T20:31:25Z",
  "stale": false,
  "framework": {
   "name": "GHSS business R-zone (Greenwood–Hanson–Shleifer–Sørensen 2022) / Deutsche Bank 2025-11",
@@ -1620,9 +1620,7 @@
  "equity": {
   "series": "SP500 / CPIAUCSL (+Yahoo ^GSPC monthly before 2016-11-21)",
   "series_label": "S&P 500 deflated by CPI, 3-year real change (%)",
-  "yahoo_patched_days": [
-   "2026-11-19"
-  ],
+  "yahoo_patched_days": [],
   "date": "2026-11-19",
   "sp_start": 4514.02,
   "sp_end": 7175.83,
