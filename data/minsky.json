@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-25T08:48:10Z",
+ "fetched_at": "2026-11-25T19:25:59Z",
  "stale": false,
  "framework": {
   "name": "GHSS business R-zone (Greenwood–Hanson–Shleifer–Sørensen 2022) / Deutsche Bank 2025-11",
@@ -17,7 +17,7 @@
  },
  "scale": {
   "gdp_asof": "2026-07-01",
-  "gdp_busd": 33010.0,
+  "gdp_busd": 33056.2,
   "nonfin_business_debt_asof": "2026-04-01",
   "nonfin_business_debt_busd": 23971.5
  },
@@ -62,7 +62,7 @@
     }
    ],
    "gdp_asof": "2026-07-01",
-   "gdp_chg_3y_pct": 17.6
+   "gdp_chg_3y_pct": 17.8
   },
   "asof": "2026-04-01",
   "level": 75.4,
@@ -1618,11 +1618,9 @@
   ]
  },
  "equity": {
-  "series": "SP500 / CPIAUCSL (+Yahoo ^GSPC monthly before 2016-11-25)",
+  "series": "SP500 / CPIAUCSL (+Yahoo ^GSPC monthly before 2016-11-28)",
   "series_label": "S&P 500 deflated by CPI, 3-year real change (%)",
-  "yahoo_patched_days": [
-   "2026-11-24"
-  ],
+  "yahoo_patched_days": [],
   "date": "2026-11-24",
   "sp_start": 4559.34,
   "sp_end": 7201.09,
