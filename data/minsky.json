@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-27T12:41:43Z",
+ "fetched_at": "2026-11-27T23:35:11Z",
  "stale": false,
  "framework": {
   "name": "GHSS business R-zone (Greenwood–Hanson–Shleifer–Sørensen 2022) / Deutsche Bank 2025-11",
@@ -45,20 +45,20 @@
     {
      "series": "TOTCI",
      "series_label": "Commercial and industrial loans, all commercial banks (H.8, weekly, SA)",
-     "asof": "2026-11-11",
-     "value_busd": 3018.1,
-     "start_date": "2023-11-08",
-     "start_busd": 2760.1,
-     "chg_3y_pct": 9.3
+     "asof": "2026-11-18",
+     "value_busd": 3007.5,
+     "start_date": "2023-11-15",
+     "start_busd": 2760.0,
+     "chg_3y_pct": 9.0
     },
     {
      "series": "CREACBW027SBOG",
      "series_label": "Commercial real estate loans, all commercial banks (H.8, weekly, SA)",
-     "asof": "2026-11-11",
-     "value_busd": 3162.5,
-     "start_date": "2023-11-08",
-     "start_busd": 2957.5,
-     "chg_3y_pct": 6.9
+     "asof": "2026-11-18",
+     "value_busd": 3168.3,
+     "start_date": "2023-11-15",
+     "start_busd": 2959.5,
+     "chg_3y_pct": 7.1
     }
    ],
    "gdp_asof": "2026-07-01",
@@ -1621,18 +1621,18 @@
   "series": "SP500 / CPIAUCSL (+Yahoo ^GSPC monthly before 2016-11-28)",
   "series_label": "S&P 500 deflated by CPI, 3-year real change (%)",
   "yahoo_patched_days": [
-   "2026-11-25"
+   "2026-11-27"
   ],
-  "date": "2026-11-25",
-  "sp_start": 4559.34,
-  "sp_end": 7182.78,
-  "sp_start_date": "2023-11-24",
-  "sp_end_date": "2026-11-25",
-  "nominal_pct": 57.5,
+  "date": "2026-11-27",
+  "sp_start": 4550.43,
+  "sp_end": 7297.49,
+  "sp_start_date": "2023-11-27",
+  "sp_end_date": "2026-11-27",
+  "nominal_pct": 60.4,
   "cpi_pct": 9.5,
   "cpi_start_date": "2023-11-01",
   "cpi_end_date": "2026-10-01",
-  "real_pct": 43.8,
+  "real_pct": 46.4,
   "threshold": 26.0,
   "in_red": true,
   "history": [
